@@ -49,7 +49,7 @@
 <div id="live-demo"></div>
 
 ## Live Demo
-This repository is hosted on GitHub Pages.  You can view a live version of it here: https://PWNAGERobotics.github.io/ScoutingPASS.  (You can host your ScoutingPASS application on GitHub Pages as well.)
+This repository is hosted on GitHub Pages.  You can view a live version of it here: https://andrecar001.github.io/ScoutingPASS.  (You can host your ScoutingPASS application on GitHub Pages as well.)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <div id="description"></div>
