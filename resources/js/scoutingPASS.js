@@ -242,18 +242,6 @@ function addClickableImage(table, idx, name, data) {
       showUndo = false;
     }
   }
-  let showLeft = true;
-  if (data.hasOwnProperty('showLeft')) {
-    if (data.showLeft.toLowerCase() == 'false') {
-      showLeft = false;
-    }
-  }
-  let showRight = true;
-  if (data.hasOwnProperty('showRight')) {
-    if (data.showRight.toLowerCase() == 'false') {
-      showRight = false;
-    }
-  }
 
   if (showFlip || showUndo) {
     idx += 1
@@ -287,38 +275,6 @@ function addClickableImage(table, idx, name, data) {
       cell.appendChild(flipButton);
     }
   }
-  if (showLeft || showRight) {
-    idx += 1
-    row = table.insertRow(idx);
-    cell = row.insertCell(0);
-    cell.setAttribute("colspan", 2);
-    cell.setAttribute("style", "text-align: center;");
-
-    if (showUndo) {
-      // Undo button
-      let leftButton = document.createElement("input");
-      leftButton.setAttribute("type", "button");
-      leftButton.setAttribute("onclick", "left(this.parentElement)");
-      leftButton.setAttribute("value", "Left");
-      leftButton.setAttribute("id", "left_" + data.code);
-      leftButton.setAttribute("class", "undoButton");
-      cell.appendChild(leftButton);
-    }
-
-    if (showRight) {
-      // Flip button
-      let rightButton = document.createElement("input");
-      rightButton.setAttribute("type", "button");
-      rightButton.setAttribute("onclick", "Right(this.parentElement)");
-      rightButton.setAttribute("value", "Right");
-      rightButton.setAttribute("id", "Right_" + data.code);
-      rightButton.setAttribute("class", "flipButton");
-      if (showRight) {
-        rightButton.setAttribute("margin-left", '8px');
-      }
-      cell.appendChild(rightButton);
-    }
-  }  
 
   idx += 1;
   row = table.insertRow(idx);
@@ -574,7 +530,8 @@ function addRadio(table, idx, name, data) {
   }
   cell2.classList.add("field");
   if ((data.type == 'level') ||
-    (data.type == 'robot')
+    (data.type == 'robot') ||
+    (data.type == 'direction')
   ) {
     cell2.setAttribute("onchange", "updateMatchStart(event)");
   }
@@ -681,10 +638,14 @@ function addElement(table, idx, data) {
   ) {
     idx = addText(table, idx, name, data);
   } else if ((data.type == 'level') ||
-    (data.type == 'radio') ||
-    (data.type == 'robot')
+    (data.type == 'radio') || 
+    (data.type == 'robot') ||
+    (data.type == 'direction')
+  
   ) {
     idx = addRadio(table, idx, name, data);
+  } else if(data.type == 'direction') {
+    idx = addRadio(table,idx,name,data)
   } else if ((data.type == 'match') ||
     (data.type == 'team') ||
     (data.type == 'number')
@@ -821,7 +782,7 @@ for ( rb of document.getElementsByName('r')) { rb.checked = false };
 
 
 function getLevel(){
-return document.forms.scoutingForm.l.value
+  return document.forms.scoutingForm.l.value
 }
 
 
@@ -1407,6 +1368,10 @@ function undo(event) {
   tempValue.pop();
   changingInput.value = JSON.stringify(tempValue);
   drawFields();
+  direction_radio = document.getElementsByName('dir');
+  //console.log(direction_radio)
+  document.getElementById("input_dir_l").checked = false;
+  document.getElementById("input_dir_r").checked = false;
 }
 
 function flip(event) {
@@ -1418,6 +1383,28 @@ function flip(event) {
     flipImg.style.transform = '';
   }
   drawFields();
+}
+
+function left(event){
+  let leftButton = event.querySelector('input[type="button"]');
+  //var leftButton = document.getElementById("input" + getIdBase(leftID.id))
+  if (leftButton.style.backgroundColor == 'black' || leftButton.style.backgroundColor == ''){
+    leftButton.style.backgroundColor = 'green'
+  } else{
+    leftButton.style.backgroundColor = 'black'
+  }
+}
+
+function right(event){
+  let rightButton = event.querySelector('input[type="button"]');
+  //var leftButton = document.getElementById("input" + getIdBase(leftID.id))
+  if (rightButton.style.backgroundColor == 'black' 
+      || rightButton.style.backgroundColor == ''
+      && leftButton.style.backgroundColor != 'green'){
+    rightButton.style.backgroundColor = 'green'
+  } else{
+    rightButton.style.backgroundColor = 'black'
+  }
 }
 
 function displayData(){

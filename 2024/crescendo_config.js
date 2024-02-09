@@ -1,6 +1,6 @@
 var config_data = `
 {
-  "dataFormat": "tsv",
+  "dataFormat": "kvs",
   "title": "Scouting PASS 2024",
   "page_title": "Crescendo, Team 2508",
   "checkboxAs": "10",
@@ -27,7 +27,7 @@ var config_data = `
         "sf": "Semifinals<br>"
         
       },
-      "defaultValue": "qm",
+      "defaultValue": "p",
       "required": "true"
     },
     { "name": "Match #",
@@ -56,14 +56,7 @@ var config_data = `
       "min": 1,
       "max": 99999
     },
-    { "name": "Auto Start Direction",
-      "code": "dir",
-      "type": "direction",
-      "choices": {
-        "r": "Right",
-        "l": "Left"
-      }
-    },
+    
     { "name": "Auto Start Position",
       "code": "as",
       "type": "clickable_image",
@@ -71,6 +64,14 @@ var config_data = `
       "clickRestriction": "one",
       "allowableResponses": "1 12 13 24 25 36 37 48 49 60 61 72",
       "shape": "circle 5 black red true"
+    },
+    { "name": "Direction",
+      "code": "dir",
+      "type": "direction",
+      "choices": {
+        "l": "Left",
+        "r": "Right"
+      }
     }
   ],
   "auton": [
