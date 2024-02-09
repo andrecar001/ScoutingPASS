@@ -1,6 +1,6 @@
 var config_data = `
 {
-  "dataFormat": "kvs",
+  "dataFormat": "tsv",
   "title": "Scouting PASS 2024",
   "page_title": "Crescendo, Team 2508",
   "checkboxAs": "10",
