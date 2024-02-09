@@ -81,10 +81,11 @@ def sendToBluetoothDevice(device_name):
     pyautogui.hotkey('tab')
     time.sleep(1.5)
     pyautogui.hotkey('enter')
+    time.sleep(5)
 
 
 
-sendToBluetoothDevice('phone.pos')
+sendToBluetoothDevice('One')
 
 
 

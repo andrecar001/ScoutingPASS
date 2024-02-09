@@ -15,16 +15,17 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2023tnkn",
+      "defaultValue": "Grand Forks",
       "required": "true"
     },
     { "name": "Match Level",
       "code": "l",
       "type": "level",
       "choices": {
+        "p": "Practice<br>",
         "qm": "Quals<br>",
-        "sf": "Semifinals<br>",
-        "f": "Finals"
+        "sf": "Semifinals<br>"
+        
       },
       "defaultValue": "qm",
       "required": "true"
@@ -54,6 +55,14 @@ var config_data = `
       "type": "team",
       "min": 1,
       "max": 99999
+    },
+    { "name": "Auto Start Direction",
+      "code": "dir",
+      "type": "direction",
+      "choices": {
+        "r": "Right",
+        "l": "Left"
+      }
     },
     { "name": "Auto Start Position",
       "code": "as",

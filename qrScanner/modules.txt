@@ -1,0 +1,2 @@
+## Use this to install all needed modules
+python -m pip install pyautogui pyperclip openpyxl opencv-python

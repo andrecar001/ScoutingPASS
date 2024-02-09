@@ -242,6 +242,18 @@ function addClickableImage(table, idx, name, data) {
       showUndo = false;
     }
   }
+  let showLeft = true;
+  if (data.hasOwnProperty('showLeft')) {
+    if (data.showLeft.toLowerCase() == 'false') {
+      showLeft = false;
+    }
+  }
+  let showRight = true;
+  if (data.hasOwnProperty('showRight')) {
+    if (data.showRight.toLowerCase() == 'false') {
+      showRight = false;
+    }
+  }
 
   if (showFlip || showUndo) {
     idx += 1
@@ -275,6 +287,38 @@ function addClickableImage(table, idx, name, data) {
       cell.appendChild(flipButton);
     }
   }
+  if (showLeft || showRight) {
+    idx += 1
+    row = table.insertRow(idx);
+    cell = row.insertCell(0);
+    cell.setAttribute("colspan", 2);
+    cell.setAttribute("style", "text-align: center;");
+
+    if (showUndo) {
+      // Undo button
+      let leftButton = document.createElement("input");
+      leftButton.setAttribute("type", "button");
+      leftButton.setAttribute("onclick", "left(this.parentElement)");
+      leftButton.setAttribute("value", "Left");
+      leftButton.setAttribute("id", "left_" + data.code);
+      leftButton.setAttribute("class", "undoButton");
+      cell.appendChild(leftButton);
+    }
+
+    if (showRight) {
+      // Flip button
+      let rightButton = document.createElement("input");
+      rightButton.setAttribute("type", "button");
+      rightButton.setAttribute("onclick", "Right(this.parentElement)");
+      rightButton.setAttribute("value", "Right");
+      rightButton.setAttribute("id", "Right_" + data.code);
+      rightButton.setAttribute("class", "flipButton");
+      if (showRight) {
+        rightButton.setAttribute("margin-left", '8px');
+      }
+      cell.appendChild(rightButton);
+    }
+  }  
 
   idx += 1;
   row = table.insertRow(idx);
