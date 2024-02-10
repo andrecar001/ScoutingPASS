@@ -8,7 +8,7 @@ import cv2
 from ocrSeparator import VideoStream,OCR
 
 
-frames = VideoStream(0).start()
+frames = VideoStream(2).start()
 cap = OCR().start()
 cap.set_exchange(frames)
 detector = cv2.QRCodeDetector()
