@@ -71,7 +71,9 @@ var config_data = `
       "choices": {
         "l": "Left",
         "r": "Right"
-      }
+      },
+      "defaultValue": "u",
+      "required": "true"
     }
   ],
   "auton": [

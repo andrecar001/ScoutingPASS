@@ -6,9 +6,10 @@ import openpyxl
 from openpyxl import Workbook, load_workbook
 import cv2
 from ocrSeparator import VideoStream,OCR
+import winsound
 
 
-frames = VideoStream(2).start()
+frames = VideoStream(0).start()
 cap = OCR().start()
 cap.set_exchange(frames)
 detector = cv2.QRCodeDetector()
@@ -19,14 +20,17 @@ while True:
     _, frame = frames.read()
     b,img = cap.read()
     qr_str = None
+    #If qr code is defective, try again
     try:
         data, bbox, b = detector.detectAndDecode(img)
     except Exception as e:
         print("Scanner Problem, please wait for it to reset")
         continue
     if data:
+        #If data isn't a string, continue
         try:
             qr_str=str(data)
+            
             
         except Exception as e:
             print("An Error Has Occured, Please make sure the QR code returns a string\n")
@@ -35,6 +39,7 @@ while True:
                 print(i + "\n")
             print("Resuming program...")
             continue
+        
     cv2.imshow("Camera 1", frame)
     if cv2.waitKey(1) == ord("q"):
             cv2.destroyAllWindows()
@@ -44,14 +49,15 @@ while True:
             break
     if((qr_str == None) or (qr_str in prev_qr_strs)): 
         if cv2.waitKey(1) == ord("q"):
-            cv2.destroyAllWindows()
+            '''cv2.destroyAllWindows()
             frames.stop_process()
-            cap.stop_process()
+            cap.stop_process()'''
             break
         continue
     
     print(qr_str)
     prev_qr_strs.append(qr_str)
+    winsound.Beep(2500,500)
     pyperclip.copy(qr_str)
     pyautogui.hotkey('ctrl', 'v')
     pyautogui.hotkey('down')
@@ -62,7 +68,6 @@ def sendToBluetoothDevice(device_name):
     print("Sending file to device...")
     pyperclip.copy('TestSheet.xlsx')
     subprocess.Popen("cmd /c start fsquirt",shell=True)
-    print("Clipboard")
     time.sleep(2)
     pyautogui.hotkey('s')
     time.sleep(1)
