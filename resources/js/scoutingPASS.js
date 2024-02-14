@@ -192,7 +192,7 @@ function addCounter(table, idx, name, data) {
   button2.setAttribute("onclick", "counter(this.parentElement, 1)");
   button2.setAttribute("value", "+");
   cell2.appendChild(button2);
-
+  
   if (data.hasOwnProperty('cycleTimer')) {
     if (data.cycleTimer != "") {
       inp = document.createElement('input');
@@ -212,6 +212,197 @@ function addCounter(table, idx, name, data) {
   }
 
   return idx + 1;
+}
+
+function addPitImage(table, idx, name, data) {
+  var row = table.insertRow(idx);
+  var cell = row.insertCell(0);
+  cell.setAttribute("colspan", 2);
+  cell.setAttribute("style", "text-align: center;");
+  cell.classList.add("title");
+  if (!data.hasOwnProperty('code')) {
+    cell1.innerHTML = `Error: No code specified for ${name}`;
+    return idx + 1;
+  }
+  cell.innerHTML = name;
+  if (data.hasOwnProperty('tooltip')) {
+    cell.setAttribute("title", data.tooltip);
+  }
+
+  let showFlip = true;
+  if (data.hasOwnProperty('showFlip')) {
+    if (data.showFlip.toLowerCase() == 'false') {
+      showFlip = false;
+    }
+  }
+
+  let showUndo = true;
+  if (data.hasOwnProperty('showUndo')) {
+    if (data.showUndo.toLowerCase() == 'false') {
+      showUndo = false;
+    }
+  }
+
+  if (showFlip || showUndo) {
+    idx += 1
+    row = table.insertRow(idx);
+    cell = row.insertCell(0);
+    cell.setAttribute("colspan", 2);
+    cell.setAttribute("style", "text-align: center;");
+
+    if (showUndo) {
+      // Undo button
+      let undoButton = document.createElement("input");
+      undoButton.setAttribute("type", "button");
+      undoButton.setAttribute("onclick", "undo(this.parentElement)");
+      undoButton.setAttribute("value", "Undo");
+      undoButton.setAttribute("id", "undo_" + data.code);
+      undoButton.setAttribute("class", "undoButton");
+      cell.appendChild(undoButton);
+    }
+
+    if (showFlip) {
+      // Flip button
+      let flipButton = document.createElement("input");
+      flipButton.setAttribute("type", "button");
+      flipButton.setAttribute("onclick", "flip(this.parentElement)");
+      flipButton.setAttribute("value", "Flip Image");
+      flipButton.setAttribute("id", "flip_" + data.code);
+      flipButton.setAttribute("class", "flipButton");
+      if (showUndo) {
+        flipButton.setAttribute("margin-left", '8px');
+      }
+      cell.appendChild(flipButton);
+    }
+  }
+
+  idx += 1;
+  row = table.insertRow(idx);
+  cell = row.insertCell(0);
+  cell.setAttribute("colspan", 2);
+  cell.setAttribute("style", "text-align: center;");
+  var canvas = document.createElement('canvas');
+  //canvas.onclick = onFieldClick;
+  canvas.setAttribute("onclick", "onFieldClick(event)");
+  canvas.setAttribute("class", "field-image-src");
+  canvas.setAttribute("id", "canvas_" + data.code);
+  canvas.innerHTML = "No canvas support";
+  canvas.getContext("2d")
+  canvas.style.width = "541px"
+  canvas.style.height = "700px"
+  cell.appendChild(canvas);
+
+  idx += 1;
+  row = table.insertRow(idx);
+  row.setAttribute("style", "display:none");
+  cell = row.insertCell(0);
+  cell.setAttribute("colspan", 2);
+  var inp = document.createElement('input');
+  inp.setAttribute("type", "hidden");
+  inp.setAttribute("id", "XY_" + data.code);
+  inp.setAttribute("value", "[]");
+  cell.appendChild(inp);
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
+    inp.setAttribute("name", data.gsCol);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
+  inp.setAttribute("id", "input_" + data.code);
+  inp.setAttribute("value", "[]");
+  inp.setAttribute("class", "clickableImage");
+
+  cell.appendChild(inp);
+  
+  // TODO: Make these more efficient/elegant
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "clickRestriction_" + data.code);
+  inp.setAttribute("value", "none");
+  if (data.hasOwnProperty('clickRestriction')) {
+    if ((data.clickRestriction == "one") ||
+      (data.clickRestriction == "onePerBox")) {
+      inp.setAttribute("value", data.clickRestriction);
+    }
+  }
+  cell.appendChild(inp);
+
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "allowableResponses_" + data.code);
+  inp.setAttribute("value", "none");
+  if (data.hasOwnProperty('allowableResponses')) {
+    let responses = data.allowableResponses.split(' ').map(Number)
+    console.log(responses)
+      inp.setAttribute("value", responses);
+  }
+  cell.appendChild(inp);
+
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "dimensions_" + data.code);
+  inp.setAttribute("value", "12 6");
+  if (data.hasOwnProperty('dimensions')) {
+    if (data.dimensions != "") {
+      // TODO: Add validation for "X Y" format
+      inp.setAttribute("value", data.dimensions);
+    }
+  }
+  cell.appendChild(inp);
+
+  //inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "shape_" + data.code);
+  // Default shape: white circle of size 5 not filled in
+  inp.setAttribute("value", "circle 5 white white true");
+  if (data.hasOwnProperty('shape')) {
+    if (data.shape != "") {
+      // TODO: Add validation for "shape size color fill" format
+      inp.setAttribute("value", data.shape);
+    }
+  }
+  cell.appendChild(inp);
+
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "toggleClick_" + data.code);
+  inp.setAttribute("value", "false");
+  if (data.hasOwnProperty('toggleClick')) {
+    if (data.toggleClick != "") {
+      // TODO: Add validation for true/false format
+      inp.setAttribute("value", data.toggleClick);
+    }
+  }
+  cell.appendChild(inp);
+
+  if (data.hasOwnProperty('cycleTimer')) {
+    if (data.cycleTimer != "") {
+      inp = document.createElement('input');
+      inp.setAttribute("hidden", "");
+      inp.setAttribute("id", "cycleTimer_" + data.code);
+      inp.setAttribute("value", data.cycleTimer);
+      cell.appendChild(inp);
+    }
+  }
+
+  idx += 1
+  row = table.insertRow(idx);
+  row.setAttribute("style", "display:none");
+  cell = row.insertCell(0);
+  cell.setAttribute("colspan", 2);
+  var img = document.createElement('img');
+  img.src = data.filename;
+  img.style.height = "700px"
+  img.style.width = "541px"
+  img.setAttribute("id", "img_" + data.code);
+  img.setAttribute("class", "field-image-src");
+  img.setAttribute("onload", "drawFields()");
+  console.log(cell)
+  
+  cell.appendChild(img);
+
+  return idx + 1
 }
 
 function addClickableImage(table, idx, name, data) {
@@ -287,6 +478,7 @@ function addClickableImage(table, idx, name, data) {
   canvas.setAttribute("class", "field-image-src");
   canvas.setAttribute("id", "canvas_" + data.code);
   canvas.innerHTML = "No canvas support";
+  
   cell.appendChild(canvas);
 
   idx += 1;
@@ -311,7 +503,7 @@ function addClickableImage(table, idx, name, data) {
   inp.setAttribute("class", "clickableImage");
 
   cell.appendChild(inp);
-
+  
   // TODO: Make these more efficient/elegant
   inp = document.createElement('input');
   inp.setAttribute("hidden", "");
@@ -392,8 +584,7 @@ function addClickableImage(table, idx, name, data) {
   img.src = data.filename;
   img.setAttribute("id", "img_" + data.code);
   img.setAttribute("class", "field-image-src");
-  img.setAttribute("onload", "drawFields()");
-  img.setAttribute("hidden", "");
+  img.setAttribute("onload", "drawFields()");  
   cell.appendChild(img);
 
   return idx + 1
@@ -654,6 +845,8 @@ function addElement(table, idx, data) {
   } else if ((data.type == 'field_image') ||
     (data.type == 'clickable_image')) {
     idx = addClickableImage(table, idx, name, data);
+  } else if(data.type == "image"){
+    idx = addPitImage(table,idx,name,data);
   } else if ((data.type == 'bool') ||
     (data.type == 'checkbox') ||
     (data.type == 'pass_fail')
@@ -1036,17 +1229,25 @@ function swipePage(increment) {
 }
 
 function drawFields(name) {
+
   var fields = document.querySelectorAll("[id*='canvas_']");
 
   for (f of fields) {
+    if(f.id == "canvas_pi"){
+      f.setAttribute("height", "700px")
+      f.setAttribute("width", "541px")
+    }
+    
+
     code = f.id.substring(7);
     var img = document.getElementById("img_" + code);
+    console.log(img)
     var shape = document.getElementById("shape_" + code);
     let shapeArr = shape.value.split(' ');
     var ctx = f.getContext("2d");
-    ctx.clearRect(0, 0, f.width, f.height);
+    //ctx.clearRect(0, 0, f.width, f.height);
     ctx.drawImage(img, 0, 0, f.width, f.height);
-
+    
     var xyStr = document.getElementById("XY_" + code).value
     if (JSON.stringify(xyStr).length > 2) {
       pts = Array.from(JSON.parse(xyStr))
@@ -1076,22 +1277,40 @@ function drawFields(name) {
         }
       }
     }
+    
   }
 }
 
 function onFieldClick(event) {
   let target = event.target;
   let base = getIdBase(target.id);
-
+  //console.log(target.height)
   //Resolution height and width (e.g. 52x26)
-  let resX = 12;
-  let resY = 6;
+  var resX = 15
+  var resY = 15
+  var dimensions
+  var arr
+  if (target.id == "canvas_as"){
+    resX = 12;
+    resY = 6;
 
-  let dimensions = document.getElementById("dimensions" + base);
-  if (dimensions.value != "") {
-    let arr = dimensions.value.split(' ');
-    resX = arr[0];
-    resY = arr[1];
+    dimensions = document.getElementById("dimensions" + base);
+    if (dimensions.value != "") {
+      arr = dimensions.value.split(' ');
+      resX = arr[0];
+      resY = arr[1];
+    }
+  }
+  else if (target.id == "canvas_pi"){
+    resX = 20;
+    resY = 25;
+    
+    dimensions = document.getElementById("dimensions" + base);
+    if (dimensions.value != "") {
+      arr = dimensions.value.split(' ');
+      resX = arr[0];
+      resY = arr[1];
+    }
   }
 
   //Turns coordinates into a numeric box

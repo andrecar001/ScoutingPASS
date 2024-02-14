@@ -9,6 +9,12 @@ var config_data = `
       "code": "t",
       "type": "number"
     },
+    { "name": "Cool Robot Name",
+      "code": "crn",
+      "type": "text",
+      "size": 20,
+      "maxSize": 50
+    },
     { "name": "Width",
       "code": "wid",
       "type": "number",
@@ -37,7 +43,7 @@ var config_data = `
       "size": 20,
       "maxSize": 50
     },
-    { "name": "Swerve Ratio",
+    { "name": "Input Gear Ratio",
       "code": "sr",
       "type": "radio",
       "choices": {
@@ -69,17 +75,61 @@ var config_data = `
       "code": "fpu",
       "type": "bool"
     },
+    { "name": "Score Speaker?",
+      "code": "ss",
+      "type": "bool"
+    },
+    { "name": "Score Amp",
+      "code": "sa",
+      "type": "bool"
+    },
+    { "name": "Good Defense",
+      "code": "def",
+      "type": "bool"
+    },
+    { "name": "Good Driver?",
+      "code": "driv",
+      "type": "bool"
+    },
+    { "name": "Climbing",
+      "code": "clmb",
+      "type": "radio",
+      "choices": {
+        "s": "Single Climb<br>",
+        "d": "Double Climb<br>",
+        "x": "No"
+      },
+      "defaultValue": "x"
+    },
     { "name": "Autos",
       "code": "aut",
       "type": "text",
       "size": 20,
       "maxSize": 250
     },
-    { "name": "Scouting Method /<br>Program (ScoutingPASS?)",
-      "code": "sct",
+    { "name": "Do They Scout",
+      "code": "dts",
+      "type": "radio",
+      "choices": {
+        "2": "A lot<br>",
+        "1": "A little<br>",
+        "x": "No"
+      },
+      "defaultValue":"x"
+    },
+    { "name": "Pit Image",
+      "code": "pi",
+      "type": "image",
+      "filename": "2024/gn_pit_map_v2.png",
+      "clickRestriction": "one",
+      
+      "shape": "circle 5 black red true"
+    },
+    {"name": "Pit Location",
+      "code": "pl",
       "type": "text",
-      "size": 20,
-      "maxSize": 250
+      "size": "20",
+      "maxSize": 2
     },
     { "name": "Comments",
       "code": "co",
