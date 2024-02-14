@@ -120,7 +120,7 @@ var config_data = `
     { "name": "Pit Image",
       "code": "pi",
       "type": "image",
-      "filename": "2024/gn_pit_map_v2.png",
+      "filename": "2024/gn_pit_map_v3.png",
       "clickRestriction": "one",
       
       "shape": "circle 5 black red true"
