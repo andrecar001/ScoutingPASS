@@ -214,7 +214,7 @@ function addCounter(table, idx, name, data) {
   return idx + 1;
 }
 
-function addPitImage(table, idx, name, data) {
+function addImage(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
@@ -228,68 +228,15 @@ function addPitImage(table, idx, name, data) {
   if (data.hasOwnProperty('tooltip')) {
     cell.setAttribute("title", data.tooltip);
   }
-
-  let showFlip = true;
-  if (data.hasOwnProperty('showFlip')) {
-    if (data.showFlip.toLowerCase() == 'false') {
-      showFlip = false;
-    }
-  }
-
-  let showUndo = true;
-  if (data.hasOwnProperty('showUndo')) {
-    if (data.showUndo.toLowerCase() == 'false') {
-      showUndo = false;
-    }
-  }
-
-  if (showFlip || showUndo) {
-    idx += 1
-    row = table.insertRow(idx);
-    cell = row.insertCell(0);
-    cell.setAttribute("colspan", 2);
-    cell.setAttribute("style", "text-align: center;");
-
-    if (showUndo) {
-      // Undo button
-      let undoButton = document.createElement("input");
-      undoButton.setAttribute("type", "button");
-      undoButton.setAttribute("onclick", "undo(this.parentElement)");
-      undoButton.setAttribute("value", "Undo");
-      undoButton.setAttribute("id", "undo_" + data.code);
-      undoButton.setAttribute("class", "undoButton");
-      cell.appendChild(undoButton);
-    }
-
-    if (showFlip) {
-      // Flip button
-      let flipButton = document.createElement("input");
-      flipButton.setAttribute("type", "button");
-      flipButton.setAttribute("onclick", "flip(this.parentElement)");
-      flipButton.setAttribute("value", "Flip Image");
-      flipButton.setAttribute("id", "flip_" + data.code);
-      flipButton.setAttribute("class", "flipButton");
-      if (showUndo) {
-        flipButton.setAttribute("margin-left", '8px');
-      }
-      cell.appendChild(flipButton);
-    }
-  }
-
   idx += 1;
   row = table.insertRow(idx);
   cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
   cell.setAttribute("style", "text-align: center;");
   var canvas = document.createElement('canvas');
-  //canvas.onclick = onFieldClick;
-  canvas.setAttribute("onclick", "onFieldClick(event)");
   canvas.setAttribute("class", "field-image-src");
   canvas.setAttribute("id", "canvas_" + data.code);
   canvas.innerHTML = "No canvas support";
-  canvas.getContext("2d")
-  canvas.style.width = "541px"
-  canvas.style.height = "700px"
   cell.appendChild(canvas);
 
   idx += 1;
@@ -298,21 +245,6 @@ function addPitImage(table, idx, name, data) {
   cell = row.insertCell(0);
   cell.setAttribute("colspan", 2);
   var inp = document.createElement('input');
-  inp.setAttribute("type", "hidden");
-  inp.setAttribute("id", "XY_" + data.code);
-  inp.setAttribute("value", "[]");
-  cell.appendChild(inp);
-  inp = document.createElement('input');
-  inp.setAttribute("hidden", "");
-  if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
-    inp.setAttribute("name", data.gsCol);
-  } else {
-    inp.setAttribute("name", data.code);
-  }
-  inp.setAttribute("id", "input_" + data.code);
-  inp.setAttribute("value", "[]");
-  inp.setAttribute("class", "clickableImage");
-
   cell.appendChild(inp);
   
   // TODO: Make these more efficient/elegant
@@ -339,52 +271,8 @@ function addPitImage(table, idx, name, data) {
   }
   cell.appendChild(inp);
 
-  inp = document.createElement('input');
-  inp.setAttribute("hidden", "");
-  inp.setAttribute("id", "dimensions_" + data.code);
-  inp.setAttribute("value", "12 6");
-  if (data.hasOwnProperty('dimensions')) {
-    if (data.dimensions != "") {
-      // TODO: Add validation for "X Y" format
-      inp.setAttribute("value", data.dimensions);
-    }
-  }
-  cell.appendChild(inp);
-
-  //inp = document.createElement('input');
   inp.setAttribute("hidden", "");
   inp.setAttribute("id", "shape_" + data.code);
-  // Default shape: white circle of size 5 not filled in
-  inp.setAttribute("value", "circle 5 white white true");
-  if (data.hasOwnProperty('shape')) {
-    if (data.shape != "") {
-      // TODO: Add validation for "shape size color fill" format
-      inp.setAttribute("value", data.shape);
-    }
-  }
-  cell.appendChild(inp);
-
-  inp = document.createElement('input');
-  inp.setAttribute("hidden", "");
-  inp.setAttribute("id", "toggleClick_" + data.code);
-  inp.setAttribute("value", "false");
-  if (data.hasOwnProperty('toggleClick')) {
-    if (data.toggleClick != "") {
-      // TODO: Add validation for true/false format
-      inp.setAttribute("value", data.toggleClick);
-    }
-  }
-  cell.appendChild(inp);
-
-  if (data.hasOwnProperty('cycleTimer')) {
-    if (data.cycleTimer != "") {
-      inp = document.createElement('input');
-      inp.setAttribute("hidden", "");
-      inp.setAttribute("id", "cycleTimer_" + data.code);
-      inp.setAttribute("value", data.cycleTimer);
-      cell.appendChild(inp);
-    }
-  }
 
   idx += 1
   row = table.insertRow(idx);
@@ -393,13 +281,9 @@ function addPitImage(table, idx, name, data) {
   cell.setAttribute("colspan", 2);
   var img = document.createElement('img');
   img.src = data.filename;
-  img.style.height = "700px"
-  img.style.width = "541px"
   img.setAttribute("id", "img_" + data.code);
   img.setAttribute("class", "field-image-src");
   img.setAttribute("onload", "drawFields()");
-  console.log(cell)
-  
   cell.appendChild(img);
 
   return idx + 1
@@ -846,7 +730,7 @@ function addElement(table, idx, data) {
     (data.type == 'clickable_image')) {
     idx = addClickableImage(table, idx, name, data);
   } else if(data.type == "image"){
-    idx = addPitImage(table,idx,name,data);
+    idx = addImage(table,idx,name,data);
   } else if ((data.type == 'bool') ||
     (data.type == 'checkbox') ||
     (data.type == 'pass_fail')
@@ -903,6 +787,67 @@ function configure() {
     }
   }
 
+  function configQR() {
+    
+    
+    const con_img = new Image()
+
+    con_img.src = 'resources/images/carter_pog.png'
+    con_img.alt = 'Congrats Image'
+    con_img.id = 'congrats_img'
+    con_img.height = 500
+    document.getElementById('congrats').appendChild(con_img)
+    let scale = 0.5
+    let growing = true
+    var startTime
+    //Change these to last page if needed
+    document.getElementById('nextButton1').addEventListener('click', onNextClick)
+    document.getElementById('nextButton2').addEventListener('click', onNextClick)
+    document.getElementById('nextButton9').addEventListener('click', onNextClick)
+    document.getElementById('nextButton10').addEventListener('click', onNextClick)
+    function onNextClick() {
+      scale = 0.5
+      startTime = Date.now()
+      changeImageAfterDelay()
+    }
+  
+  
+    function changeImageAfterDelay() {
+
+      con_img.style.display = ""
+      let qrElement = document.getElementById('qrcode')
+      
+      qrElement.style.display = 'none'
+      pulseImage()
+      
+      setTimeout(() => {
+        con_img.style.display = 'none'
+        qrElement.style.display = 'block'
+      }, 2000)
+    }
+    
+  
+    function pulseImage() {
+      if (growing) {
+        scale += 0.005
+      } else {
+        scale -= 0.005
+      }
+  
+      if (scale >= 1.2) {
+        growing = false
+      } else if (scale <= 0.8) {
+        growing = true
+      }
+  
+      con_img.style.transform = `scale(${scale})`
+      if (Date.now() - startTime < 2000){
+        requestAnimationFrame(pulseImage)
+      }
+    }
+  
+  }
+
   if (mydata.hasOwnProperty('checkboxAs')) {
     // Supported modes
     // YN - Y or N
@@ -956,6 +901,11 @@ function configure() {
   pmc.forEach(element => {
     idx = addElement(pmt, idx, element);
   });
+
+  // Configure qr screen
+    configQR()
+
+  //qr = new QRCode(document.getElementById("qrcode"), options)
 
   if (!enableGoogleSheets) {
     document.getElementById("submit").style.display = "none";
@@ -1231,51 +1181,82 @@ function swipePage(increment) {
 function drawFields(name) {
 
   var fields = document.querySelectorAll("[id*='canvas_']");
-
+  const startTime = Date.now();
   for (f of fields) {
     if(f.id == "canvas_pi"){
       f.setAttribute("height", "700px")
       f.setAttribute("width", "541px")
     }
+    if(f.id == "canvas_ci"){
+      f.setAttribute("height", "500px")
+      f.setAttribute("width", "500px")
+    }
     
-
     code = f.id.substring(7);
     var img = document.getElementById("img_" + code);
-    console.log(img)
     var shape = document.getElementById("shape_" + code);
     let shapeArr = shape.value.split(' ');
     var ctx = f.getContext("2d");
-    //ctx.clearRect(0, 0, f.width, f.height);
+    ctx.clearRect(0, 0, f.width, f.height);
     ctx.drawImage(img, 0, 0, f.width, f.height);
-    
-    var xyStr = document.getElementById("XY_" + code).value
-    if (JSON.stringify(xyStr).length > 2) {
-      pts = Array.from(JSON.parse(xyStr))
-      for (p of pts) {
-        var coord = p.split(",")
-        var centerX = coord[0];
-        var centerY = coord[1];
-        var radius = 5;
-        ctx.beginPath();
-        if (shapeArr[0].toLowerCase() == 'circle') {
-          ctx.arc(centerX, centerY, shapeArr[1], 0, 2 * Math.PI, false);
-        } else {
-          ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-        }
-        ctx.lineWidth = 2;
-        if (shapeArr[2] != "") {
-          ctx.strokeStyle = shapeArr[2];
-        } else {
-          ctx.strokeStyle = '#FFFFFF';
-        }
-        if (shapeArr[4].toLowerCase() == 'true') {
-          ctx.fillStyle = shapeArr[3];
-        }
-        ctx.stroke();
-        if (shapeArr[4].toLowerCase() == 'true') {
-          ctx.fill();
+    if(f.id == "canvas_as"){
+      var xyStr = document.getElementById("XY_" + code).value
+      if (JSON.stringify(xyStr).length > 2) {
+        pts = Array.from(JSON.parse(xyStr))
+        for (p of pts) {
+          var coord = p.split(",")
+          var centerX = coord[0];
+          var centerY = coord[1];
+          var radius = 5;
+          ctx.beginPath();
+          if (shapeArr[0].toLowerCase() == 'circle') {
+            ctx.arc(centerX, centerY, shapeArr[1], 0, 2 * Math.PI, false);
+          } else {
+            ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
+          }
+          ctx.lineWidth = 2;
+          if (shapeArr[2] != "") {
+            ctx.strokeStyle = shapeArr[2];
+          } else {
+            ctx.strokeStyle = '#FFFFFF';
+          }
+          if (shapeArr[4].toLowerCase() == 'true') {
+            ctx.fillStyle = shapeArr[3];
+          }
+          ctx.stroke();
+          if (shapeArr[4].toLowerCase() == 'true') {
+            ctx.fill();
+          }
         }
       }
+    }
+    if(f.id == "canvas_ci"){
+      let scale = 1
+      let growing = true
+      
+      function pulseImage() {
+        if (growing) {
+          scale += 0.02
+        } else {
+          scale -= 0.02
+        }
+        if(scale >= 1.2) {
+          growing = false
+        } else if (scale <= 1) {
+          growing = true
+        }
+
+        img.style.transform = `scale(${scale})`
+
+        if (Date.now() - startTime < 5000) {
+          requestAnimationFrame(pulseImage)
+        }
+        console.log(startTime)
+      }
+      
+      pulseImage()
+      qr = new QRCode(img, options)
+      console.log(qr)
     }
     
   }

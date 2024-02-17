@@ -120,10 +120,7 @@ var config_data = `
     { "name": "Pit Image",
       "code": "pi",
       "type": "image",
-      "filename": "2024/gn_pit_map_v3.png",
-      "clickRestriction": "one",
-      
-      "shape": "circle 5 black red true"
+      "filename": "2024/gn_pit_map_v3.png"
     },
     {"name": "Pit Location",
       "code": "pl",
@@ -145,5 +142,12 @@ var config_data = `
   "endgame": [
   ],
   "postmatch": [
+  ],
+  "qr_page": [
+    { "name": "congrats_img",
+      "code": "ci",
+      "type": "image",
+      "filename": "resources/images/pog_test.png"
+    }
   ]
 }`;
