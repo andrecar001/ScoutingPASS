@@ -14,7 +14,14 @@ var slide = 0
 var checkboxAs = 'YN'
 
 //Required Format for data
-var requiredScoutingFields = ["s","e","m","r","t","as","dir","al","aas","ass","tss","tta","tpu","dt","fs","nit","dr","sr","die","tie","dn","co"]
+//var requiredScoutingFields = ["s","e","m","r","t","as","dir","al","aas","ass","tss","tta","tpu","dt","fs","nit","dr","sr","die","tie","dn","co"]
+var requiredPrematchFields = ['Initials','Match Level','Match #','Team #','Position','Direction']
+var requiredAutonFields = ['Leave Start','Auto Amp Score','Auto Speaker Score']
+var requiredTeleopFields = ['Teleop Amp Scores','Teleop Speaker Scores','Times Amplified','Pickup From']
+var requiredEndgameFields = ['Stage Time','Final Status','Note in Trap']
+var requiredMiscellaneousFields = ['Driver Skill','Defense Rating','Speed Rating','Died/Immobilized','Tippy','Dropped Notes(>2)','Good Ally','Comments']
+var requiredScoutingFields = [...requiredPrematchFields,...requiredAutonFields,...requiredTeleopFields,...requiredEndgameFields,...requiredMiscellaneousFields]
+
 var requiredPitFields = ["t","crn","wid","wei","drv","odt","sr","mot","nob","fpu","ss","sa","def","driv","clmb","aut","dts","co"]
 
 
@@ -50,12 +57,47 @@ async function create2dFileArray(fileName) {
 
 async function createTable(fileName){
 
-    array = await create2dFileArray(fileName)
-    console.log(array)
-    var container = document.createElement('div')
-    container.setAttribute('id', 'textData')
-    document.getElementById('allData_table').appendChild(container)
-    document.getElementById('textData').innerText = array
+    data = await create2dFileArray(fileName)
+
+    //Create div for table
+    const tableContainer = document.createElement('div');
+    tableContainer.setAttribute('id', 'table-container')
+    tableContainer.setAttribute('class', 'all-scouting-data')
+    tableContainer.style.height = '100%'
+    document.getElementById('allData_table').appendChild(tableContainer);
+    //Create table in div
+    const table = document.createElement('table');
+    table.setAttribute('class', 'all-scouting-data')
+    document.getElementById('table-container').appendChild(table);
+    var theader = document.createElement('tr')
+    requiredScoutingFields.forEach(newHeader => {
+        const currHeader = document.createElement('th')
+        currHeader.textContent = newHeader
+        currHeader.style.borderBottom = '1px solid black';
+        currHeader.style.minWidth = '50px';
+        currHeader.style.padding = '5px';
+        theader.appendChild(currHeader)
+
+    })
+    table.appendChild(theader)
+
+    // Loop through the data and create rows and cells
+    data.forEach(rowData => {
+        const row = document.createElement('tr');
+        row.setAttribute('class', 'tableRow')
+        row.style.display = 'flex';
+        
+        rowData.forEach(cellData => {
+            const cell = document.createElement('td');
+            cell.textContent = cellData;
+            cell.style.borderBottom = '1px solid black';
+            cell.style.minWidth = '50px';
+            cell.style.padding = '5px';
+            row.appendChild(cell);
+        });
+
+        table.appendChild(row);
+    });
 }
 
 
@@ -159,39 +201,8 @@ function getIdBase(name) {
 }
 // Sample data for the spreadsheet
 
-
-function test() {
-    const data = [
-        ['A1', 'B1', 'C1'],
-        ['A2', 'B2', 'C2'],
-        ['A3', 'B3', 'C3']
-    ];
-    // Create a container div to hold the spreadsheet
-    const container = document.createElement('div');
-    container.style.border = '1px solid black';
-    container.style.backgroundColor = 'grey';
-    container.style.padding = '10px';
-    document.getElementById('allData_table').appendChild(container);
-
-    // Loop through the data and create rows and cells
-    data.forEach(rowData => {
-        const row = document.createElement('div');
-        row.style.display = 'flex';
-
-        rowData.forEach(cellData => {
-            const cell = document.createElement('div');
-            cell.textContent = cellData;
-            cell.style.border = '1px solid black';
-            cell.style.minWidth = '50px';
-            cell.style.padding = '5px';
-            row.appendChild(cell);
-        });
-
-        container.appendChild(row);
-    });
-}
-
 window.onload = function() {
+    console.log(requiredScoutingFields)
     createTable('../../data/scoutingData.txt')
-    test()
+    
 }
