@@ -61,6 +61,10 @@ th{
    background-color: grey;
    border: 1px solid white ;
 }
+tr:hover {
+    color: black;
+    background-color: aqua;
+}
 
 #allDataHeader1 {
     color: white;
