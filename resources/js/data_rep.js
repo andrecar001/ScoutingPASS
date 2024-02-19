@@ -15,7 +15,7 @@ var checkboxAs = 'YN'
 
 //Required Format for data
 //var requiredScoutingFields = ["s","e","m","r","t","as","dir","al","aas","ass","tss","tta","tpu","dt","fs","nit","dr","sr","die","tie","dn","co"]
-var requiredPrematchFields = ['Initials','Match Level','Match #','Team #','Position','Direction']
+var requiredPrematchFields = ['Initials','Event','Match Level','Match #','Robot','Team #','Position','Direction']
 var requiredAutonFields = ['Leave Start','Auto Amp Score','Auto Speaker Score']
 var requiredTeleopFields = ['Teleop Amp Scores','Teleop Speaker Scores','Times Amplified','Pickup From']
 var requiredEndgameFields = ['Stage Time','Final Status','Note in Trap']
@@ -59,45 +59,58 @@ async function createTable(fileName){
 
     data = await create2dFileArray(fileName)
 
-    //Create div for table
+    //Create container div
     const tableContainer = document.createElement('div');
     tableContainer.setAttribute('id', 'table-container')
     tableContainer.setAttribute('class', 'all-scouting-data')
-    tableContainer.style.height = '100%'
     document.getElementById('allData_table').appendChild(tableContainer);
-    //Create table in div
+    //Create table
     const table = document.createElement('table');
     table.setAttribute('class', 'all-scouting-data')
-    document.getElementById('table-container').appendChild(table);
-    var theader = document.createElement('tr')
+
+    // table.style.width = '100vw'
+
+    tableContainer.appendChild(table);
+    //Create Headers
+    const tableHead = document.createElement('thead')
+    const tableHeadRow = document.createElement('tr')
+
+    tableHead.style.display = 'table-header-group'
+  
     requiredScoutingFields.forEach(newHeader => {
         const currHeader = document.createElement('th')
+
+        currHeader.setAttribute('class','table-header')
         currHeader.textContent = newHeader
-        currHeader.style.borderBottom = '1px solid black';
-        currHeader.style.minWidth = '50px';
-        currHeader.style.padding = '5px';
-        theader.appendChild(currHeader)
 
+        // currHeader.style.borderBottom = '1px solid black';
+        // currHeader.style.width = '20px';
+        // currHeader.style.padding = '5px';
+
+        tableHeadRow.appendChild(currHeader)
     })
-    table.appendChild(theader)
+    table.appendChild(tableHead)
+    tableHead.appendChild(tableHeadRow)
 
-    // Loop through the data and create rows and cells
-    data.forEach(rowData => {
-        const row = document.createElement('tr');
-        row.setAttribute('class', 'tableRow')
-        row.style.display = 'flex';
-        
-        rowData.forEach(cellData => {
-            const cell = document.createElement('td');
-            cell.textContent = cellData;
-            cell.style.borderBottom = '1px solid black';
-            cell.style.minWidth = '50px';
-            cell.style.padding = '5px';
-            row.appendChild(cell);
-        });
+    //Append Data to Headers
+    const tableBody = document.createElement('tbody')
 
-        table.appendChild(row);
-    });
+    data.forEach(line => {
+        const row = document.createElement('tr')
+        row.setAttribute('class','table-row')
+        // row.style.borderBottom = '1px solid'
+        // row.style.borderBottom = '1px solid'
+        line.forEach(cellData => {
+            const cell = row.insertCell()
+            cell.setAttribute('class','table-cell')
+            cell.style.width = '20px'
+            cell.textContent = cellData
+        })
+
+        tableBody.appendChild(row)
+    })
+
+    table.appendChild(tableBody)
 }
 
 
@@ -120,9 +133,9 @@ function addTable(table, idx, name, data) {
         sheetRowData.forEach(cellData => {
             var cell = document.createElement('div')
             cell.textContent = cellData
-            cell.style.border = '1px solid black'
+            // cell.style.border = '1px solid black'
             cell.style.minWidth = '50px'
-            cell.style.padding = '5px'
+            // cell.style.padding = '5px'
             sheetRow.appendChild(cell)
         })
 
@@ -202,7 +215,7 @@ function getIdBase(name) {
 // Sample data for the spreadsheet
 
 window.onload = function() {
-    console.log(requiredScoutingFields)
+    //console.log(requiredScoutingFields)
     createTable('../../data/scoutingData.txt')
     
 }

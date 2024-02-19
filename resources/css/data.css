@@ -29,17 +29,37 @@ html, body{
 }
 .all-scouting-data {
     text-align: center;
-    background-color: grey;
+    background-color: white;
     width: 100vw;
     max-width: 100%;
     overflow: auto;
-    border-bottom: 1px solid black;
     /* padding: 5px; */
     margin: 0 auto;
 }
 .button {
     font-family: Alexis;
     font-size: 16px;
+}
+tr:nth-child(even) {background-color: #8a0000;}
+tr:nth-child(odd) {background-color: #490101;}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.table-cell {
+    max-width: 150px;
+    padding: 5px;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 1px solid black;
+    overflow: auto;
+}
+th{
+   padding: 5px;
+   overflow: auto;
+   background-color: grey;
+   border: 1px solid white ;
 }
 
 #allDataHeader1 {
@@ -127,14 +147,14 @@ h1 .even {
     text-align: center;
 }
 
-table {
+/* table {
     border: 1px solid black;
     width: 100%;
-}
+} */
 
-td {
+/* td {
     padding: 10px 4px;
-}
+} */
 
 input {
     font-size: 16px;
