@@ -46,21 +46,13 @@ while True:
             cv2.destroyAllWindows()
             break
     #Write qr_string to allStrings, and prevent repeats
-    with open('qrScanner/allStrings.txt', 'r') as file:
+    with open('py/qrScanner/allStrings.txt', 'r') as file:
         lines = file.readlines()
         if (qr_str == None) or (qr_str +'\n' in lines):
             continue
     with open('qrScanner/allStrings.txt', 'a') as file:
         file.write(qr_str + '\n')
-
-        '''    if((qr_str == None) or (qr_str in prev_qr_strs)): 
-        if cv2.waitKey(1) == ord("q"):
-            cv2.destroyAllWindows()
-            frames.stop_process()
-            cap.stop_process()
-            break
-        continue
-        '''    
+ 
     #Paste string and beep confirmation
     print(qr_str)
     pyperclip.copy(qr_str)
@@ -99,5 +91,7 @@ def sendToBluetoothDevice(device_name):
 #Check to send to bluetooth
 if input("Would you like to send to a bluetooth device (Y/N): ") == "Y":
     sendToBluetoothDevice(input("Phone Name: "))
+
+
 
 print("Exiting Program...")
