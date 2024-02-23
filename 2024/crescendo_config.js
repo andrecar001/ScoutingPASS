@@ -1,6 +1,6 @@
 var config_data = `
 {
-  "dataFormat": "tsv",
+  "dataFormat": "kvs",
   "title": "Scouting PASS 2024",
   "page_title": "Crescendo, Team 2508",
   "checkboxAs": "10",
@@ -143,9 +143,9 @@ var config_data = `
       "code": "ds",
       "type": "radio",
       "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
+        "1": "Not Effective<br>",
+        "2": "Average<br>",
+        "3": "Very Effective<br>",
         "x": "Not Observed"
       },
       "defaultValue": "x"
@@ -158,7 +158,7 @@ var config_data = `
         "2": "Average<br>",
         "3": "Good<br>",
         "4": "Excellent<br>",
-        "0": "Did not play defense"
+        "x": "Did not play defense"
       },
       "defaultValue": "x"
     },
