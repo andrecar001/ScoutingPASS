@@ -28,14 +28,34 @@ configuration = tbaapiv3client.Configuration(
 
 
 # Enter a context with an instance of the API client
-with tbaapiv3client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = tbaapiv3client.TBAApi(api_client)
-    if_modified_since = 'if_modified_since_example' # str | Value of the `Last-Modified` header in the most recently cached response by the client. (optional)
 
-    try:
-        api_response = api_instance.get_status(if_modified_since=if_modified_since)
-        pprint(api_response)
-    except ApiException as e:
-        print("Exception when calling TBAApi->get_status: %s\n" % e)
-    
+### TEAMS ###
+def getTeamsSimple(event_key):
+    with tbaapiv3client.ApiClient(configuration) as api_client:
+        # Create an instance of the API class
+        api_instance = tbaapiv3client.TeamApi(api_client)
+        #event_key = '2024mnkk' # str | TBA Event Key, eg `2016nytr`
+        if_modified_since = 'if_modified_since_example' # str | Value of the `Last-Modified` header in the most recently cached response by the client. (optional)
+        
+        try:
+            api_response = api_instance.get_event_teams_simple(event_key, if_modified_since=if_modified_since)
+            pprint(api_response)
+        except ApiException as e:
+            print("Exception when calling TeamApi->get_event_teams_keys: %s\n" % e)
+
+
+### MATCHES ###
+def getEventMatches(event_key):
+    with tbaapiv3client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+        api_instance = tbaapiv3client.MatchApi(api_client)
+        #event_key = 'event_key_example' # str | TBA Event Key, eg `2016nytr`
+        if_modified_since = 'if_modified_since_example' # str | Value of the `Last-Modified` header in the most recently cached response by the client. (optional)
+
+        try:
+            api_response = api_instance.get_event_matches_keys(event_key, if_modified_since=if_modified_since)
+            pprint(api_response)
+        except ApiException as e:
+            print("Exception when calling MatchApi->get_event_matches: %s\n" % e)
+
+getEventMatches('2023ndgf')
