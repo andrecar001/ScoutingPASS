@@ -11,9 +11,7 @@ var config_data = `
     },
     { "name": "Cool Robot Name",
       "code": "crn",
-      "type": "text",
-      "size": 20,
-      "maxSize": 50
+      "type": "text"
     },
     { "name": "Width",
       "code": "wid",
@@ -43,18 +41,11 @@ var config_data = `
       "size": 20,
       "maxSize": 50
     },
-    { "name": "Input Gear Ratio",
-      "code": "sr",
-      "type": "radio",
-      "choices": {
-        "1": "L1 (8.14:1)<br>",
-        "2": "L2 (6.75:1)<br>",
-        "3": "L3 (6.12:1)<br>",
-        "4": "L4 (5.14:1)<br>",
-        "o": "Other ratio (put in comments)<br>",
-        "x": "Not Swerve"
-      },
-      "defaultValue":"x"
+    { "name": "Gear Ratio",
+      "code": "gr",
+      "type": "text",
+      "size": 20,
+      "maxSize": 50
     },
     { "name": "Drivetrain Motor",
       "code": "mot",
@@ -67,66 +58,37 @@ var config_data = `
       },
       "defaultValue":"x"
     },
-    { "name": "# of Batteries",
-      "code": "nob",
-      "type": "number"
-    },
-    { "name": "Floor pickup Notes",
-      "code": "fpu",
-      "type": "bool"
-    },
-    { "name": "Score Speaker?",
-      "code": "ss",
-      "type": "bool"
-    },
-    { "name": "Score Amp",
+    { "name": "Score Areas",
       "code": "sa",
-      "type": "bool"
-    },
-    { "name": "Good Defense",
-      "code": "def",
-      "type": "bool"
-    },
-    { "name": "Good Driver?",
-      "code": "driv",
-      "type": "bool"
-    },
-    { "name": "Climbing",
-      "code": "clmb",
       "type": "radio",
       "choices": {
-        "s": "Single Climb<br>",
-        "d": "Double Climb<br>",
-        "x": "No"
+        "s": "Speaker<br>",
+        "a": "Amp<br>",
+        "b": "Both<br>",
+        "n": "None<br>",
+        "o": "Other<br>"
       },
-      "defaultValue": "x"
+      "defaultValue": "o"
     },
-    { "name": "Autos",
-      "code": "aut",
-      "type": "text",
-      "size": 20,
-      "maxSize": 250
-    },
-    { "name": "Do They Scout",
-      "code": "dts",
+
+    { "name": "Scouting Amount",			
+      "code": "sa",
       "type": "radio",
       "choices": {
-        "2": "A lot<br>",
-        "1": "A little<br>",
-        "x": "No"
+        "l": "Alot<br>",
+        "f": "Few<br>",
+        "n": "None<br>",
+        "o": "Other<br>"
       },
-      "defaultValue":"x"
+      "defaultValue": "o"
     },
-    { "name": "Pit Image",
-      "code": "pi",
-      "type": "image",
-      "filename": "2024/gn_pit_map_v3.png"
+    { "name": "Good Driver (checked = yes)",
+      "code": "gdr",
+      "type": "bool"
     },
-    {"name": "Pit Location",
-      "code": "pl",
-      "type": "text",
-      "size": "20",
-      "maxSize": 2
+    { "name": "Good Defense (checked = yes)",
+      "code": "gde",
+      "type": "bool"
     },
     { "name": "Comments",
       "code": "co",
@@ -136,18 +98,71 @@ var config_data = `
     }
   ],
   "auton": [
+    { "name": "Leave Starting Zone",
+      "code": "al",
+      "type": "bool"
+    },
+    { "name": "Amp Scores",
+      "code": "aas",
+      "type": "counter"
+    },
+    { "name": "Speaker Scores",
+      "code": "ass",
+      "type": "counter"
+    }
   ],
   "teleop": [
+    { "name": "Amp Scores",
+      "code": "tas",
+      "type": "counter"
+    },
+    { "name": "Speaker Scores",
+      "code": "tss",
+      "type": "counter"
+    },
+    { "name": "Times Amplified",
+      "code": "tta",
+      "type": "counter"
+    },
+    { "name": "Pickup From",
+      "code": "tpu",
+      "type": "radio",
+      "choices": {
+        "s": "Source<br>",
+        "f": "Floor<br>",
+        "b": "Both<br>",
+        "x": "Not Attempted"
+      },
+      "defaultValue": "x"
+    },
+    { "name": "Auto Start Position",
+      "code": "as",
+      "type": "clickable_image",
+      "filename": "2024/field_image.png",
+      "shape": "circle 5 black red true"
+    }
   ],
   "endgame": [
+    { "name": "Stage Timer",
+      "code": "dt",
+      "type": "text"
+    },
+    { "name": "Final Status",
+      "code": "fs",
+      "type":"radio",
+      "choices": {
+        "c": "Can't Climb<br>",
+        "s": "Single Climb<br>",
+        "d": "Double Climb<br>",
+        "o": "Other<br>"
+      },
+      "defaultValue": "o"
+    },
+    { "name": "Note in Trap",
+      "code": "nit",
+      "type": "bool"
+    }
   ],
   "postmatch": [
-  ],
-  "qr_page": [
-    { "name": "congrats_img",
-      "code": "ci",
-      "type": "image",
-      "filename": "resources/images/pog_test.png"
-    }
   ]
 }`;
