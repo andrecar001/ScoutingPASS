@@ -903,7 +903,7 @@ function configure() {
   });
 
   // Configure qr screen
-    configQR()
+  configQR()
 
   //qr = new QRCode(document.getElementById("qrcode"), options)
 

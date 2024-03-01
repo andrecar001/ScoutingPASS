@@ -39,7 +39,7 @@ def getTeamsSimple(event_key):
         
         try:
             api_response = api_instance.get_event_teams_simple(event_key, if_modified_since=if_modified_since)
-            pprint(api_response)
+            return api_response
         except ApiException as e:
             print("Exception when calling TeamApi->get_event_teams_keys: %s\n" % e)
 
@@ -54,8 +54,51 @@ def getEventMatches(event_key):
 
         try:
             api_response = api_instance.get_event_matches_keys(event_key, if_modified_since=if_modified_since)
-            pprint(api_response)
+            return api_response
         except ApiException as e:
             print("Exception when calling MatchApi->get_event_matches: %s\n" % e)
 
-getEventMatches('2023ndgf')
+    # print(getTeamsSimple('2024mnkk'))
+            
+def getEventOPR(event_key):
+    with tbaapiv3client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+        api_instance = tbaapiv3client.EventApi(api_client)
+        if_modified_since = 'if_modified_since_example' # str | Value of the `Last-Modified` header in the most recently cached response by the client. (optional)
+
+        try:
+            api_response = api_instance.get_event_op_rs(event_key, if_modified_since=if_modified_since)
+            return (api_response)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+
+EVENT_KEY = "2023ndgf"
+teams = getTeamsSimple(EVENT_KEY)
+eventOprs = getEventOPR(EVENT_KEY).oprs
+eventDprs = getEventOPR(EVENT_KEY).dprs
+eventCCWMs = getEventOPR(EVENT_KEY).ccwms
+team_vals = {}
+#Base team info
+for team in teams:
+    temp_obj = {}
+    #temp_obj["key"] = team.key
+    temp_obj["team_number"] = team.team_number
+    temp_obj["nickname"] = team.nickname
+    temp_obj["location"] = (team.city + ", " + team.state_prov)
+
+    team_vals[team.key] = temp_obj
+
+#OPRs, DPRs, CCWMs
+if eventOprs != None:
+    for opr in eventOprs:
+        team_vals[str(opr)]["OPR"] = eventOprs[opr]
+if eventDprs != None:
+    for dpr in eventDprs:
+        if dpr != None: team_vals[str(dpr)]["DPR"] = eventDprs[dpr]
+if eventCCWMs != None:
+    for ccwm in eventCCWMs:
+        if ccwm != None: team_vals[str(ccwm)]["CCWM"] = eventCCWMs[ccwm]
+
+print(team_vals["frc2508"])
+# for team in team_vals:
+#     print(team_vals[team])
