@@ -64,7 +64,7 @@ var config_data = `
       "defaultValue":"x"
     },
     { "name": "Can Leave Starting Zone",
-    "code": "al",
+    "code": "lst",
     "type": "bool"
     },
     { "name": "Pickup From",
@@ -77,6 +77,11 @@ var config_data = `
         "x": "Neither"
       },
       "defaultValue": "x"
+    },
+    { "name": "Cycle Time(s)",
+    "code": "cyt",
+    "type": "text",
+    "defaultValue": "x"
     },
     { "name": "Auto Amp Score",
       "code": "aas",
@@ -99,8 +104,12 @@ var config_data = `
       "type": "number",
       "defaultValue": "0"
     },
-    { "name": "Climb Time",
-    "code": "ct",
+    { "name": "Designated Human Player?",
+    "code": "hp",
+    "type": "bool"
+    },
+    { "name": "Climb Time(s)",
+    "code": "cbt",
     "type": "text",
     "defaultValue": "x"
     },
@@ -118,11 +127,29 @@ var config_data = `
       "code": "nit",
       "type": "bool"
     },
-    { "name": "Shooting Positions",
+    { "name": "Auto Start Position",
     "code": "as",
     "type": "clickable_image",
     "filename": "2024/field_image.png",
+    "clickRestriction": "one",
+    "allowableResponses": "1 12 13 24 25 36 37 48 49 60 61 72",
     "shape": "circle 5 black red true"
+  },
+    { "name": "Shooting Positions",
+    "code": "sp",
+    "type": "clickable_image",
+    "filename": "2024/field_image_half.png",
+    "shape": "circle 5 black red true"
+    },
+    { "name": "Defense/Offense",
+      "code": "do",
+      "type":"radio",
+      "choices": {
+        "d": "Defense<br>",
+        "o": "Offense<br>",
+        "x": "Doesn't Matter<br>"
+      },
+      "defaultValue": "c"
     },
     { "name": "Scouting Amount",			
       "code": "sa",
@@ -134,6 +161,12 @@ var config_data = `
         "o": "Other<br>"
       },
       "defaultValue": "o"
+    },
+    { "name": "What Do They Do In Auto?",
+      "code": "autoco",
+      "type": "text",
+      "size": 20,
+      "maxSize": 250
     },
     { "name": "Comments",
       "code": "co",
@@ -147,7 +180,6 @@ var config_data = `
   "teleop": [
   ],
   "endgame": [
-
   ],
   "postmatch": [
   ]

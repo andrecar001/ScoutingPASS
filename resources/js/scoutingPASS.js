@@ -937,6 +937,9 @@ function validateData() {
     if (thisRF.value == "[]" || thisRF.value.length == 0) {
       if (rf == "as") {
         rftitle = "Auto Start Position"
+      }
+      else if (rf == "sp"){
+        rftitle = "Shooting Positions"
       } else {
         thisInputEl = thisRF instanceof RadioNodeList ? thisRF[0] : thisRF;
         rftitle = thisInputEl.parentElement.parentElement.children[0].innerHTML.replace("&nbsp;","");
@@ -1183,9 +1186,9 @@ function drawFields(name) {
   var fields = document.querySelectorAll("[id*='canvas_']");
   const startTime = Date.now();
   for (f of fields) {
-    if(f.id == "canvas_pi"){
-      f.setAttribute("height", "700px")
-      f.setAttribute("width", "541px")
+    if(f.id == "canvas_sp"){
+      f.setAttribute("height", "150px")
+      f.setAttribute("width", "300px")
     }
     if(f.id == "canvas_ci"){
       f.setAttribute("height", "500px")
@@ -1199,7 +1202,7 @@ function drawFields(name) {
     var ctx = f.getContext("2d");
     ctx.clearRect(0, 0, f.width, f.height);
     ctx.drawImage(img, 0, 0, f.width, f.height);
-    if(f.id == "canvas_as"){
+    if(f.id == "canvas_as" || f.id == "canvas_sp"){
       var xyStr = document.getElementById("XY_" + code).value
       if (JSON.stringify(xyStr).length > 2) {
         pts = Array.from(JSON.parse(xyStr))
