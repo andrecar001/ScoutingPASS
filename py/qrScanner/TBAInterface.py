@@ -30,7 +30,7 @@ configuration = tbaapiv3client.Configuration(
 # Enter a context with an instance of the API client
 
 ### TEAMS ###
-def getTeamsSimple(event_key):
+def getEventTeamsSimple(event_key):
     with tbaapiv3client.ApiClient(configuration) as api_client:
         # Create an instance of the API class
         api_instance = tbaapiv3client.TeamApi(api_client)
@@ -39,10 +39,9 @@ def getTeamsSimple(event_key):
         
         try:
             api_response = api_instance.get_event_teams_simple(event_key, if_modified_since=if_modified_since)
-            pprint(api_response)
+            return api_response
         except ApiException as e:
             print("Exception when calling TeamApi->get_event_teams_keys: %s\n" % e)
-
 
 ### MATCHES ###
 def getEventMatches(event_key):
@@ -54,8 +53,68 @@ def getEventMatches(event_key):
 
         try:
             api_response = api_instance.get_event_matches_keys(event_key, if_modified_since=if_modified_since)
-            pprint(api_response)
+            return api_response
         except ApiException as e:
             print("Exception when calling MatchApi->get_event_matches: %s\n" % e)
 
-getEventMatches('2023ndgf')
+    # print(getTeamsSimple('2024mnkk'))
+            
+def getEventOPR(event_key):
+    with tbaapiv3client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+        api_instance = tbaapiv3client.EventApi(api_client)
+        if_modified_since = 'if_modified_since_example' # str | Value of the `Last-Modified` header in the most recently cached response by the client. (optional)
+
+        try:
+            api_response = api_instance.get_event_op_rs(event_key, if_modified_since=if_modified_since)
+            return (api_response)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+
+def getEventInfo():
+
+    teams = getEventTeamsSimple(EVENT_KEY)
+    team_vals = {}
+    #Base team info
+    for team in teams:
+        # print(team)
+        temp_obj = {}
+        #temp_obj["key"] = team.key
+        temp_obj["team_number"] = team.team_number
+        temp_obj["nickname"] = team.nickname
+        temp_obj["location"] = (team.city + ", " + team.state_prov)
+        team_vals[team.key] = temp_obj
+
+ 
+    return team_vals
+
+def addOPRs(team_vals):
+    #OPRs, DPRs, CCWMs
+
+    eventOprs = getEventOPR(EVENT_KEY).oprs
+    eventDprs = getEventOPR(EVENT_KEY).dprs
+    eventCCWMs = getEventOPR(EVENT_KEY).ccwms
+    if eventOprs != None:
+        for opr in eventOprs:
+            team_vals[str(opr)]["OPR"] = eventOprs[opr]
+    if eventDprs != None:
+        for dpr in eventDprs:
+            if dpr != None: team_vals[str(dpr)]["DPR"] = eventDprs[dpr]
+    if eventCCWMs != None:
+        for ccwm in eventCCWMs:
+            if ccwm != None: team_vals[str(ccwm)]["CCWM"] = eventCCWMs[ccwm]
+# EVENT ="2023ndgf"
+TEAM = "frc2508"
+EVENT_KEY = "2024ndgf"
+teams = getEventInfo()
+# print(teams[TEAM])
+# addOPRs(teams)
+# print(teams[TEAM])
+
+for team in teams.values():
+    num = team["team_number"]
+    nick = team["nickname"]
+    loc = team["location"]
+    print(f"{num}\t{nick}\t{loc}")
+    # print(team)
+

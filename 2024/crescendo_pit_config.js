@@ -13,12 +13,17 @@ var config_data = `
       "code": "crn",
       "type": "text"
     },
-    { "name": "Width",
+    { "name": "Width(in)",
       "code": "wid",
       "type": "number",
       "defaultValue": "0"
     },
-    { "name": "Weight",
+    { "name": "Length(in)",
+      "code": "len",
+      "type": "number",
+      "defaultValue": "0"
+    },
+    { "name": "Weight(lbs)",
       "code": "wei",
       "type": "number",
       "defaultValue": "0"
@@ -58,19 +63,94 @@ var config_data = `
       },
       "defaultValue":"x"
     },
-    { "name": "Score Areas",
-      "code": "sca",
+    { "name": "Can Leave Starting Zone",
+    "code": "lst",
+    "type": "bool"
+    },
+    { "name": "Pickup From",
+      "code": "tpu",
       "type": "radio",
       "choices": {
-        "s": "Speaker<br>",
-        "a": "Amp<br>",
+        "s": "Source<br>",
+        "f": "Floor<br>",
         "b": "Both<br>",
-        "n": "None<br>",
-        "o": "Other<br>"
+        "x": "Neither"
       },
-      "defaultValue": "o"
+      "defaultValue": "x"
     },
-
+    { "name": "Cycle Time(s)",
+    "code": "cyt",
+    "type": "text",
+    "defaultValue": "x"
+    },
+    { "name": "Auto Amp Score",
+      "code": "aas",
+      "type": "counter"
+    },
+    { "name": "Auto Speaker Score",
+      "code": "ass",
+      "type": "counter"
+    },
+    { "name": "Teleop Amp Score",
+    "code": "tas",
+    "type": "counter"
+    },
+    { "name": "Teleop Speaker Score",
+      "code": "tss",
+      "type": "counter"
+    },
+    { "name": "Reliable Shooting Distance(ft)",
+      "code": "rsd",
+      "type": "number",
+      "defaultValue": "0"
+    },
+    { "name": "Designated Human Player?",
+    "code": "hp",
+    "type": "bool"
+    },
+    { "name": "Climb Time(s)",
+    "code": "cbt",
+    "type": "text",
+    "defaultValue": "x"
+    },
+    { "name": "Climb Status",
+      "code": "fs",
+      "type":"radio",
+      "choices": {
+        "c": "Can't Climb<br>",
+        "s": "Single Climb<br>",
+        "d": "Double Climb<br>"
+      },
+      "defaultValue": "c"
+    },
+    { "name": "Can Score Note in Trap",
+      "code": "nit",
+      "type": "bool"
+    },
+    { "name": "Auto Start Position",
+    "code": "as",
+    "type": "clickable_image",
+    "filename": "2024/field_image.png",
+    "clickRestriction": "one",
+    "allowableResponses": "1 12 13 24 25 36 37 48 49 60 61 72",
+    "shape": "circle 5 black red true"
+  },
+    { "name": "Shooting Positions",
+    "code": "sp",
+    "type": "clickable_image",
+    "filename": "2024/field_image_half.png",
+    "shape": "circle 5 black red true"
+    },
+    { "name": "Defense/Offense",
+      "code": "do",
+      "type":"radio",
+      "choices": {
+        "d": "Defense<br>",
+        "o": "Offense<br>",
+        "x": "Doesn't Matter<br>"
+      },
+      "defaultValue": "c"
+    },
     { "name": "Scouting Amount",			
       "code": "sa",
       "type": "radio",
@@ -82,86 +162,30 @@ var config_data = `
       },
       "defaultValue": "o"
     },
-    { "name": "Good Driver (checked = yes)",
-      "code": "gdr",
-      "type": "bool"
-    },
-    { "name": "Good Defense (checked = yes)",
-      "code": "gde",
-      "type": "bool"
+    { "name": "What Do They Do In Auto?",
+      "code": "autoco",
+      "type": "text",
+      "size": 20,
+      "maxSize": 250
     },
     { "name": "Comments",
       "code": "co",
       "type": "text",
       "size": 20,
       "maxSize": 250
+    },
+    { "name": "Coolness (1-10)",
+    "code": "cr",
+    "type": "text",
+    "size": 20,
+    "maxSize": 250
     }
   ],
   "auton": [
-    { "name": "Leave Starting Zone",
-      "code": "al",
-      "type": "bool"
-    },
-    { "name": "Amp Scores",
-      "code": "aas",
-      "type": "counter"
-    },
-    { "name": "Speaker Scores",
-      "code": "ass",
-      "type": "counter"
-    }
   ],
   "teleop": [
-    { "name": "Amp Scores",
-      "code": "tas",
-      "type": "counter"
-    },
-    { "name": "Speaker Scores",
-      "code": "tss",
-      "type": "counter"
-    },
-    { "name": "Times Amplified",
-      "code": "tta",
-      "type": "counter"
-    },
-    { "name": "Pickup From",
-      "code": "tpu",
-      "type": "radio",
-      "choices": {
-        "s": "Source<br>",
-        "f": "Floor<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
-      },
-      "defaultValue": "x"
-    },
-    { "name": "Auto Start Position",
-      "code": "as",
-      "type": "clickable_image",
-      "filename": "2024/field_image.png",
-      "shape": "circle 5 black red true"
-    }
   ],
   "endgame": [
-    { "name": "Stage Timer",
-      "code": "dt",
-      "type": "text"
-    },
-    { "name": "Final Status",
-      "code": "fs",
-      "type":"radio",
-      "choices": {
-        "c": "Can't Climb<br>",
-        "s": "Single Climb<br>",
-        "d": "Double Climb<br>",
-        "o": "Other<br>"
-      },
-      "defaultValue": "o"
-    },
-    { "name": "Note in Trap",
-      "code": "nit",
-      "type": "bool"
-    }
   ],
   "postmatch": [
   ]

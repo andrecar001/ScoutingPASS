@@ -191,6 +191,10 @@ var config_data = `
       "code": "all",
       "type": "bool"
     },
+    { "name": "Coolness😎(1-10)",
+      "code": "cn",
+      "type": "counter"
+    },
     { "name": "Comments",
       "code": "co",
       "type": "text",
