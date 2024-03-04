@@ -50,7 +50,7 @@ while True:
         lines = file.readlines()
         if (qr_str == None) or (qr_str +'\n' in lines):
             continue
-    with open('qrScanner/allStrings.txt', 'a') as file:
+    with open('py/qrScanner/allStrings.txt', 'a') as file:
         file.write(qr_str + '\n')
  
     #Paste string and beep confirmation

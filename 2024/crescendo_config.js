@@ -1,6 +1,6 @@
 var config_data = `
 {
-  "dataFormat": "kvs",
+  "dataFormat": "tsv",
   "title": "Scouting PASS 2024",
   "page_title": "Crescendo, Team 2508",
   "checkboxAs": "10",
@@ -116,11 +116,11 @@ var config_data = `
     }
   ],
   "endgame": [
-    { "name": "Stage Timer",
+    { "name": "Climb Timer",
       "code": "dt",
       "type": "timer"
     },
-    { "name": "Final Status",
+    { "name": "Climb Status",
       "code": "fs",
       "type":"radio",
       "choices": {

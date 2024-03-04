@@ -59,7 +59,7 @@ var config_data = `
       "defaultValue":"x"
     },
     { "name": "Score Areas",
-      "code": "sa",
+      "code": "sca",
       "type": "radio",
       "choices": {
         "s": "Speaker<br>",

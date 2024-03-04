@@ -1,9 +1,25 @@
-howe	grand forks	qm	6565	r2	730	[49]	r	1	7	14	10	3	8	f	2.5	s	0	v	a	4	1	1	0	1	terrible
-jax	grand forks	p	.6910	r2	6.5	[60]	l	1	9	11	9	4	9	s	2.5	a	1	v	e	2	1	0	0	1	awful
-Jaspy	grand forks	sf	3.14	b2	6502	[49]	r	1	7	12	7	5	10	b	2.6	p	0	x	a	4	0	1	0	0	awesome
-Fredy	grand forks	qm	.1735	r2	789	[60]	r	1	6	14	8	3	10	f	4.3	a	1	a	g	2	1	0	0	1	cool
-Eddie	grand forks	p	26	r2	666	[1]	r	1	2	2	6	4	2	x	4.3	s	0	v	e	5	0	1	1	0	nice
-CT	grand forks	sf	25	b1	4567	[60]	r	1	2	5	4	4	3	s	4.3	x	0	v	b	1	1	0	0	1	great
-CS	grand forks	qm	69	r2	5782	[60]	r	1	3	8	5	6	3	b	4.3	s	1	a	e	4	0	1	0	1	good
-Ian	grand forks	sf	3	r2	9876	[49]	r	1	5	8	4	5	8	f	2.4	o	1	v	b	2	1	0	1	0	nice
-Milf	grand forks	sf	4	r3	1235	[37]	r	1	6	9	6	6	6	f	1.1	h	1	a	g	4	1	1	1	1	cool
+s=KG;e=week 0;l=p;m=7;r=b1;t=3082;as=[25];dir=r;al=0;aas=0;ass=0;tas=0;tss=3;tta=0;tpu=x;dt=7.5;fs=o;nit=0;ds=x;dr=x;sr=3;die=1;tip=0;dn=0;all=0;co=Immobilized for first chunk of match.
+s=KG;e=week 0;l=p;m=6;r=b1;t=8234;as=[49];dir=r;al=0;aas=0;ass=0;tas=0;tss=0;tta=0;tpu=x;dt=0;fs=x;nit=0;ds=x;dr=x;sr=3;die=0;tip=0;dn=0;all=0;co=They may have just been testing driving
+s=KG;e=week 0;l=p;m=5;r=b1;t=2052;as=[49];dir=r;al=0;aas=0;ass=0;tas=1;tss=3;tta=0;tpu=x;dt=3.3;fs=o;nit=0;ds=3;dr=x;sr=4;die=0;tip=0;dn=0;all=1;co=
+s=KG;e=week 0;l=p;m=4;r=b1;t=5464;as=[25];dir=r;al=0;aas=0;ass=0;tas=0;tss=0;tta=0;tpu=x;dt=57.9;fs=a;nit=0;ds=x;dr=x;sr=3;die=0;tip=0;dn=1;all=0;co=Shooter would not make it to the speaker.
+s=KG;e=week 0;l=p;m=3;r=b1;t=2846;as=[25];dir=l;al=1;aas=0;ass=0;tas=9;tss=0;tta=0;tpu=f;dt=0;fs=x;nit=0;ds=2;dr=x;sr=4;die=0;tip=0;dn=0;all=1;co=Made one pathetic attempt at scoring at the speaker.
+s=KG;e=week 0;l=p;m=2;r=b1;t=3926;as=[37];dir=r;al=0;aas=0;ass=1;tas=0;tss=3;tta=0;tpu=f;dt=7.7;fs=o;nit=0;ds=2;dr=x;sr=3;die=0;tip=0;dn=1;all=0;co=
+s=SSC;e=week 0;l=p;m=10;r=b3;t=6719;as=[1];dir=r;al=0;aas=0;ass=0;tas=0;tss=0;tta=0;tpu=x;dt=0;fs=x;nit=0;ds=x;dr=x;sr=1;die=1;tip=0;dn=0;all=0;co=Didn't move or do anything the entire time
+s=SSC;e=week 0;l=p;m=9;r=b3;t=7797;as=[13];dir=l;al=1;aas=0;ass=0;tas=0;tss=5;tta=0;tpu=s;dt=0;fs=h;nit=0;ds=3;dr=3;sr=4;die=0;tip=0;dn=0;all=1;co=
+s=SSC;e=week 0;l=p;m=8;r=b3;t=2472;as=[1];dir=r;al=0;aas=1;ass=0;tas=0;tss=0;tta=0;tpu=f;dt=3.2;fs=x;nit=0;ds=1;dr=1;sr=2;die=1;tip=0;dn=1;all=0;co=
+s=SSC;e=Irondale;l=p;m=1;r=b3;t=2181;as=[25];dir=l;al=0;aas=0;ass=0;tas=0;tss=5;tta=0;tpu=f;dt=1.7;fs=a;nit=0;ds=2;dr=2;sr=3;die=0;tip=0;dn=0;all=1;co=It's pretty much a vacuum
+s=SSC;e=week 0;l=p;m=24;r=b1;t=2052;as=[49];dir=r;al=0;aas=0;ass=0;tas=0;tss=1;tta=0;tpu=s;dt=3.1;fs=a;nit=0;ds=2;dr=3;sr=3;die=0;tip=0;dn=1;all=0;co=
+s=AG;e=IRONDALE;l=p;m=1;r=r3;t=9576;as=[12];dir=l;al=0;aas=0;ass=0;tas=1;tss=3;tta=0;tpu=f;dt=0;fs=p;nit=0;ds=2;dr=2;sr=4;die=0;tip=0;dn=0;all=0;co=
+s=AG;e=IRONDALE;l=p;m=2;r=r2;t=2472;as=[24];dir=r;al=1;aas=0;ass=0;tas=0;tss=0;tta=0;tpu=f;dt=0;fs=p;nit=0;ds=1;dr=1;sr=1;die=1;tip=0;dn=0;all=0;co=
+s=AG;e=IRONDALE;l=p;m=3;r=r1;t=2052;as=[48];dir=r;al=0;aas=0;ass=0;tas=2;tss=3;tta=0;tpu=f;dt=6.8;fs=a;nit=0;ds=2;dr=2;sr=4;die=0;tip=0;dn=0;all=1;co=
+s=AG;e=IRONDALE;l=p;m=4;r=r3;t=4207;as=[24];dir=l;al=1;aas=0;ass=1;tas=1;tss=2;tta=0;tpu=f;dt=0;fs=p;nit=0;ds=2;dr=2;sr=3;die=0;tip=0;dn=0;all=1;co=
+s=AG;e=IRONDALE;l=p;m=5;r=r2;t=3206;as=[48];dir=l;al=1;aas=0;ass=0;tas=0;tss=0;tta=0;tpu=b;dt=12.8;fs=o;nit=0;ds=2;dr=2;sr=3;die=0;tip=0;dn=0;all=0;co=
+s=AG;e=IRONDALE;l=p;m=6;r=r2;t=2052;as=[36];dir=r;al=0;aas=0;ass=0;tas=0;tss=3;tta=0;tpu=f;dt=0;fs=p;nit=0;ds=2;dr=2;sr=3;die=0;tip=0;dn=0;all=0;co=
+s=CT;e=week 0;l=p;m=10;r=b2;t=4059;as=[13];dir=;al=0;aas=0;ass=0;tas=0;tss=3;tta=0;tpu=f;dt=0;fs=x;nit=0;ds=3;dr=2;sr=5;die=0;tip=0;dn=0;all=0;co=
+s=CT;e=week zero;l=p;m=1;r=b2;t=3206;as=[36];dir=r;al=0;aas=0;ass=1;tas=0;tss=3;tta=0;tpu=f;dt=26.9;fs=a;nit=0;ds=2;dr=x;sr=4;die=0;tip=0;dn=0;all=1;co=
+s=CT;e=week 0;l=p;m=9;r=b2;t=5464;as=[13];dir=;al=1;aas=0;ass=1;tas=4;tss=3;tta=0;tpu=f;dt=0;fs=x;nit=0;ds=3;dr=x;sr=5;die=0;tip=0;dn=0;all=1;co=
+s=SB;e=IRONDALE;l=p;m=9;r=r1;t=2052;as=[48];dir=r;al=0;aas=0;ass=0;tas=0;tss=4;tta=0;tpu=f;dt=17.8;fs=o;nit=0;ds=3;dr=x;sr=5;die=0;tip=0;dn=0;all=1;co=
+s=SB;e=IRONDALE;l=p;m=8;r=r3;t=3130;as=[12];dir=l;al=1;aas=0;ass=0;tas=0;tss=5;tta=0;tpu=f;dt=0;fs=o;nit=0;ds=3;dr=x;sr=5;die=0;tip=0;dn=0;all=1;co=
+s=SB;e=IRONDALE;l=p;m=7;r=r1;t=3926;as=[48];dir=l;al=1;aas=0;ass=1;tas=0;tss=0;tta=0;tpu=f;dt=12.5;fs=o;nit=0;ds=2;dr=x;sr=4;die=0;tip=0;dn=1;all=0;co=
+s=SB;e=IRONDALE;l=p;m=6;r=r1;t=9676;as=[48];dir=r;al=1;aas=0;ass=0;tas=2;tss=0;tta=0;tpu=f;dt=0;fs=x;nit=0;ds=1;dr=x;sr=5;die=0;tip=0;dn=1;all=0;co=
+s=SB;e=IRONDALE;l=p;m=5;r=r3;t=7797;as=[36];dir=l;al=0;aas=0;ass=0;tas=0;tss=11;tta=0;tpu=b;dt=0;fs=o;nit=0;ds=3;dr=x;sr=4;die=0;tip=0;dn=0;all=1;co=

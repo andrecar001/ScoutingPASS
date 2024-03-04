@@ -1,0 +1,14 @@
+add height
+Asking for a good driver is stupid
+good defense to offense/defense
+'autostart' and 'shooting preference'
+gear ratio L3,L2,L1
+stage timer to climb time
+ask about human player - (designated person)?
+cycle time
+remove radio for where they can score, turn into checkboxes
+teleop scores radio for where they can shoot "alot, little, don't know"
+make it better :3
+what are they doing in auto textbox
+>:(
+--how 'reckless' is the driver--probably not this
