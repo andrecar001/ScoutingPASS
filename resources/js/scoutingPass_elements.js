@@ -122,605 +122,623 @@ function addTimer(table, idx, name, data) {
     return idx + 1;
   }
   
-  function addCounter(table, idx, name, data) {
-    var row = table.insertRow(idx);
-    var cell1 = row.insertCell(0);
-    cell1.classList.add("title");
-    if (!data.hasOwnProperty('code')) {
-      cell1.innerHTML = `Error: No code specified for ${name}`;
-      return idx + 1;
-    }
-    var cell2 = row.insertCell(1);
-    cell1.innerHTML = name + '&nbsp;';
-    if (data.hasOwnProperty('tooltip')) {
-      cell1.setAttribute("title", data.tooltip);
-    }
-    cell2.classList.add("field");
-  
-    var button1 = document.createElement("input");
-    button1.setAttribute("type", "button");
-    button1.setAttribute("id", "minus_" + data.code);
-    button1.setAttribute("onclick", "counter(this.parentElement, -1)");
-    button1.setAttribute("value", "-");
-    cell2.appendChild(button1);
-  
-    var inp = document.createElement("input");
-    inp.classList.add("counter");
-    inp.setAttribute("id", "input_" + data.code);
-    inp.setAttribute("type", "text");
-    if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
-      inp.setAttribute("name", data.gsCol);
-    } else {
-      inp.setAttribute("name", data.code);
-    }
-    inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;");
-    inp.setAttribute("disabled", "");
-    inp.setAttribute("value", 0);
-    inp.setAttribute("size", 2);
-    inp.setAttribute("maxLength", 2);
-    cell2.appendChild(inp);
-  
-    var button2 = document.createElement("input");
-    button2.setAttribute("type", "button");
-    button2.setAttribute("id", "plus_" + data.code);
-    button2.setAttribute("onclick", "counter(this.parentElement, 1)");
-    button2.setAttribute("value", "+");
-    cell2.appendChild(button2);
-    
-    if (data.hasOwnProperty('cycleTimer')) {
-      if (data.cycleTimer != "") {
-        inp = document.createElement('input');
-        inp.setAttribute("hidden", "");
-        inp.setAttribute("id", "cycleTimer_" + data.code);
-        inp.setAttribute("value", data.cycleTimer);
-        cell.appendChild(inp);
-      }
-    }
-  
-    if (data.hasOwnProperty('defaultValue')) {
-      var def = document.createElement("input");
-      def.setAttribute("id", "default_" + data.code)
-      def.setAttribute("type", "hidden");
-      def.setAttribute("value", data.defaultValue);
-      cell2.appendChild(def);
-    }
-  
+function addCounter(table, idx, name, data) {
+  var row = table.insertRow(idx);
+  var cell1 = row.insertCell(0);
+  cell1.classList.add("title");
+  if (!data.hasOwnProperty('code')) {
+    cell1.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
   }
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = name + '&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
+  cell2.classList.add("field");
+
+  var button1 = document.createElement("input");
+  button1.setAttribute("type", "button");
+  button1.setAttribute("id", "minus_" + data.code);
+  button1.setAttribute("onclick", "counter(this.parentElement, -1)");
+  button1.setAttribute("value", "-");
+  cell2.appendChild(button1);
+
+  var inp = document.createElement("input");
+  inp.classList.add("counter");
+  inp.setAttribute("id", "input_" + data.code);
+  inp.setAttribute("type", "text");
+  if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
+    inp.setAttribute("name", data.gsCol);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
+  inp.setAttribute("style", "background-color: black; color: white;border: none; text-align: center;");
+  inp.setAttribute("disabled", "");
+  inp.setAttribute("value", 0);
+  inp.setAttribute("size", 2);
+  inp.setAttribute("maxLength", 2);
+  cell2.appendChild(inp);
+
+  var button2 = document.createElement("input");
+  button2.setAttribute("type", "button");
+  button2.setAttribute("id", "plus_" + data.code);
+  button2.setAttribute("onclick", "counter(this.parentElement, 1)");
+  button2.setAttribute("value", "+");
+  cell2.appendChild(button2);
   
-  function addImage(table, idx, name, data) {
-    var row = table.insertRow(idx);
-    var cell = row.insertCell(0);
-    cell.setAttribute("colspan", 2);
-    cell.setAttribute("style", "text-align: center;");
-    cell.classList.add("title");
-    if (!data.hasOwnProperty('code')) {
-      cell1.innerHTML = `Error: No code specified for ${name}`;
-      return idx + 1;
+  if (data.hasOwnProperty('cycleTimer')) {
+    if (data.cycleTimer != "") {
+      inp = document.createElement('input');
+      inp.setAttribute("hidden", "");
+      inp.setAttribute("id", "cycleTimer_" + data.code);
+      inp.setAttribute("value", data.cycleTimer);
+      cell.appendChild(inp);
     }
-    cell.innerHTML = name;
-    if (data.hasOwnProperty('tooltip')) {
-      cell.setAttribute("title", data.tooltip);
+  }
+
+  if (data.hasOwnProperty('defaultValue')) {
+    var def = document.createElement("input");
+    def.setAttribute("id", "default_" + data.code)
+    def.setAttribute("type", "hidden");
+    def.setAttribute("value", data.defaultValue);
+    cell2.appendChild(def);
+  }
+
+  return idx + 1;
+}
+
+function addImage(table, idx, name, data) {
+  var row = table.insertRow(idx);
+  var cell = row.insertCell(0);
+  cell.setAttribute("colspan", 2);
+  cell.setAttribute("style", "text-align: center;");
+  cell.classList.add("title");
+  if (!data.hasOwnProperty('code')) {
+    cell1.innerHTML = `Error: No code specified for ${name}`;
+    return idx + 1;
+  }
+  cell.innerHTML = name;
+  if (data.hasOwnProperty('tooltip')) {
+    cell.setAttribute("title", data.tooltip);
+  }
+  idx += 1;
+  row = table.insertRow(idx);
+  cell = row.insertCell(0);
+  cell.setAttribute("colspan", 2);
+  cell.setAttribute("style", "text-align: center;");
+  var canvas = document.createElement('canvas');
+  canvas.setAttribute("class", "field-image-src");
+  canvas.setAttribute("id", "canvas_" + data.code);
+  canvas.innerHTML = "No canvas support";
+  cell.appendChild(canvas);
+
+  idx += 1;
+  row = table.insertRow(idx);
+  row.setAttribute("style", "display:none");
+  cell = row.insertCell(0);
+  cell.setAttribute("colspan", 2);
+  var inp = document.createElement('input');
+  cell.appendChild(inp);
+  
+  // TODO: Make these more efficient/elegant
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "clickRestriction_" + data.code);
+  inp.setAttribute("value", "none");
+  if (data.hasOwnProperty('clickRestriction')) {
+    if ((data.clickRestriction == "one") ||
+      (data.clickRestriction == "onePerBox")) {
+      inp.setAttribute("value", data.clickRestriction);
     }
-    idx += 1;
-    row = table.insertRow(idx);
-    cell = row.insertCell(0);
-    cell.setAttribute("colspan", 2);
-    cell.setAttribute("style", "text-align: center;");
-    var canvas = document.createElement('canvas');
-    canvas.setAttribute("class", "field-image-src");
-    canvas.setAttribute("id", "canvas_" + data.code);
-    canvas.innerHTML = "No canvas support";
-    cell.appendChild(canvas);
-  
-    idx += 1;
-    row = table.insertRow(idx);
-    row.setAttribute("style", "display:none");
-    cell = row.insertCell(0);
-    cell.setAttribute("colspan", 2);
-    var inp = document.createElement('input');
-    cell.appendChild(inp);
-    
-    // TODO: Make these more efficient/elegant
-    inp = document.createElement('input');
-    inp.setAttribute("hidden", "");
-    inp.setAttribute("id", "clickRestriction_" + data.code);
-    inp.setAttribute("value", "none");
-    if (data.hasOwnProperty('clickRestriction')) {
-      if ((data.clickRestriction == "one") ||
-        (data.clickRestriction == "onePerBox")) {
-        inp.setAttribute("value", data.clickRestriction);
-      }
+  }
+  cell.appendChild(inp);
+
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "allowableResponses_" + data.code);
+  inp.setAttribute("value", "none");
+  if (data.hasOwnProperty('allowableResponses')) {
+    let responses = data.allowableResponses.split(' ').map(Number)
+    console.log(responses)
+      inp.setAttribute("value", responses);
+  }
+  cell.appendChild(inp);
+
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "shape_" + data.code);
+
+  idx += 1
+  row = table.insertRow(idx);
+  row.setAttribute("style", "display:none");
+  cell = row.insertCell(0);
+  cell.setAttribute("colspan", 2);
+  var img = document.createElement('img');
+  img.src = data.filename;
+  img.setAttribute("id", "img_" + data.code);
+  img.setAttribute("class", "field-image-src");
+  img.setAttribute("onload", "drawFields()");
+  cell.appendChild(img);
+
+  return idx + 1
+}
+
+function addClickableImage(table, idx, name, data) {
+  var row = table.insertRow(idx);
+  var cell = row.insertCell(0);
+  cell.setAttribute("colspan", 2);
+  cell.setAttribute("style", "text-align: center;");
+  cell.classList.add("title");
+  if (!data.hasOwnProperty('code')) {
+    cell1.innerHTML = `Error: No code specified for ${name}`;
+    return idx + 1;
+  }
+  cell.innerHTML = name;
+  if (data.hasOwnProperty('tooltip')) {
+    cell.setAttribute("title", data.tooltip);
+  }
+
+  let showFlip = true;
+  if (data.hasOwnProperty('showFlip')) {
+    if (data.showFlip.toLowerCase() == 'false') {
+      showFlip = false;
     }
-    cell.appendChild(inp);
-  
-    inp = document.createElement('input');
-    inp.setAttribute("hidden", "");
-    inp.setAttribute("id", "allowableResponses_" + data.code);
-    inp.setAttribute("value", "none");
-    if (data.hasOwnProperty('allowableResponses')) {
-      let responses = data.allowableResponses.split(' ').map(Number)
-      console.log(responses)
-        inp.setAttribute("value", responses);
+  }
+
+  let showUndo = true;
+  if (data.hasOwnProperty('showUndo')) {
+    if (data.showUndo.toLowerCase() == 'false') {
+      showUndo = false;
     }
-    cell.appendChild(inp);
-  
-    inp.setAttribute("hidden", "");
-    inp.setAttribute("id", "shape_" + data.code);
-  
+  }
+
+  if (showFlip || showUndo) {
     idx += 1
     row = table.insertRow(idx);
-    row.setAttribute("style", "display:none");
     cell = row.insertCell(0);
     cell.setAttribute("colspan", 2);
-    var img = document.createElement('img');
-    img.src = data.filename;
-    img.setAttribute("id", "img_" + data.code);
-    img.setAttribute("class", "field-image-src");
-    img.setAttribute("onload", "drawFields()");
-    cell.appendChild(img);
-  
-    return idx + 1
-  }
-  
-  function addClickableImage(table, idx, name, data) {
-    var row = table.insertRow(idx);
-    var cell = row.insertCell(0);
-    cell.setAttribute("colspan", 2);
     cell.setAttribute("style", "text-align: center;");
-    cell.classList.add("title");
-    if (!data.hasOwnProperty('code')) {
-      cell1.innerHTML = `Error: No code specified for ${name}`;
-      return idx + 1;
+
+    if (showUndo) {
+      // Undo button
+      let undoButton = document.createElement("input");
+      undoButton.setAttribute("type", "button");
+      undoButton.setAttribute("onclick", "undo(this.parentElement)");
+      undoButton.setAttribute("value", "Undo");
+      undoButton.setAttribute("id", "undo_" + data.code);
+      undoButton.setAttribute("class", "undoButton");
+      cell.appendChild(undoButton);
     }
-    cell.innerHTML = name;
-    if (data.hasOwnProperty('tooltip')) {
-      cell.setAttribute("title", data.tooltip);
-    }
-  
-    let showFlip = true;
-    if (data.hasOwnProperty('showFlip')) {
-      if (data.showFlip.toLowerCase() == 'false') {
-        showFlip = false;
-      }
-    }
-  
-    let showUndo = true;
-    if (data.hasOwnProperty('showUndo')) {
-      if (data.showUndo.toLowerCase() == 'false') {
-        showUndo = false;
-      }
-    }
-  
-    if (showFlip || showUndo) {
-      idx += 1
-      row = table.insertRow(idx);
-      cell = row.insertCell(0);
-      cell.setAttribute("colspan", 2);
-      cell.setAttribute("style", "text-align: center;");
-  
+
+    if (showFlip) {
+      // Flip button
+      let flipButton = document.createElement("input");
+      flipButton.setAttribute("type", "button");
+      flipButton.setAttribute("onclick", "flip(this.parentElement)");
+      flipButton.setAttribute("value", "Flip Image");
+      flipButton.setAttribute("id", "flip_" + data.code);
+      flipButton.setAttribute("class", "flipButton");
       if (showUndo) {
-        // Undo button
-        let undoButton = document.createElement("input");
-        undoButton.setAttribute("type", "button");
-        undoButton.setAttribute("onclick", "undo(this.parentElement)");
-        undoButton.setAttribute("value", "Undo");
-        undoButton.setAttribute("id", "undo_" + data.code);
-        undoButton.setAttribute("class", "undoButton");
-        cell.appendChild(undoButton);
+        flipButton.setAttribute("margin-left", '8px');
       }
-  
-      if (showFlip) {
-        // Flip button
-        let flipButton = document.createElement("input");
-        flipButton.setAttribute("type", "button");
-        flipButton.setAttribute("onclick", "flip(this.parentElement)");
-        flipButton.setAttribute("value", "Flip Image");
-        flipButton.setAttribute("id", "flip_" + data.code);
-        flipButton.setAttribute("class", "flipButton");
-        if (showUndo) {
-          flipButton.setAttribute("margin-left", '8px');
-        }
-        cell.appendChild(flipButton);
-      }
+      cell.appendChild(flipButton);
     }
+  }
+
+  idx += 1;
+  row = table.insertRow(idx);
+  cell = row.insertCell(0);
+  cell.setAttribute("colspan", 2);
+  cell.setAttribute("style", "text-align: center;");
+  var canvas = document.createElement('canvas');
+  //canvas.onclick = onFieldClick;
+  canvas.setAttribute("onclick", "onFieldClick(event)");
+  canvas.setAttribute("class", "field-image-src");
+  canvas.setAttribute("id", "canvas_" + data.code);
+  canvas.innerHTML = "No canvas support";
   
-    idx += 1;
-    row = table.insertRow(idx);
-    cell = row.insertCell(0);
-    cell.setAttribute("colspan", 2);
-    cell.setAttribute("style", "text-align: center;");
-    var canvas = document.createElement('canvas');
-    //canvas.onclick = onFieldClick;
-    canvas.setAttribute("onclick", "onFieldClick(event)");
-    canvas.setAttribute("class", "field-image-src");
-    canvas.setAttribute("id", "canvas_" + data.code);
-    canvas.innerHTML = "No canvas support";
-    
-    cell.appendChild(canvas);
+  cell.appendChild(canvas);
+
+  idx += 1;
+  row = table.insertRow(idx);
+  row.setAttribute("style", "display:none");
+  cell = row.insertCell(0);
+  cell.setAttribute("colspan", 2);
+  var inp = document.createElement('input');
+  inp.setAttribute("type", "hidden");
+  inp.setAttribute("id", "XY_" + data.code);
+  inp.setAttribute("value", "[]");
+  cell.appendChild(inp);
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
+    inp.setAttribute("name", data.gsCol);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
+  inp.setAttribute("id", "input_" + data.code);
+  inp.setAttribute("value", "[]");
+  inp.setAttribute("class", "clickableImage");
+
+  cell.appendChild(inp);
   
-    idx += 1;
-    row = table.insertRow(idx);
-    row.setAttribute("style", "display:none");
-    cell = row.insertCell(0);
-    cell.setAttribute("colspan", 2);
-    var inp = document.createElement('input');
-    inp.setAttribute("type", "hidden");
-    inp.setAttribute("id", "XY_" + data.code);
-    inp.setAttribute("value", "[]");
-    cell.appendChild(inp);
-    inp = document.createElement('input');
-    inp.setAttribute("hidden", "");
-    if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
-      inp.setAttribute("name", data.gsCol);
-    } else {
-      inp.setAttribute("name", data.code);
+  // TODO: Make these more efficient/elegant
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "clickRestriction_" + data.code);
+  inp.setAttribute("value", "none");
+  if (data.hasOwnProperty('clickRestriction')) {
+    if ((data.clickRestriction == "one") ||
+      (data.clickRestriction == "onePerBox")) {
+      inp.setAttribute("value", data.clickRestriction);
     }
-    inp.setAttribute("id", "input_" + data.code);
-    inp.setAttribute("value", "[]");
-    inp.setAttribute("class", "clickableImage");
-  
-    cell.appendChild(inp);
-    
-    // TODO: Make these more efficient/elegant
-    inp = document.createElement('input');
-    inp.setAttribute("hidden", "");
-    inp.setAttribute("id", "clickRestriction_" + data.code);
-    inp.setAttribute("value", "none");
-    if (data.hasOwnProperty('clickRestriction')) {
-      if ((data.clickRestriction == "one") ||
-        (data.clickRestriction == "onePerBox")) {
-        inp.setAttribute("value", data.clickRestriction);
-      }
+  }
+  cell.appendChild(inp);
+
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "allowableResponses_" + data.code);
+  inp.setAttribute("value", "none");
+  if (data.hasOwnProperty('allowableResponses')) {
+    let responses = data.allowableResponses.split(' ').map(Number)
+    console.log(responses)
+      inp.setAttribute("value", responses);
+  }
+  cell.appendChild(inp);
+
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "dimensions_" + data.code);
+  inp.setAttribute("value", "12 6");
+
+  if (data.hasOwnProperty('dimensions')) {
+    if (data.dimensions != "") {
+      // TODO: Add validation for "X Y" format
+      inp.setAttribute("value", data.dimensions);
     }
-    cell.appendChild(inp);
-  
-    inp = document.createElement('input');
-    inp.setAttribute("hidden", "");
-    inp.setAttribute("id", "allowableResponses_" + data.code);
-    inp.setAttribute("value", "none");
-    if (data.hasOwnProperty('allowableResponses')) {
-      let responses = data.allowableResponses.split(' ').map(Number)
-      console.log(responses)
-        inp.setAttribute("value", responses);
+  }
+  cell.appendChild(inp);
+
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "shape_" + data.code);
+  // Default shape: white circle of size 5 not filled in
+  inp.setAttribute("value", "circle 5 white white true");
+  if (data.hasOwnProperty('shape')) {
+    if (data.shape != "") {
+      // TODO: Add validation for "shape size color fill" format
+      inp.setAttribute("value", data.shape);
     }
-    cell.appendChild(inp);
-  
-    inp = document.createElement('input');
-    inp.setAttribute("hidden", "");
-    inp.setAttribute("id", "dimensions_" + data.code);
-    inp.setAttribute("value", "12 6");
-  
-    if (data.hasOwnProperty('dimensions')) {
-      if (data.dimensions != "") {
-        // TODO: Add validation for "X Y" format
-        inp.setAttribute("value", data.dimensions);
-      }
+  }
+  cell.appendChild(inp);
+
+  inp = document.createElement('input');
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("id", "toggleClick_" + data.code);
+  inp.setAttribute("value", "false");
+  if (data.hasOwnProperty('toggleClick')) {
+    if (data.toggleClick != "") {
+      // TODO: Add validation for true/false format
+      inp.setAttribute("value", data.toggleClick);
     }
-    cell.appendChild(inp);
-  
-    inp = document.createElement('input');
-    inp.setAttribute("hidden", "");
-    inp.setAttribute("id", "shape_" + data.code);
-    // Default shape: white circle of size 5 not filled in
-    inp.setAttribute("value", "circle 5 white white true");
-    if (data.hasOwnProperty('shape')) {
-      if (data.shape != "") {
-        // TODO: Add validation for "shape size color fill" format
-        inp.setAttribute("value", data.shape);
-      }
+  }
+  cell.appendChild(inp);
+
+  if (data.hasOwnProperty('cycleTimer')) {
+    if (data.cycleTimer != "") {
+      inp = document.createElement('input');
+      inp.setAttribute("hidden", "");
+      inp.setAttribute("id", "cycleTimer_" + data.code);
+      inp.setAttribute("value", data.cycleTimer);
+      cell.appendChild(inp);
     }
-    cell.appendChild(inp);
-  
-    inp = document.createElement('input');
-    inp.setAttribute("hidden", "");
-    inp.setAttribute("id", "toggleClick_" + data.code);
-    inp.setAttribute("value", "false");
-    if (data.hasOwnProperty('toggleClick')) {
-      if (data.toggleClick != "") {
-        // TODO: Add validation for true/false format
-        inp.setAttribute("value", data.toggleClick);
-      }
+  }
+
+  idx += 1
+  row = table.insertRow(idx);
+  row.setAttribute("style", "display:none");
+  cell = row.insertCell(0);
+  cell.setAttribute("colspan", 2);
+  var img = document.createElement('img');
+  img.src = data.filename;
+  img.setAttribute("id", "img_" + data.code);
+  img.setAttribute("class", "field-image-src");
+  img.setAttribute("onload", "drawFields()");  
+  cell.appendChild(img);
+
+  return idx + 1
+}
+
+function addHeader(table, idx, name, data) {
+  var row = table.insertRow(idx);
+  var header = document.createElement('th')
+  header.textContent = name;
+  header.style.textAlign = 'center'
+  header.style.fontSize = '20px'
+  header.style.padding = '10px 4px'
+  if (name.toLowerCase() != 'robot'){
+    header.style.borderTop = '2px solid white'
+  }
+  header.setAttribute('colspan',2)
+  row.appendChild(header)
+  return idx + 1
+}
+
+function addText(table, idx, name, data) {
+  var row = table.insertRow(idx);
+  var cell1 = row.insertCell(0);
+  cell1.classList.add("title");
+  if (!data.hasOwnProperty('code')) {
+    cell1.innerHTML = `Error: No code specified for ${name}`;
+    return idx + 1;
+  }
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = name + '&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
+  cell2.classList.add("field");
+  var inp = document.createElement("input");
+  inp.setAttribute("id", "input_" + data.code);
+  inp.setAttribute("type", "text");
+  if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
+    inp.setAttribute("name", data.gsCol);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
+  if (data.hasOwnProperty('size')) {
+    inp.setAttribute("size", data.size);
+  }
+  if (data.hasOwnProperty('maxSize')) {
+    inp.setAttribute("maxLength", data.maxSize);
+  }
+  if (data.hasOwnProperty('defaultValue')) {
+    if (data.type == 'event') {
+      data.defaultValue = data.defaultValue.toLowerCase();
     }
-    cell.appendChild(inp);
-  
-    if (data.hasOwnProperty('cycleTimer')) {
-      if (data.cycleTimer != "") {
-        inp = document.createElement('input');
-        inp.setAttribute("hidden", "");
-        inp.setAttribute("id", "cycleTimer_" + data.code);
-        inp.setAttribute("value", data.cycleTimer);
-        cell.appendChild(inp);
-      }
-    }
-  
+    inp.setAttribute("value", data.defaultValue);
+  }
+  if (data.hasOwnProperty('required')) {
+    inp.setAttribute("required", "");
+  }
+  if (data.hasOwnProperty('disabled')) {
+    inp.setAttribute("disabled", "");
+  }
+  cell2.appendChild(inp);
+
+  if (data.hasOwnProperty('defaultValue')) {
+    var def = document.createElement("input");
+    def.setAttribute("id", "default_" + data.code)
+    def.setAttribute("type", "hidden");
+    def.setAttribute("value", data.defaultValue);
+    cell2.appendChild(def);
+  }
+
+  return idx + 1
+}
+
+function addNumber(table, idx, name, data) {
+  var row = table.insertRow(idx);
+  var cell1 = row.insertCell(0);
+  cell1.classList.add("title");
+  if (!data.hasOwnProperty('code')) {
+    cell1.innerHTML = `Error: No code specified for ${name}`;
+    return idx + 1;
+  }
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = name + '&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
+  cell2.classList.add("field");
+  var inp = document.createElement("input");
+  inp.setAttribute("id", "input_" + data.code);
+  inp.setAttribute("type", "number");
+  if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
+    inp.setAttribute("name", data.gsCol);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
+  if ((data.type == 'team') ||
+    (data.type == 'match')) {
+    inp.setAttribute("onchange", "updateMatchStart(event)");
+  }
+  if (data.hasOwnProperty('min')) {
+    inp.setAttribute("min", data.min);
+  }
+  if (data.hasOwnProperty('max')) {
+    inp.setAttribute("max", data.max);
+  }
+  if (data.hasOwnProperty('defaultValue')) {
+    inp.setAttribute("value", data.defaultValue);
+  }
+  if (data.hasOwnProperty('disabled')) {
+    inp.setAttribute("disabled", "");
+  }
+  if (data.hasOwnProperty('required')) {
+    inp.setAttribute("required", "");
+  }
+  cell2.appendChild(inp);
+
+  if (data.hasOwnProperty('defaultValue')) {
+    var def = document.createElement("input");
+    def.setAttribute("id", "default_" + data.code)
+    def.setAttribute("type", "hidden");
+    def.setAttribute("value", data.defaultValue);
+    cell2.appendChild(def);
+  }
+
+  if (data.type == 'team') {
     idx += 1
     row = table.insertRow(idx);
-    row.setAttribute("style", "display:none");
-    cell = row.insertCell(0);
-    cell.setAttribute("colspan", 2);
-    var img = document.createElement('img');
-    img.src = data.filename;
-    img.setAttribute("id", "img_" + data.code);
-    img.setAttribute("class", "field-image-src");
-    img.setAttribute("onload", "drawFields()");  
-    cell.appendChild(img);
-  
-    return idx + 1
+    cell1 = row.insertCell(0);
+    cell1.setAttribute("id", "teamname-label");
+    cell1.setAttribute("colspan", 2);
+    cell1.setAttribute("style", "text-align: center;");
   }
-  
-  function addText(table, idx, name, data) {
-    var row = table.insertRow(idx);
-    var cell1 = row.insertCell(0);
-    cell1.classList.add("title");
-    if (!data.hasOwnProperty('code')) {
-      cell1.innerHTML = `Error: No code specified for ${name}`;
-      return idx + 1;
-    }
-    var cell2 = row.insertCell(1);
-    cell1.innerHTML = name + '&nbsp;';
-    if (data.hasOwnProperty('tooltip')) {
-      cell1.setAttribute("title", data.tooltip);
-    }
-    cell2.classList.add("field");
-    var inp = document.createElement("input");
-    inp.setAttribute("id", "input_" + data.code);
-    inp.setAttribute("type", "text");
-    if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
-      inp.setAttribute("name", data.gsCol);
-    } else {
-      inp.setAttribute("name", data.code);
-    }
-    if (data.hasOwnProperty('size')) {
-      inp.setAttribute("size", data.size);
-    }
-    if (data.hasOwnProperty('maxSize')) {
-      inp.setAttribute("maxLength", data.maxSize);
-    }
-    if (data.hasOwnProperty('defaultValue')) {
-      if (data.type == 'event') {
-        data.defaultValue = data.defaultValue.toLowerCase();
+
+  return idx + 1;
+}
+
+function addRadio(table, idx, name, data) {
+  var row = table.insertRow(idx);
+  var cell1 = row.insertCell(0);
+  cell1.classList.add("title");
+  if (!data.hasOwnProperty('code')) {
+    cell1.innerHTML = `Error: No code specified for ${name}`;
+    return idx + 1;
+  }
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = name + '&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
+  cell2.classList.add("field");
+  if ((data.type == 'level') ||
+    (data.type == 'robot') ||
+    (data.type == 'direction')
+  ) {
+    cell2.setAttribute("onchange", "updateMatchStart(event)");
+  }
+  var checked = null
+  if (data.hasOwnProperty('defaultValue')) {
+    checked = data.defaultValue;
+  }
+  if (data.hasOwnProperty('choices')) {
+    keys = Object.keys(data.choices);
+    keys.forEach(c => {
+      var inp = document.createElement("input");
+      inp.setAttribute("id", "input_" + data.code + "_" + c);
+      inp.setAttribute("type", "radio");
+      if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
+        inp.setAttribute("name", data.gsCol);
+      } else {
+        inp.setAttribute("name", data.code);
       }
-      inp.setAttribute("value", data.defaultValue);
-    }
-    if (data.hasOwnProperty('required')) {
-      inp.setAttribute("required", "");
-    }
-    if (data.hasOwnProperty('disabled')) {
-      inp.setAttribute("disabled", "");
-    }
-    cell2.appendChild(inp);
-  
-    if (data.hasOwnProperty('defaultValue')) {
-      var def = document.createElement("input");
-      def.setAttribute("id", "default_" + data.code)
-      def.setAttribute("type", "hidden");
-      def.setAttribute("value", data.defaultValue);
-      cell2.appendChild(def);
-    }
-  
-    return idx + 1
+      inp.setAttribute("value", c);
+      if (checked == c) {
+        inp.setAttribute("checked", "");
+      }
+      cell2.appendChild(inp);
+      cell2.innerHTML += data.choices[c];
+    });
   }
-  
-  function addNumber(table, idx, name, data) {
-    var row = table.insertRow(idx);
-    var cell1 = row.insertCell(0);
-    cell1.classList.add("title");
-    if (!data.hasOwnProperty('code')) {
-      cell1.innerHTML = `Error: No code specified for ${name}`;
-      return idx + 1;
-    }
-    var cell2 = row.insertCell(1);
-    cell1.innerHTML = name + '&nbsp;';
-    if (data.hasOwnProperty('tooltip')) {
-      cell1.setAttribute("title", data.tooltip);
-    }
-    cell2.classList.add("field");
-    var inp = document.createElement("input");
-    inp.setAttribute("id", "input_" + data.code);
-    inp.setAttribute("type", "number");
-    if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
-      inp.setAttribute("name", data.gsCol);
-    } else {
-      inp.setAttribute("name", data.code);
-    }
-    if ((data.type == 'team') ||
-      (data.type == 'match')) {
-      inp.setAttribute("onchange", "updateMatchStart(event)");
-    }
-    if (data.hasOwnProperty('min')) {
-      inp.setAttribute("min", data.min);
-    }
-    if (data.hasOwnProperty('max')) {
-      inp.setAttribute("max", data.max);
-    }
-    if (data.hasOwnProperty('defaultValue')) {
-      inp.setAttribute("value", data.defaultValue);
-    }
-    if (data.hasOwnProperty('disabled')) {
-      inp.setAttribute("disabled", "");
-    }
-    if (data.hasOwnProperty('required')) {
-      inp.setAttribute("required", "");
-    }
-    cell2.appendChild(inp);
-  
-    if (data.hasOwnProperty('defaultValue')) {
-      var def = document.createElement("input");
-      def.setAttribute("id", "default_" + data.code)
-      def.setAttribute("type", "hidden");
-      def.setAttribute("value", data.defaultValue);
-      cell2.appendChild(def);
-    }
-  
-    if (data.type == 'team') {
-      idx += 1
-      row = table.insertRow(idx);
-      cell1 = row.insertCell(0);
-      cell1.setAttribute("id", "teamname-label");
-      cell1.setAttribute("colspan", 2);
-      cell1.setAttribute("style", "text-align: center;");
-    }
-  
+  var inp = document.createElement("input");
+  inp.setAttribute("id", "display_" + data.code);
+  inp.setAttribute("hidden", "");
+  inp.setAttribute("value", "");
+  cell2.appendChild(inp);
+
+  if (data.hasOwnProperty('defaultValue')) {
+    var def = document.createElement("input");
+    def.setAttribute("id", "default_" + data.code)
+    def.setAttribute("type", "hidden");
+    def.setAttribute("value", data.defaultValue);
+    cell2.appendChild(def);
+  }
+
+  return idx + 1;
+}
+
+function addCheckbox(table, idx, name, data) {
+  var row = table.insertRow(idx);
+  var cell1 = row.insertCell(0);
+  cell1.classList.add("title");
+  if (!data.hasOwnProperty('code')) {
+    cell1.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
   }
-  
-  function addRadio(table, idx, name, data) {
-    var row = table.insertRow(idx);
-    var cell1 = row.insertCell(0);
-    cell1.classList.add("title");
-    if (!data.hasOwnProperty('code')) {
-      cell1.innerHTML = `Error: No code specified for ${name}`;
-      return idx + 1;
-    }
-    var cell2 = row.insertCell(1);
-    cell1.innerHTML = name + '&nbsp;';
-    if (data.hasOwnProperty('tooltip')) {
-      cell1.setAttribute("title", data.tooltip);
-    }
-    cell2.classList.add("field");
-    if ((data.type == 'level') ||
-      (data.type == 'robot') ||
-      (data.type == 'direction')
-    ) {
-      cell2.setAttribute("onchange", "updateMatchStart(event)");
-    }
-    var checked = null
-    if (data.hasOwnProperty('defaultValue')) {
-      checked = data.defaultValue;
-    }
-    if (data.hasOwnProperty('choices')) {
-      keys = Object.keys(data.choices);
-      keys.forEach(c => {
-        var inp = document.createElement("input");
-        inp.setAttribute("id", "input_" + data.code + "_" + c);
-        inp.setAttribute("type", "radio");
-        if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
-          inp.setAttribute("name", data.gsCol);
-        } else {
-          inp.setAttribute("name", data.code);
-        }
-        inp.setAttribute("value", c);
-        if (checked == c) {
-          inp.setAttribute("checked", "");
-        }
-        cell2.appendChild(inp);
-        cell2.innerHTML += data.choices[c];
-      });
-    }
-    var inp = document.createElement("input");
-    inp.setAttribute("id", "display_" + data.code);
-    inp.setAttribute("hidden", "");
-    inp.setAttribute("value", "");
-    cell2.appendChild(inp);
-  
-    if (data.hasOwnProperty('defaultValue')) {
-      var def = document.createElement("input");
-      def.setAttribute("id", "default_" + data.code)
-      def.setAttribute("type", "hidden");
-      def.setAttribute("value", data.defaultValue);
-      cell2.appendChild(def);
-    }
-  
-    return idx + 1;
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = name + '&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
   }
-  
-  function addCheckbox(table, idx, name, data) {
-    var row = table.insertRow(idx);
-    var cell1 = row.insertCell(0);
-    cell1.classList.add("title");
-    if (!data.hasOwnProperty('code')) {
-      cell1.innerHTML = `Error: No code specified for ${name}`;
-      return idx + 1;
-    }
-    var cell2 = row.insertCell(1);
-    cell1.innerHTML = name + '&nbsp;';
-    if (data.hasOwnProperty('tooltip')) {
-      cell1.setAttribute("title", data.tooltip);
-    }
-    cell2.classList.add("field");
-    var inp = document.createElement("input");
-    inp.setAttribute("id", "input_" + data.code);
-    inp.setAttribute("type", "checkbox");
-    if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
-      inp.setAttribute("name", data.gsCol);
-    } else {
-      inp.setAttribute("name", data.code);
-    }
-    cell2.appendChild(inp);
-  
-    if (data.type == 'bool') {
-      cell2.innerHTML += "(checked = Yes)";
-    }
-  
-    if (data.hasOwnProperty('defaultValue')) {
-      var def = document.createElement("input");
-      def.setAttribute("id", "default_" + data.code)
-      def.setAttribute("type", "hidden");
-      def.setAttribute("value", data.defaultValue);
-      cell2.appendChild(def);
-    }
-  
-    return idx + 1;
+  cell2.classList.add("field");
+  var inp = document.createElement("input");
+  inp.setAttribute("id", "input_" + data.code);
+  inp.setAttribute("type", "checkbox");
+  if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
+    inp.setAttribute("name", data.gsCol);
+  } else {
+    inp.setAttribute("name", data.code);
   }
-  
-  function addElement(table, idx, data) {
-    var type = null;
-    var name = 'Default Name';
-    if (data.hasOwnProperty('name')) {
-      name = data.name
-    }
-    if (data.hasOwnProperty('type')) {
-      type = data.type
-    } else {
-      console.log("No type specified");
-      console.log("Data: ")
-      console.log(data);
-      err = { code: "err", defaultValue: "No type specified: " + data };
-      idx = addText(table, idx, name, err);
-      return
-    }
-    if (type == 'counter') {
-      idx = addCounter(table, idx, name, data);
-    } else if ((data.type == 'scouter') ||
-      (data.type == 'event') ||
-      (data.type == 'text')
-    ) {
-      idx = addText(table, idx, name, data);
-    } else if ((data.type == 'level') ||
-      (data.type == 'radio') || 
-      (data.type == 'robot') ||
-      (data.type == 'direction')
-    
-    ) {
-      idx = addRadio(table, idx, name, data);
-    } else if(data.type == 'direction') {
-      idx = addRadio(table,idx,name,data)
-    } else if ((data.type == 'match') ||
-      (data.type == 'team') ||
-      (data.type == 'number')
-    ) {
-      idx = addNumber(table, idx, name, data);
-    } else if ((data.type == 'field_image') ||
-      (data.type == 'clickable_image')) {
-      idx = addClickableImage(table, idx, name, data);
-    } else if(data.type == "image"){
-      idx = addImage(table,idx,name,data);
-    } else if ((data.type == 'bool') ||
-      (data.type == 'checkbox') ||
-      (data.type == 'pass_fail')
-    ) {
-      idx = addCheckbox(table, idx, name, data);
-    } else if (data.type == 'counter') {
-      idx = addCounter(table, idx, name, data);
-    } else if ((data.type == 'timer') ||
-      (data.type == 'cycle')) {
-      idx = addTimer(table, idx, name, data);
-    } else {
-      console.log(`Unrecognized type: ${data.type}`);
-    }
-    return idx
+  cell2.appendChild(inp);
+
+  if (data.type == 'bool') {
+    cell2.innerHTML += "(checked = Yes)";
   }
+
+  if (data.hasOwnProperty('defaultValue')) {
+    var def = document.createElement("input");
+    def.setAttribute("id", "default_" + data.code)
+    def.setAttribute("type", "hidden");
+    def.setAttribute("value", data.defaultValue);
+    cell2.appendChild(def);
+  }
+
+  return idx + 1;
+}
+
+function addElement(table, idx, data) {
+  var type = null;
+  var name = 'Default Name';
+  if (data.hasOwnProperty('name')) {
+    name = data.name
+  }
+  if (data.hasOwnProperty('type')) {
+    type = data.type
+  } else {
+    console.log("No type specified");
+    console.log("Data: ")
+    console.log(data);
+    err = { code: "err", defaultValue: "No type specified: " + data };
+    idx = addText(table, idx, name, err);
+    return
+  }
+  if (type == 'counter') {
+    idx = addCounter(table, idx, name, data);
+  } else if ((data.type == 'scouter') ||
+    (data.type == 'event') ||
+    (data.type == 'text')
+  ) {
+    idx = addText(table, idx, name, data);
+  } else if ((data.type == 'header'))
+  {
+    idx = addHeader(table, idx, name, data);
+  } else if ((data.type == 'level') ||
+    (data.type == 'radio') || 
+    (data.type == 'robot') ||
+    (data.type == 'direction')
+  
+  ) {
+    idx = addRadio(table, idx, name, data);
+  } else if(data.type == 'direction') {
+    idx = addRadio(table,idx,name,data)
+  } else if ((data.type == 'match') ||
+    (data.type == 'team') ||
+    (data.type == 'number')
+  ) {
+    idx = addNumber(table, idx, name, data);
+  } else if ((data.type == 'field_image') ||
+    (data.type == 'clickable_image')) {
+    idx = addClickableImage(table, idx, name, data);
+  } else if(data.type == "image"){
+    idx = addImage(table,idx,name,data);
+  } else if ((data.type == 'bool') ||
+    (data.type == 'checkbox') ||
+    (data.type == 'pass_fail')
+  ) {
+    idx = addCheckbox(table, idx, name, data);
+  } else if (data.type == 'counter') {
+    idx = addCounter(table, idx, name, data);
+  } else if ((data.type == 'timer') ||
+    (data.type == 'cycle')) {
+    idx = addTimer(table, idx, name, data);
+  } else {
+    console.log(`Unrecognized type: ${data.type}`);
+  }
+  return idx
+}
 
   /**
  * adds to the number in innerHTML of the value tag.

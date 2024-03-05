@@ -5,6 +5,9 @@ var config_data = `
   "page_title": "Crescendo",
   "pitConfig": "true",
   "prematch": [
+    { "name": "Robot",
+      "type": "header"
+    },
     { "name": "Team Number",
       "code": "t",
       "type": "number"
@@ -62,6 +65,9 @@ var config_data = `
         "x": "Other<br>"
       },
       "defaultValue":"x"
+    },
+    { "name": "Points",
+      "type": "header"
     },
     { "name": "Can Leave Starting Zone",
     "code": "lst",
@@ -127,6 +133,9 @@ var config_data = `
       "code": "nit",
       "type": "bool"
     },
+    { "name": "Positions",
+      "type": "header"
+    },
     { "name": "Auto Start Position",
     "code": "as",
     "type": "clickable_image",
@@ -140,6 +149,9 @@ var config_data = `
     "type": "clickable_image",
     "filename": "2024/field_image_half.png",
     "shape": "circle 5 black red true"
+    },
+    { "name": "Misc.",
+      "type": "header"
     },
     { "name": "Defense/Offense",
       "code": "do",
@@ -174,11 +186,9 @@ var config_data = `
       "size": 20,
       "maxSize": 250
     },
-    { "name": "Coolness (1-10)",
-    "code": "cr",
-    "type": "text",
-    "size": 20,
-    "maxSize": 250
+    { "name": "Coolness😎(1-10)",
+      "code": "cn",
+      "type": "counter"
     }
   ],
   "auton": [

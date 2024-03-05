@@ -64,16 +64,6 @@ var config_data = `
       "clickRestriction": "one",
       "allowableResponses": "1 12 13 24 25 36 37 48 49 60 61 72",
       "shape": "circle 5 black red true"
-    },
-    { "name": "Direction",
-      "code": "dir",
-      "type": "direction",
-      "choices": {
-        "l": "Left",
-        "r": "Right"
-      },
-      "defaultValue": "u",
-      "required": "true"
     }
   ],
   "auton": [
@@ -190,10 +180,6 @@ var config_data = `
       "tooltip": "Would you want this robot on your alliance in eliminations?",
       "code": "all",
       "type": "bool"
-    },
-    { "name": "Coolness😎(1-10)",
-      "code": "cn",
-      "type": "counter"
     },
     { "name": "Comments",
       "code": "co",

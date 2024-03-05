@@ -22,7 +22,7 @@ function flip(event) {
     let flipID = event.firstChild;
     var flipImg = document.getElementById("canvas" + getIdBase(flipID.id));
     if (flipImg.style.transform == "") {
-        flipImg.style.transform = 'rotate(180deg)';
+        flipImg.style.transform = 'scaleX(-1)';
     } else {
         flipImg.style.transform = '';
     }
