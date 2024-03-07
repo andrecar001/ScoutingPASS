@@ -5,6 +5,9 @@ var config_data = `
   "page_title": "Crescendo, Team 2508",
   "checkboxAs": "10",
   "prematch": [
+    { "name": "Pre-match",
+      "type": "header"
+    },
     { "name": "Scouter Initials",
       "code": "s",
       "type": "scouter",
@@ -15,7 +18,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "Week 0",
+      "defaultValue": "2024mndu",
       "required": "true"
     },
     { "name": "Match Level",
@@ -23,9 +26,7 @@ var config_data = `
       "type": "level",
       "choices": {
         "p": "Practice<br>",
-        "qm": "Quals<br>",
-        "sf": "Semifinals<br>"
-        
+        "qm": "Quals<br>"
       },
       "defaultValue": "p",
       "required": "true"
@@ -60,13 +61,17 @@ var config_data = `
     { "name": "Auto Start Position",
       "code": "as",
       "type": "clickable_image",
-      "filename": "2024/field_image.png",
+      "filename": "2024/field_image_half.png",
       "clickRestriction": "one",
-      "allowableResponses": "1 12 13 24 25 36 37 48 49 60 61 72",
+      "allowableResponses": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24",
       "shape": "circle 5 black red true"
-    }
-  ],
-  "auton": [
+    },
+
+
+
+    { "name": "Auto",
+      "type": "header"
+    },
     { "name": "Leave Starting Zone",
       "code": "al",
       "type": "bool"
@@ -78,9 +83,13 @@ var config_data = `
     { "name": "Speaker Scores",
       "code": "ass",
       "type": "counter"
-    }
-  ],
-  "teleop": [
+    },
+
+
+
+    { "name": "Teleop",
+      "type": "header"
+    },
     { "name": "Amp Scores",
       "code": "tas",
       "type": "counter"
@@ -103,9 +112,13 @@ var config_data = `
         "x": "Not Attempted"
       },
       "defaultValue": "x"
-    }
-  ],
-  "endgame": [
+    },
+
+
+
+    { "name": "Endgame",
+      "type": "header"
+    },
     { "name": "Climb Timer",
       "code": "dt",
       "type": "timer"
@@ -126,17 +139,21 @@ var config_data = `
     { "name": "Note in Trap",
       "code": "nit",
       "type": "bool"
-    }
-  ],
-  "postmatch": [
+    },
+
+
+
+    { "name": "Post-match",
+      "type": "header"
+    },
     { "name": "Driver Skill",
-      "code": "ds",
-      "type": "radio",
-      "choices": {
-        "1": "Not Effective<br>",
-        "2": "Average<br>",
-        "3": "Very Effective<br>",
-        "x": "Not Observed"
+    "code": "ds",
+    "type": "radio",
+    "choices": {
+      "1": "Not Effective<br>",
+      "2": "Average<br>",
+      "3": "Very Effective<br>",
+      "x": "Not Observed"
       },
       "defaultValue": "x"
     },
@@ -187,5 +204,15 @@ var config_data = `
       "size": 15,
       "maxSize": 55
     }
+  ],
+
+
+  "auton": [
+  ],
+  "teleop": [
+  ],
+  "endgame": [
+  ],
+  "postmatch": [
   ]
 }`;

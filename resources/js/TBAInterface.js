@@ -8,6 +8,7 @@ var authKey = "2hKZge8yV9nkehbD8bOXGBrHNgUzD9eSNHPZnaIWIQFHCO6DhFKkQLFVFaoyja8k"
  * @param {eventCode} eventCode the event code (i.e. 2020caln) to pull the team list
  */
 function getTeams(eventCode) {
+	//eventCode = "2023ndgf"
 	if (authKey) {
 		var xmlhttp = new XMLHttpRequest();
 		var url = "https://www.thebluealliance.com/api/v3/event/" + eventCode + "/teams/simple";

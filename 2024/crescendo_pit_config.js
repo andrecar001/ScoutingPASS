@@ -37,7 +37,6 @@ var config_data = `
       "choices": {
         "s": "Swerve<br>",
         "w": "West Coast/Tank<br>",
-        "b": "Butterfly/Grashopper<br>",
         "m": "Mechanum<br>",
         "o": "Other"
       },
@@ -60,7 +59,7 @@ var config_data = `
       "type": "radio",
       "choices": {
         "n": "Neo<br>",
-        "f": "Falcon<br>",
+        "f": "Falcon/Kraken<br>",
         "c": "CIM<br>",
         "x": "Other<br>"
       },
@@ -84,7 +83,7 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-    { "name": "Cycle Time(s)",
+    { "name": "Cycle Times(s)",
     "code": "cyt",
     "type": "text",
     "defaultValue": "x"
@@ -139,9 +138,9 @@ var config_data = `
     { "name": "Auto Start Position",
     "code": "as",
     "type": "clickable_image",
-    "filename": "2024/field_image.png",
-    "clickRestriction": "one",
-    "allowableResponses": "1 12 13 24 25 36 37 48 49 60 61 72",
+    "filename": "2024/field_image_half.png",
+
+    "allowableResponses": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24",
     "shape": "circle 5 black red true"
   },
     { "name": "Shooting Positions",

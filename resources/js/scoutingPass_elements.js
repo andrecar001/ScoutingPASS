@@ -456,7 +456,7 @@ function addHeader(table, idx, name, data) {
   header.style.textAlign = 'center'
   header.style.fontSize = '20px'
   header.style.padding = '10px 4px'
-  if (name.toLowerCase() != 'robot'){
+  if (name.toLowerCase() != 'robot' && name.toLowerCase() != 'pre-match'){
     header.style.borderTop = '2px solid white'
   }
   header.setAttribute('colspan',2)
