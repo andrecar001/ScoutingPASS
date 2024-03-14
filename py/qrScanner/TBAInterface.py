@@ -76,100 +76,173 @@ with tbaapiv3client.ApiClient(configuration) as api_client:
     list_api_instance = tbaapiv3client.ListApi(api_client)
 
     ### API FUNCTIONS ###
-    # EVENTS
-    def getEventTeamsSimple(event_key):
+    #DISTRICTAPI
+    def getDistrictEvents(district_key):
         try:
-            return team_api_instance.get_event_teams_simple(event_key, if_modified_since=if_modified_since)
+            return district_api_instance.get_district_events(district_key, if_modified_since=if_modified_since)    
+        except ApiException as e:
+            print("Exception when calling DistrictApi->get_event_matches: %s\n" % e)
+    def getDistrictEventKeys(district_key):
+        try:
+            return district_api_instance.get_district_events_keys(district_key, if_modified_since=if_modified_since)    
+        except ApiException as e:
+            print("Exception when calling DistrictApi->get_event_matches: %s\n" % e)
+    def getDistrictEventsSimple(district_key):
+        try:
+            return district_api_instance.get_district_events_simple(district_key, if_modified_since=if_modified_since)    
+        except ApiException as e:
+            print("Exception when calling DistrictApi->get_event_matches: %s\n" % e)
+    def getDistrictRankings(district_key):
+        try:
+            return district_api_instance.get_district_rankings(district_key, if_modified_since=if_modified_since)    
+        except ApiException as e:
+            print("Exception when calling DistrictApi->get_event_matches: %s\n" % e)
+    def getDistrictTeams(district_key):
+        try:
+            return district_api_instance.get_district_teams(district_key, if_modified_since=if_modified_since)    
+        except ApiException as e:
+            print("Exception when calling DistrictApi->get_event_matches: %s\n" % e)
+    def getDistrictTeamsKeys(district_key):
+        try:
+            return district_api_instance.get_district_teams_keys(district_key, if_modified_since=if_modified_since)    
+        except ApiException as e:
+            print("Exception when calling DistrictApi->get_event_matches: %s\n" % e)    
+    def getDistrictTeamsSimples(district_key):
+        try:
+            return district_api_instance.get_district_teams_simple(district_key, if_modified_since=if_modified_since)    
+        except ApiException as e:
+            print("Exception when calling DistrictApi->get_event_matches: %s\n" % e)
+    def getDistrictsByYear(year):
+        try:
+            return district_api_instance.get_districts_by_year(year, if_modified_since=if_modified_since)    
+        except ApiException as e:
+            print("Exception when calling DistrictApi->get_event_matches: %s\n" % e)
+    # EVENTS
+    def getEvent(event_key):
+        try:
+            return event_api_instance.get_event(event_key, if_modified_since=if_modified_since)
         except ApiException as e:
             print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
-
-    def getEventOPR(event_key):
+    def getEventAlliances(event_key):
+        try:
+            return event_api_instance.get_event_alliances(event_key, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventAwards(event_key):
+        try:
+            return event_api_instance.get_event_awards(event_key, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventDistrictPoints(event_key):
+        try:
+            return event_api_instance.get_event_district_points(event_key, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventInsights(event_key):
+        try:
+            return event_api_instance.get_event_insights(event_key, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventMatcheTimeseries(event_key):
+        try:
+            return event_api_instance.get_event_match_timeseries(event_key, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventMatches(event_key):
+        try:
+            return event_api_instance.get_event_matches(event_key, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventMatchesKeys(event_key):
+        try:
+            return event_api_instance.get_event_matches_keys(event_key, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventMatchesSimple(event_key):
+        try:
+            return event_api_instance.get_event_matches_simple(event_key, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventOPRs(event_key):
         try:
             return event_api_instance.get_event_op_rs(event_key, if_modified_since=if_modified_since)
         except ApiException as e:
             print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
-    # MATCHAPI
-    def getEventMatches(event_key):
+    def getEventPredictions(event_key):
         try:
-            return match_api_instance.get_event_matches(event_key, if_modified_since=if_modified_since)    
+            return event_api_instance.get_event_predictions(event_key, if_modified_since=if_modified_since)
         except ApiException as e:
-            print("Exception when calling MatchApi->get_event_matches: %s\n" % e)
-    def getEventMatchesSimple(event_key):
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventRankings(event_key):
         try:
-            return match_api_instance.get_event_matches_simple(event_key, if_modified_since=if_modified_since)    
+            return event_api_instance.get_event_rankings(event_key, if_modified_since=if_modified_since)
         except ApiException as e:
-            print("Exception when calling MatchApi->get_event_matches: %s\n" % e)
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventSimple(event_key):
+        try:
+            return event_api_instance.get_event_simple(event_key, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventTeams(event_key):
+        try:
+            return event_api_instance.get_event_teams(event_key, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventTeamsKeys(event_key):
+        try:
+            return event_api_instance.get_event_teams_keys(event_key, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventTeamsSimple(event_key):
+        try:
+            return event_api_instance.get_event_teams_keys(event_key, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventTeamsStatuses(event_key):
+        try:
+            return event_api_instance.get_event_teams_statuses(event_key, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventsByYear(year):
+        try:
+            return event_api_instance.get_events_by_year(year, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventsByYearKeys(year):
+        try:
+            return event_api_instance.get_events_by_year_keys(year, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    def getEventsByYearSimple(year):
+        try:
+            return event_api_instance.get_events_by_year_simple(year, if_modified_since=if_modified_since)
+        except ApiException as e:
+            print("Exception when calling EventApi->get_event_op_rs: %s\n" % e)
+    
+    #LISTAPI
+    #MATCHAPI
     def getMatch(event_key):
         try:
             return match_api_instance.get_match(event_key, if_modified_since=if_modified_since)    
         except ApiException as e:
             print("Exception when calling MatchApi->get_event_matches: %s\n" % e)
-    def getTeamEventMatches(event_key):
+    def getMatchSimple(match_key):
         try:
-            return match_api_instance.get_team_event_matches(event_key, if_modified_since=if_modified_since)    
+            return match_api_instance.get_match_simple(match_key, if_modified_since=if_modified_since)    
         except ApiException as e:
             print("Exception when calling MatchApi->get_event_matches: %s\n" % e)
-    def getTeamMatchesSimple(event_key):
+    def getMatchTimeseries(match_key):
         try:
-            return match_api_instance.get_team_event_matches_simple(event_key, if_modified_since=if_modified_since)    
+            return match_api_instance.get_match_timeseries(match_key, if_modified_since=if_modified_since)    
         except ApiException as e:
             print("Exception when calling MatchApi->get_event_matches: %s\n" % e)
-    def getTeamMatchesByYear(event_key):
+    def getMatchZebra(match_key):
         try:
-            return match_api_instance.get_team_matches_by_year(event_key, if_modified_since=if_modified_since)    
+            return match_api_instance.get_match_zebra(match_key, if_modified_since=if_modified_since)    
         except ApiException as e:
             print("Exception when calling MatchApi->get_event_matches: %s\n" % e)
-    def getTeamMatchesByYearKeys(event_key):
-        try:
-            return match_api_instance.get_team_matches_by_year_keys(event_key, if_modified_since=if_modified_since)    
-        except ApiException as e:
-            print("Exception when calling MatchApi->get_event_matches: %s\n" % e)
-    def getTeamMatchesByYearSimple(event_key):
-        try:
-            return match_api_instance.get_team_matches_by_year_simple(event_key, if_modified_since=if_modified_since)    
-        except ApiException as e:
-            print("Exception when calling MatchApi->get_event_matches: %s\n" % e)
+    
     # TEAMAPI
-    def getDistrictRankings(district_key):
-        try:
-            return team_api_instance.get_district_rankings(district_key, if_modified_since=if_modified_since)    
-        except ApiException as e:
-            print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def getDistrictTeams(district_key):
-        try:
-            return team_api_instance.get_district_teams(district_key, if_modified_since=if_modified_since)    
-        except ApiException as e:
-            print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def getDistrictTeamsKeys(district_key):
-        try:
-            return team_api_instance.get_district_teams_keys(district_key, if_modified_since=if_modified_since)    
-        except ApiException as e:
-            print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def getDistrictTeamsSimple(district_key):
-        try:
-            return team_api_instance.get_district_teams_simple(district_key, if_modified_since=if_modified_since)    
-        except ApiException as e:
-            print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def getEventTeams(event_key):
-        try:
-            return team_api_instance.get_event_teams(event_key, if_modified_since=if_modified_since)    
-        except ApiException as e:
-            print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def getEventTeamsKeys(event_key):
-        try:
-            return team_api_instance.get_event_teams_keys(event_key, if_modified_since=if_modified_since)    
-        except ApiException as e:
-            print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def getEventTeamsSimple(event_key):
-        try:
-            return team_api_instance.get_event_teams_simple(event_key, if_modified_since=if_modified_since)    
-        except ApiException as e:
-            print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def getEventTeamsStatuses(event_key):
-        try:
-            return team_api_instance.get_event_teams_statuses(event_key, if_modified_since=if_modified_since)    
-        except ApiException as e:
-            print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
     def getTeam(team_key):
         try:
             return team_api_instance.get_team(team_key, if_modified_since=if_modified_since)    
@@ -180,49 +253,49 @@ with tbaapiv3client.ApiClient(configuration) as api_client:
             return team_api_instance.get_team_awards(event_key, if_modified_since=if_modified_since)    
         except ApiException as e:
             print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def getTeamAwardsByYear(event_key):
+    def getTeamAwardsByYear(event_key,year):
         try:
-            return team_api_instance.get_team_awards_by_year(event_key, if_modified_since=if_modified_since)    
+            return team_api_instance.get_team_awards_by_year(event_key, year, if_modified_since=if_modified_since)    
         except ApiException as e:
             print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def getTeamDistricts(event_key):
+    def getTeamDistricts(team_key):
         try:
-            return team_api_instance.get_team_districts(event_key, if_modified_since=if_modified_since)    
+            return team_api_instance.get_team_districts(team_key, if_modified_since=if_modified_since)    
         except ApiException as e:
             print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def getTeamEventAwards(event_key):
+    def getTeamEventAwards(team_key, event_key):
         try:
-            return team_api_instance.get_team_event_awards(event_key, if_modified_since=if_modified_since)    
+            return team_api_instance.get_team_event_awards(team_key, event_key, if_modified_since=if_modified_since)    
         except ApiException as e:
             print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def getTeamEventMatches(event_key):
+    def getTeamEventMatches(team_key, event_key):
         try:
-            return team_api_instance.get_team_event_matches(event_key, if_modified_since=if_modified_since)    
+            return team_api_instance.get_team_event_matches(team_key, event_key, if_modified_since=if_modified_since)    
         except ApiException as e:
             print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def getTeamEventMatchesKeys(event_key):
+    def getTeamEventMatchesKeys(team_key, event_key):
         try:
-            return team_api_instance.get_team_event_matches_keys(event_key, if_modified_since=if_modified_since)    
+            return team_api_instance.get_team_event_matches_keys(team_key, event_key, if_modified_since=if_modified_since)    
         except ApiException as e:
             print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def get(team_key, event_key):
+    def getTeamEventMatchesSimple(team_key, event_key):
         try:
-            return team_api_instance.get_(team_key, event_key, if_modified_since=if_modified_since)    
+            return team_api_instance.get_team_event_matches_simple(team_key, event_key, if_modified_since=if_modified_since)    
         except ApiException as e:
             print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def get(event_key):
+    def getTeamEventStatus(team_key, event_key):
         try:
-            return team_api_instance.get_(event_key, if_modified_since=if_modified_since)    
+            return team_api_instance.get_team_event_status(team_key, event_key, if_modified_since=if_modified_since)    
         except ApiException as e:
             print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def get(event_key):
+    def getTeamEvents(team_key):
         try:
-            return team_api_instance.get_(event_key, if_modified_since=if_modified_since)    
+            return team_api_instance.get_(team_key, if_modified_since=if_modified_since)    
         except ApiException as e:
             print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
-    def get(event_key):
+    def getTeamEventsByYear(team_key, year):
         try:
-            return team_api_instance.get_(event_key, if_modified_since=if_modified_since)    
+            return team_api_instance.get_(team_key, year, if_modified_since=if_modified_since)    
         except ApiException as e:
             print("Exception when calling TeamApi->get_event_matches: %s\n" % e)
     def get(event_key):
@@ -406,15 +479,31 @@ def addOPRs(team_vals):
 TEAM = "frc2508"
 EVENT_KEY = "2024ndgf"
 teams = getEventInfo()
-pprint(getEventMatches(EVENT_KEY))
+addOPRs(teams)
+# pprint(teams)
 
-# addOPRs(teams)
+matches = getTeamEventMatches(TEAM,EVENT_KEY)
+# print(matches)
+addOPRs(teams)
+matchNums = [8,14,25,36,47,53,60,70,80]
+matchIdx = 0
 
+def getOurMatches():
+    for match in matches:
+        red_teams = ""
+        blue_teams = ""
+        for team in match.alliances.blue.team_keys:
+            blue_teams += (team[3:] + "%")
+        for team in match.alliances.red.team_keys:
+            red_teams += (team[3:] + "%")
+        print(f"{matchNums[matchIdx]}%Blue%{blue_teams}")
+        print(f"{matchNums[matchIdx]}%Red%{red_teams}")
+        matchIdx += 1
+    # print(match.alliances)
 
-# for team in teams.values():
-#     num = team["team_number"]
-#     nick = team["nickname"]
-#     loc = team["location"]
-#     print(f"{num}\t{nick}\t{loc}")
-#     # print(team)
-
+for team in teams.values():
+    num = team["team_number"]
+    nick = team["nickname"]
+    loc = team["location"]
+    print(f"{num}%{nick}%{loc}%{team['OPR']}%{team['DPR']}")
+    # print(team)

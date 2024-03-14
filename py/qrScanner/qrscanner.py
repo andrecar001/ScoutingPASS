@@ -9,7 +9,7 @@ from ocrSeparator import VideoStream,OCR
 import winsound
 
 
-frames = VideoStream(0).start()
+frames = VideoStream(1).start()
 cap = OCR().start()
 cap.set_exchange(frames)
 detector = cv2.QRCodeDetector()

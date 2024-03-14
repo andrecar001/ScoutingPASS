@@ -3,7 +3,7 @@ import threading
 class VideoStream:
     def __init__(self, src):
         self.stream = cv2.VideoCapture(src)
-        self.stream.set(cv2.CAP_PROP_EXPOSURE, -8)
+        #self.stream.set(cv2.CAP_PROP_EXPOSURE, -8)
         (self.grabbed,self.frame) = self.stream.read()
         self.stopped = False
     

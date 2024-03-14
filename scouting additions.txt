@@ -1,14 +1,12 @@
-add height
-Asking for a good driver is stupid
-good defense to offense/defense
-'autostart' and 'shooting preference'
-gear ratio L3,L2,L1
-stage timer to climb time
-ask about human player - (designated person)?
-cycle time
-remove radio for where they can score, turn into checkboxes
-teleop scores radio for where they can shoot "alot, little, don't know"
-make it better :3
-what are they doing in auto textbox
->:(
---how 'reckless' is the driver--probably not this
+reorganize such that questions follow logically:
+- questions asking about the same thing follow eachother
+- - EX: ask if able to climb -> climb time -> single / double climb
+- - EX: what do in auto -> auto score ammount -> eachother
+Was the same as last year pretty much. Good for freshman because they get to know people.
+it was fine but it was hard to find where they started from
+I didnt do much of it but from what I ended up doing, It was alright
+pretty easy to use 
+it was fine but there should be an option for "they dont know"
+It worked out well, but it was hard to remember when to add how someone grabbed a gamepeice when the end came quick
+I have no complaints about the match scouting forms
+I thought the format was really good and liked how the forms were organized
