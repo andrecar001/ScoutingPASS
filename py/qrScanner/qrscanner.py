@@ -1,3 +1,9 @@
+'''
+A file to help scan qr codes into whatever type of sheet you are working in, it simply copys the data from the qr code,
+paste, and hits the down key(this is specific for sheets). It also makes a file of all the data you have scanned
+in order to avoid repeats and data loss
+'''
+
 import pyautogui
 import subprocess
 import time
