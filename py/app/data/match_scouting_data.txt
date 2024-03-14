@@ -1,38 +1,12 @@
-s=KG;e=week 0;l=p;m=7;r=b1;t=3082;as=[25];dir=r;al=0;aas=0;ass=0;tas=0;tss=3;tta=0;tpu=x;dt=7.5;fs=o;nit=0;ds=x;dr=x;sr=3;die=1;tip=0;dn=0;all=0;co=Immobilized for first chunk of match.
-s=KG;e=week 0;l=p;m=6;r=b1;t=8234;as=[49];dir=r;al=0;aas=0;ass=0;tas=0;tss=0;tta=0;tpu=x;dt=0;fs=x;nit=0;ds=x;dr=x;sr=3;die=0;tip=0;dn=0;all=0;co=They may have just been testing driving
-s=KG;e=week 0;l=p;m=5;r=b1;t=2052;as=[49];dir=r;al=0;aas=0;ass=0;tas=1;tss=3;tta=0;tpu=x;dt=3.3;fs=o;nit=0;ds=3;dr=x;sr=4;die=0;tip=0;dn=0;all=1;co=
-s=KG;e=week 0;l=p;m=4;r=b1;t=5464;as=[25];dir=r;al=0;aas=0;ass=0;tas=0;tss=0;tta=0;tpu=x;dt=57.9;fs=a;nit=0;ds=x;dr=x;sr=3;die=0;tip=0;dn=1;all=0;co=Shooter would not make it to the speaker.
-s=KG;e=week 0;l=p;m=3;r=b1;t=2846;as=[25];dir=l;al=1;aas=0;ass=0;tas=9;tss=0;tta=0;tpu=f;dt=0;fs=x;nit=0;ds=2;dr=x;sr=4;die=0;tip=0;dn=0;all=1;co=Made one pathetic attempt at scoring at the speaker.
-s=KG;e=week 0;l=p;m=2;r=b1;t=3926;as=[37];dir=r;al=0;aas=0;ass=1;tas=0;tss=3;tta=0;tpu=f;dt=7.7;fs=o;nit=0;ds=2;dr=x;sr=3;die=0;tip=0;dn=1;all=0;co=
-s=SSC;e=week 0;l=p;m=10;r=b3;t=6719;as=[1];dir=r;al=0;aas=0;ass=0;tas=0;tss=0;tta=0;tpu=x;dt=0;fs=x;nit=0;ds=x;dr=x;sr=1;die=1;tip=0;dn=0;all=0;co=Didn't move or do anything the entire time
-s=SSC;e=week 0;l=p;m=9;r=b3;t=7797;as=[13];dir=l;al=1;aas=0;ass=0;tas=0;tss=5;tta=0;tpu=s;dt=0;fs=h;nit=0;ds=3;dr=3;sr=4;die=0;tip=0;dn=0;all=1;co=
-s=SSC;e=week 0;l=p;m=8;r=b3;t=2472;as=[1];dir=r;al=0;aas=1;ass=0;tas=0;tss=0;tta=0;tpu=f;dt=3.2;fs=x;nit=0;ds=1;dr=1;sr=2;die=1;tip=0;dn=1;all=0;co=
-s=SSC;e=Irondale;l=p;m=1;r=b3;t=2181;as=[25];dir=l;al=0;aas=0;ass=0;tas=0;tss=5;tta=0;tpu=f;dt=1.7;fs=a;nit=0;ds=2;dr=2;sr=3;die=0;tip=0;dn=0;all=1;co=It's pretty much a vacuum
-s=SSC;e=week 0;l=p;m=24;r=b1;t=2052;as=[49];dir=r;al=0;aas=0;ass=0;tas=0;tss=1;tta=0;tpu=s;dt=3.1;fs=a;nit=0;ds=2;dr=3;sr=3;die=0;tip=0;dn=1;all=0;co=
-s=AG;e=IRONDALE;l=p;m=1;r=r3;t=9576;as=[12];dir=l;al=0;aas=0;ass=0;tas=1;tss=3;tta=0;tpu=f;dt=0;fs=p;nit=0;ds=2;dr=2;sr=4;die=0;tip=0;dn=0;all=0;co=
-s=AG;e=IRONDALE;l=p;m=2;r=r2;t=2472;as=[24];dir=r;al=1;aas=0;ass=0;tas=0;tss=0;tta=0;tpu=f;dt=0;fs=p;nit=0;ds=1;dr=1;sr=1;die=1;tip=0;dn=0;all=0;co=
-s=AG;e=IRONDALE;l=p;m=3;r=r1;t=2052;as=[48];dir=r;al=0;aas=0;ass=0;tas=2;tss=3;tta=0;tpu=f;dt=6.8;fs=a;nit=0;ds=2;dr=2;sr=4;die=0;tip=0;dn=0;all=1;co=
-s=AG;e=IRONDALE;l=p;m=4;r=r3;t=4207;as=[24];dir=l;al=1;aas=0;ass=1;tas=1;tss=2;tta=0;tpu=f;dt=0;fs=p;nit=0;ds=2;dr=2;sr=3;die=0;tip=0;dn=0;all=1;co=
-s=AG;e=IRONDALE;l=p;m=5;r=r2;t=3206;as=[48];dir=l;al=1;aas=0;ass=0;tas=0;tss=0;tta=0;tpu=b;dt=12.8;fs=o;nit=0;ds=2;dr=2;sr=3;die=0;tip=0;dn=0;all=0;co=
-s=AG;e=IRONDALE;l=p;m=6;r=r2;t=2052;as=[36];dir=r;al=0;aas=0;ass=0;tas=0;tss=3;tta=0;tpu=f;dt=0;fs=p;nit=0;ds=2;dr=2;sr=3;die=0;tip=0;dn=0;all=0;co=
-s=CT;e=week 0;l=p;m=10;r=b2;t=4059;as=[13];dir=;al=0;aas=0;ass=0;tas=0;tss=3;tta=0;tpu=f;dt=0;fs=x;nit=0;ds=3;dr=2;sr=5;die=0;tip=0;dn=0;all=0;co=
-s=CT;e=week zero;l=p;m=1;r=b2;t=3206;as=[36];dir=r;al=0;aas=0;ass=1;tas=0;tss=3;tta=0;tpu=f;dt=26.9;fs=a;nit=0;ds=2;dr=x;sr=4;die=0;tip=0;dn=0;all=1;co=
-s=CT;e=week 0;l=p;m=9;r=b2;t=5464;as=[13];dir=;al=1;aas=0;ass=1;tas=4;tss=3;tta=0;tpu=f;dt=0;fs=x;nit=0;ds=3;dr=x;sr=5;die=0;tip=0;dn=0;all=1;co=
-s=SB;e=IRONDALE;l=p;m=9;r=r1;t=2052;as=[48];dir=r;al=0;aas=0;ass=0;tas=0;tss=4;tta=0;tpu=f;dt=17.8;fs=o;nit=0;ds=3;dr=x;sr=5;die=0;tip=0;dn=0;all=1;co=
-s=SB;e=IRONDALE;l=p;m=8;r=r3;t=3130;as=[12];dir=l;al=1;aas=0;ass=0;tas=0;tss=5;tta=0;tpu=f;dt=0;fs=o;nit=0;ds=3;dr=x;sr=5;die=0;tip=0;dn=0;all=1;co=
-s=SB;e=IRONDALE;l=p;m=7;r=r1;t=3926;as=[48];dir=l;al=1;aas=0;ass=1;tas=0;tss=0;tta=0;tpu=f;dt=12.5;fs=o;nit=0;ds=2;dr=x;sr=4;die=0;tip=0;dn=1;all=0;co=
-s=SB;e=IRONDALE;l=p;m=6;r=r1;t=9676;as=[48];dir=r;al=1;aas=0;ass=0;tas=2;tss=0;tta=0;tpu=f;dt=0;fs=x;nit=0;ds=1;dr=x;sr=5;die=0;tip=0;dn=1;all=0;co=
-s=SB;e=IRONDALE;l=p;m=5;r=r3;t=7797;as=[36];dir=l;al=0;aas=0;ass=0;tas=0;tss=11;tta=0;tpu=b;dt=0;fs=o;nit=0;ds=3;dr=x;sr=4;die=0;tip=0;dn=0;all=1;co=
 IW	2024ndgf	p	8	b3	7028	[21]	1	0	1	5	5	0	f	0	x	0	3	x	5	0	0	0	1	
 IW	2024ndgf	p	9	b3	3275	[11]	1	0	1	0	4	0	f	2.2	o	0	2	2	4	0	0	0	0	
-Pog	grand forks	qm	35	b2	246	[37]	l	1	2	6	3	5	6	s	0	h	1	v	g	4	0	1	0	0	
 IW	2024ndgf	p	15	b3	3277	[10]	0	0	0	4	1	0	x	0	x	0	2	x	4	0	0	0	0	
 IW	2024ndgf	p	14	b3	8586	[4]	0	0	0	0	1	0	s	0	x	0	1	x	2	0	0	0	0	
 IW	2024ndgf	p	11	b3	4181	[9]	1	0	1	1	2	0	f	3.7	o	0	x	x	3	0	0	0	0	
 IW	2024ndgf	p	10	b3	3871	[10]	0	0	0	0	0	0	f	0	x	0	1	x	2	1	0	0	0	
 IW	2024ndgf	p	5	b3	4239	[4]	0	0	0	0	3	0	f	3.0	s	0	2	x	3	0	0	0	0	
 IW	2024ndgf	p	7	b3	3293	[10]	0	0	0	0	0	0	x	0	x	0	x	x	1	0	0	0	0	Stationary entire match
-GN	2024ndgf	p	15	b1	3042	[3]	0	0	0	0	0	0	f	0	x	0	1	x	3	0	0	0	0	Didn�t do anything for auto period
+GN	2024ndgf	p	15	b1	3042	[3]	0	0	0	0	0	0	f	0	x	0	1	x	3	0	0	0	0	Didn't do anything for auto period
 KG	2024ndgf	p	27	r2	5172	[6]	1	0	0	0	7	0	x	17.5	o	0	3	x	5	0	0	0	1	
 KG	2024ndgf	p	26	r2	4198	[8]	1	0	1	0	1	0	f	27.1	a	0	x	x	3	0	0	1	0	Missed multiple shots
 KG	2024ndgf	p	25	r2	3277	[7]	1	0	0	4	1	0	b	0	x	0	3	x	4	0	0	0	1	
@@ -50,27 +24,27 @@ KG	2024ndgf	p	10	r2	8878	[10]	0	0	0	0	0	0	x	0	x	0	x	x	1	1	0	0	0	Never moved at a
 KG	2024ndgf	p	9	r2	4539	[10]	1	0	0	1	5	0	x	2.4	o	0	2	x	4	0	0	1	0	
 KG	2024ndgf	p	8	r2	3042	[18]	0	0	0	0	1	0	f	0	x	0	2	2	3	0	0	0	0	Note got stuck in the intake
 KG	2024ndgf	p	7	r2	8586	[5]	0	0	0	0	0	0	s	0	x	0	1	x	2	0	0	0	0	Only shot 2 notes, both missed
-KG	2024ndgf	p	6	r2	8255	[7]	0	0	0	1	0	0	s	4.0	a	0	x	x	1	0	0	0	0	It�s driving was weird and slow, seemed to get stuck.
+KG	2024ndgf	p	6	r2	8255	[7]	0	0	0	1	0	0	s	4.0	a	0	x	x	1	0	0	0	0	It's driving was weird and slow, seemed to get stuck.
 KG	2024ndgf	p	5	r2	5638	[21]	1	0	4	0	8	1	f	0	a	0	3	3	5	0	0	0	1	
 Jm	2024ndgf	p	10	b1	5172	[9]	0	0	1	0	9	0	b	0	x	0	2	x	4	0	0	0	1	
 Jm	2024ndgf	p	9	b1	876	[21]	0	0	2	0	8	0	b	0	a	0	2	x	4	0	0	0	1	
 Jm	2024ndgf	p	8	b1	3298	[11]	1	0	0	1	0	0	s	0	x	0	x	x	3	0	1	0	0	
-Jm	2024ndgf	p	5	b1	3278	[11]	1	0	0	0	0	0	s	0	x	0	1	x	2	0	0	0	0	Shot 3 times and didn�t make one
+Jm	2024ndgf	p	5	b1	3278	[11]	1	0	0	0	0	0	s	0	x	0	1	x	2	0	0	0	0	Shot 3 times and didn't make one
 Jm	2024ndgf	p	7	b1	4226	[20]	1	0	1	0	3	0	b	0	x	0	2	x	3	0	0	0	0	
 Jm	2024ndgf	p	6	b1	3134	[21]	0	1	0	0	0	0	b	0	x	0	2	x	4	0	0	0	0	
 AOD	2024ndgf	p	27	r3	6628	[7]	1	0	0	1	4	0	b	0	p	0	2	2	3	0	0	0	1	Did a bit of defense and a bit of offense
-AOD	2024ndgf	p	26	r3	4360	[5]	0	0	0	0	2	0	f	0	x	0	1	x	3	0	0	0	0	Generally wasn�t able to do much
+AOD	2024ndgf	p	26	r3	4360	[5]	0	0	0	0	2	0	f	0	x	0	1	x	3	0	0	0	0	Generally wasn't able to do much
 AOD	2024ndgf	p	25	r3	3134	[9]	1	0	0	0	6	0	b	0	x	0	3	x	5	0	0	0	1	Very efficient
-AOD	2024ndgf	p	24	r3	7257	[9]	0	0	1	2	4	0	b	7.7	o	0	3	x	3	0	0	0	1	Didn�t miss a single time
+AOD	2024ndgf	p	24	r3	7257	[9]	0	0	1	2	4	0	b	7.7	o	0	3	x	3	0	0	0	1	Didn't miss a single time
 AOD	2024ndgf	p	22	r3	3276	[10]	1	0	0	2	6	0	b	0	a	0	3	x	5	0	0	0	1	Very effective offense player
 AOD	2024ndgf	p	21	r3	3278	[11]	0	0	0	0	3	0	f	0	x	0	1	x	3	0	0	0	0	
 AOD	2024ndgf	p	20	r3	3278	[10]	0	0	0	0	4	0	f	0	a	0	2	x	3	0	0	0	1	Would probably be a good teammate
 AOD	2024ndgf	p	19	r3	4226	[9]	0	0	1	0	1	0	f	0	a	0	2	1	3	0	0	0	1	Decent support but not the best defense.
-AOD	2024ndgf	p	18	r3	2450	[7]	0	0	1	2	0	0	s	0	x	0	1	x	4	0	0	0	0	Bumped into and broke another bot and didn�t score much
-AOD	2024ndgf	p	17	r3	4536	[7]	0	0	0	2	3	0	b	3.1	o	0	3	x	4	0	0	0	1	Moved fast, wasn�t overly aggressive
-AOD	2024ndgf	p	16	r3	7048	[9]	0	0	0	3	0	0	f	0	x	0	2	x	3	0	0	0	1	Didn�t seem offensive or defensive- good support role
+AOD	2024ndgf	p	18	r3	2450	[7]	0	0	1	2	0	0	s	0	x	0	1	x	4	0	0	0	0	Bumped into and broke another bot and didn't score much
+AOD	2024ndgf	p	17	r3	4536	[7]	0	0	0	2	3	0	b	3.1	o	0	3	x	4	0	0	0	1	Moved fast, wasn't overly aggressive
+AOD	2024ndgf	p	16	r3	7048	[9]	0	0	0	3	0	0	f	0	x	0	2	x	3	0	0	0	1	Didn't seem offensive or defensive- good support role
 AOD	2024ndgf	p	15	r3	2652	[4]	0	0	0	0	3	0	b	2.6	o	0	2	x	3	0	0	0	1	
-AOD	2024ndgf	p	14	r3	9745	[4]	0	0	0	0	0	0	x	0	x	0	x	x	1	1	0	0	0	Wasn�t able to move
+AOD	2024ndgf	p	14	r3	9745	[4]	0	0	0	0	0	0	x	0	x	0	x	x	1	1	0	0	0	Wasn't able to move
 AOD	2024ndgf	p	12	r3	2883	[10]	1	0	2	1	6	0	f	0	a	0	2	x	4	0	0	0	1	Quick, efficient
 AOD	2024ndgf	p	11	r3	6146	[7]	1	0	0	0	5	0	b	0	a	0	2	x	3	0	0	0	0	Made confusing moves sometimes
 AOD	2024ndgf	p	10	r3	3313	[9]	0	0	0	0	0	0	x	0	x	0	x	x	1	1	0	0	0	Never moved at all
@@ -86,7 +60,7 @@ SL	2024ndgf	p	19	r1	3313	[7]	1	0	2	0	0	0	f	9.0	o	0	1	x	1	0	0	1	0	moved around ra
 SL	2024ndgf	p	18	r1	8188	[8]	1	0	1	0	0	0	x	30.8	a	0	1	1	2	0	0	0	0	started climbing early, failed shooting
 SL	2024ndgf	p	17	r1	3134	[9]	0	0	2	0	5	1	f	9.3	a	0	3	x	3	0	0	0	0	
 SL	2024ndgf	p	16	r1	4663	[11]	1	0	1	0	0	0	f	2.7	s	0	2	x	4	0	0	0	1	also got harmony 
-SL	2024ndgf	p	15	r1	9576	[9]	0	0	0	0	4	0	x	13.3	a	0	2	x	3	0	0	0	0	wasn�t active for a little while at beginning of tele 
+SL	2024ndgf	p	15	r1	9576	[9]	0	0	0	0	4	0	x	13.3	a	0	2	x	3	0	0	0	0	wasn't active for a little while at beginning of tele 
 SL	2024ndgf	p	14	r1	5172	[21]	0	0	2	0	6	0	f	0	x	0	3	x	5	0	0	0	1	
 SL	2024ndgf	p	12	r1	2177	[7]	0	0	0	0	2	0	x	12.5	a	0	1	1	2	0	0	0	0	drove around randomly and not good speaker
 SL	2024ndgf	p	11	r1	5638	[7]	0	0	1	1	3	1	x	3.7	a	0	3	x	5	0	0	0	0	great at speaker, below average at amp
@@ -94,7 +68,7 @@ SL	2024ndgf	p	10	r1	2549	[7]	0	0	0	1	0	0	f	0	x	0	2	x	2	0	0	0	0
 SL	2024ndgf	p	9	r1	2500	[8]	1	0	1	0	3	0	s	0	x	0	2	x	3	0	0	0	0	
 SL	2024ndgf	p	8	r1	6628	[5]	1	1	0	1	0	0	x	0	x	0	1	2	2	1	0	0	0	
 SL	2024ndgf	p	7	r1	7048	[4]	0	0	0	0	1	0	x	0	x	0	1	1	2	0	0	0	0	
-SL	2024ndgf	p	6	r1	3026	[9]	0	0	1	0	0	0	f	0	o	0	1	1	3	0	0	1	0	was struggling with bottom intake and couldn�t take not
+SL	2024ndgf	p	6	r1	3026	[9]	0	0	1	0	0	0	f	0	o	0	1	1	3	0	0	1	0	was struggling with bottom intake and couldn't take not
 SL	2024ndgf	p	5	r1	4181	[11]	0	0	2	2	1	0	f	0	a	0	2	2	2	0	0	0	0	hard to see, probably would need to get extra info
 AG	2024ndgf	p	22	b3	2500	[7]	1	0	0	0	4	0	s	3.4	o	0	2	x	3	0	0	0	0	
 AG	2024ndgf	p	20	b3	3293	[11]	1	2	0	5	0	0	f	4.5	o	0	2	3	3	0	0	0	1	
@@ -105,7 +79,7 @@ AG	2024ndgf	p	17	b3	3026	[21]	1	0	1	0	2	0	f	14.9	a	0	2	1	3	0	0	0	0
 3275	Phoenix 	36	36		s		L3	f	Y	f		0	1	0	1		Y	10	s	N	[21]	[9]	o	f	Shoot speaker	Not much but not clueless	0
 877	Jerry				m	?	?	c	Y	f	?	0	0	3	3		Y	?	c	N	[]	[20]	d	n	Drive forward	They had no idea for a lot	0
 3058	Public enemy			105.5	s		L2	f	Y	b	9-10	0	2	9	9		Y	4	d	N	[21,8]	[9,9]	o	f	Can shoot in speaker and get off line and grab note	They were very versatile for chain	0
-3293	Big G			107	s		Medium 	n	Y	f	12	2	0	9	0		Y	10	s	Y	[10,7,10]	[]	o	f	Score in amp pick up 2 middle and put in shooters way.	Didn�t know length and width 	0
+3293	Big G			107	s		Medium 	n	Y	f	12	2	0	9	0		Y	10	s	Y	[10,7,10]	[]	o	f	Score in amp pick up 2 middle and put in shooters way.	Didn't know length and width 	0
 2450	Zane	33	33	80	s		L1	n	Y	s	15 sec	0	1	4	6		Y	7	d	N	[9,7,10]	[9,7,10]	o	l	Shoot note go to center	Had most numbers	0
 2549	Becky	30	33	105	s		L3	n	Y	b	5	2	2	5	5	8	Y		c	N	[8,9,9,8]	[21,11,7]	x	l	2 notes in speaker	Not sure about a lot in auto.	0
 2530	Riffs of insanity	31	36	110.7	s			f	Y	b	6 secs	0	4	4	4	3	Y	5	d	Y	[7,9,10,9,21,21]	[21,10,7,21,18,11]	o	l	Leave, pick up score either sides.	They were prepared lots of auto options.	0
@@ -122,19 +96,19 @@ AG	2024ndgf	p	17	b3	3026	[21]	1	0	1	0	2	0	f	14.9	a	0	2	1	3	0	0	0	0
 5929	wally	32	27	78	w		unknown 	c	Y	f	unknown 	0	0	3	0		N	slower 	c	N	[10,6]	[24,24]	o	n	drove forward 		1
 6146	maestro 	29	30	97	s		1-15	n	Y	f	15	0	2	0	4		Y	3	s	N	[21,21]	[9,45]	o	l	score 3		5
 7048		24	24	92	s		unknown 	n	Y	f	unknown 	0	1	1	3		N		d	N	[9,11,7]	[9]	o	f	shoot one		3
-3755	elmo	31	31		s		14-1	n	N	b	unknown 	0	1	0	0		Y	14	d	N	[6,21,11]	[9,10]	d	n	none	didn�t know a lot of things 	1
-4360	ferdanand	28	28	80	s		medium 	n	N	f	none	0	0	0	0	0	N	x	c	N	[]	[]	d	f	none	doesn�t work well like at all 	2
+3755	elmo	31	31		s		14-1	n	N	b	unknown 	0	1	0	0		Y	14	d	N	[6,21,11]	[9,10]	d	n	none	didn't know a lot of things 	1
+4360	ferdanand	28	28	80	s		medium 	n	N	f	none	0	0	0	0	0	N	x	c	N	[]	[]	d	f	none	doesn't work well like at all 	2
 3926	icespit	28	32	116.8	s		l1	n	Y	f	unknown 	0	3	2	2		Y	4	d	N	[9,7]	[9]		f	score 1	average 	3
-4198	fish	30	29.5	120	s		l1	n	Y	x	don�t know	0	1	1	3		Y	5	d	N	[6]	[21,10,7]	o	f	1 note	lots of variables 	4
+4198	fish	30	29.5	120	s		l1	n	Y	x	don't know	0	1	1	3		Y	5	d	N	[6]	[21,10,7]	o	f	1 note	lots of variables 	4
 4181	none	36	36	88	s		l2	n	Y	f	8	0	2	4	0		Y	6	d	N	[21,21]	[21,21]	o	o	score 1	interesting dynamic	2
 4226	bounty	29.5		117	s		low	n	Y	b	no clue	0	1	4	4		Y	no clue	d	N	[21]	[21,21,9]	o	f	score 1	kinda confused 	2
-4238		20	28	105	s			n	N	f	13	0	1	0	6		N	10	d	Y	[21]	[9,10,7]	o	f	shoot 3 and grab a 4th	doesn�t work very well and don�t know a lot 	2
-4239	jawn	33	39	099	s		l2	f	Y	f	unsure 	0	2	2	7	0	N	3-4	d	N	[5,6]	[9]	o	n	2 and out	didn�t know a few things 	3
-5576	gary	25	29	72	w		3-1	f	Y	b	doesn�t know 	0	1	2	2		N	unsure 	c	N	[5,21,12]	[9,21]	x	l	score and move out	sick pins	7
+4238		20	28	105	s			n	N	f	13	0	1	0	6		N	10	d	Y	[21]	[9,10,7]	o	f	shoot 3 and grab a 4th	doesn't work very well and don't know a lot 	2
+4239	jawn	33	39	099	s		l2	f	Y	f	unsure 	0	2	2	7	0	N	3-4	d	N	[5,6]	[9]	o	n	2 and out	didn't know a few things 	3
+5576	gary	25	29	72	w		3-1	f	Y	b	doesn't know 	0	1	2	2		N	unsure 	c	N	[5,21,12]	[9,21]	x	l	score and move out	sick pins	7
 5464	thunderstruck 	38	39	91	s		l2	n	Y	f	8	0	4	0	8		Y	5	d	N	[8,21,21,21]	[21,7,10]	x	l	4 peice 	has color scheme 	6
 4674	none	29	29	98	s		medium 13-2	n	Y	f	6	1	0	0	6		Y	10	s	N	[21]	[21,9]	d	f	score 1	okay team	6
 4663	mcmera	34	34	84	s		medium	n	Y	f	8	0	4	1	2		Y	5	d	N	[8]	[21,21,21,21]	o	l	4 score	no robot yet but they know quite a bit 	6
-4596	cassiopea	29	29	119.8	s			n	Y	f	10	0	3	5	5		Y	12	s	N	[6]	[21,20]	d	l	score 2-3	pretty scattered didn�t know mutch	4
+4596	cassiopea	29	29	119.8	s			n	Y	f	10	0	3	5	5		Y	12	s	N	[6]	[21,20]	d	l	score 2-3	pretty scattered didn't know mutch	4
 4539	kashmir 	025	025	075.5	s			f	Y	b	x6.8	0	2	4	0	3	N	3	s	N	[21]	[21]	o	l	pick up notes 	pretty nolegble 	5
 3278	Squatchbot	32	38	88	m		12:1	n	Y	b	9	0	0	0	5	0	Y	x	d	N	[11]	[9,7]	o	f	pick up note		5
 2654	Switchback	36	36	124	s		L2	n	N	f		0	0	10	10	12	Y	10	d	N	[21]	[20]	o	l	score speaker once, leave	auto doesn't work yet	7
@@ -156,7 +130,7 @@ SSC	2024ndgf	p	17	b1	4198	[10]	0	0	1	0	1	0	f	1.7	h	0	2	1	3	0	0	1	0
 Ey	2024ndgf	p	16	b2	3277	[9]	0	0	2	0	5	0	f	0	p	0	3	2	4	1	0	0	1	Even though die it scored fast
 Ey	2024ndgf	p	15	b2	4239	[5]	0	0	0	0	0	0	x	0	o	0	3	4	3	0	0	0	1	They played great defense  heavy enough to block
 Ey	2024ndgf	p	17	b2	4198	[11]	0	0	0	0	4	0	b	0	o	0	2	2	3	0	0	0	0	They did nothing in auto but good shooting and avoiding
-Ey	2024ndgf	p	18	b2	4360	[7]	0	0	0	0	0	0	f	0	p	0	1	1	1	0	1	0	0	They didn�t drop but only picked 1 note up
+Ey	2024ndgf	p	18	b2	4360	[7]	0	0	0	0	0	0	f	0	p	0	1	1	1	0	1	0	0	They didn't drop but only picked 1 note up
 AG	2024ndgf	qm	15	b1	7677	[10]	0	0	0	0	3	0	f	15.6	p	0	2	x	3	0	0	0	0	
 AG	2024ndgf	qm	17	b3	7048	[7]	0	0	1	0	4	0	x	0	p	0	1	x	2	0	0	0	0	
 AG	2024ndgf	qm	18	b3	3275	[10]	0	0	2	0	2	0	f	0	p	0	2	x	4	1	0	0	1	Doing very well before the robot died
@@ -200,16 +174,16 @@ JB	2024ndgf	qm	21	r3	3058	[21]	1	0	2	0	5	0	x	5.3	o	0	2	x	4	0	0	0	1	Not extremely
 JB	2024ndgf	qm	22	r3	2654	[5]	1	0	0	0	8	0	f	7.9	a	0	3	x	4	0	0	0	1	Good robot, only scored in speaker
 JB	2024ndgf	qm	23	r3	2549	[10]	0	0	1	0	4	1	f	0	p	0	2	x	4	0	0	1	1	Good overall, not the best
 JB	2024ndgf	qm	24	r3	3026	[23]	0	0	0	0	4	0	f	6.1	o	0	3	x	3	0	0	0	0	Fairly good scorer
-AOD	2024ndgf	qm	2	b2	3278	[9]	1	0	0	0	3	0	b	0	a	0	1	x	3	0	0	0	0	Slow, �Blocky� movement
+AOD	2024ndgf	qm	2	b2	3278	[9]	1	0	0	0	3	0	b	0	a	0	1	x	3	0	0	0	0	Slow, 'Blocky' movement
 AOD	2024ndgf	qm	3	b2	6453	[11]	0	0	0	0	0	0	x	0	x	0	x	x	1	1	0	0	0	Barely moved at all.
 AOD	2024ndgf	qm	4	b2	4674	[9]	1	0	1	0	4	0	f	0	a	0	2	2	3	0	0	0	1	Ran interference and still managed to score points.
 AOD	2024ndgf	qm	6	b2	3926	[9]	1	0	2	5	1	0	f	0	p	0	3	x	5	0	0	0	1	Fast, scored lots of notes, and rarely hit other bots.
 AOD	2024ndgf	qm	7	b2	8188	[9]	1	0	1	0	5	0	f	0	x	0	1	x	4	0	0	1	0	Fast but would frequently stop.
 AOD	2024ndgf	qm	9	b2	3277	[7]	1	0	0	0	11	0	f	0	x	0	3	x	4	0	0	0	1	Incredible offense.
-AOD	2024ndgf	qm	10	b2	6453	[11]	0	0	0	0	0	0	x	0	p	0	1	x	1	0	0	0	0	Didn�t do anything other than park on the stage.
+AOD	2024ndgf	qm	10	b2	6453	[11]	0	0	0	0	0	0	x	0	p	0	1	x	1	0	0	0	0	Didn't do anything other than park on the stage.
 AOD	2024ndgf	qm	11	b2	5464	[9]	0	0	0	0	2	0	f	3.5	s	0	1	x	3	0	0	0	0	Mostly just wandered around the arena.
 AOD	2024ndgf	qm	12	b2	3926	[7]	1	0	0	3	3	0	b	3.6	o	0	2	x	4	0	0	0	1	
-AOD	2024ndgf	qm	13	b2	8878	[4]	1	0	0	0	0	0	x	0	x	0	x	x	1	1	0	0	0	Didn�t move after autonomous
+AOD	2024ndgf	qm	13	b2	8878	[4]	1	0	0	0	0	0	x	0	x	0	x	x	1	1	0	0	0	Didn't move after autonomous
 TO	2024ndgf	qm	33	r2	3278	[14]	0	0	0	0	0	0	f	0	o	0	2	x	3	0	0	0	0	
 JB	2024ndgf	qm	26	r3	3134	[20]	1	0	4	0	4	1	f	0	x	0	2	x	5	0	0	0	1	Good robot, not great driving
 JB	2024ndgf	qm	27	r3	876	[21]	1	0	2	3	4	2	f	6.6	o	0	x	x	4	0	0	0	1	Great robot
@@ -222,7 +196,7 @@ JB	2024ndgf	qm	33	r3	4536	[11]	0	0	0	0	0	0	x	0	x	0	x	x	3	1	0	0	0	Did not move du
 JB	2024ndgf	qm	34	r3	3277	[9]	1	0	3	0	6	0	f	16.6	o	0	2	x	4	0	0	1	1	Good, amp scoring not working
 JB	2024ndgf	qm	35	r3	2450	[9]	0	0	1	0	1	0	s	0	p	0	2	x	3	1	0	0	0	Died for most of match
 GN	2024ndgf	qm	32	b3	8255	[21]	1	0	1	2	2	1	b	3.6	o	0	2	x	3	0	0	0	1	good auto period, focuses on amp after 2 speaker scores
-GN	2024ndgf	qm	31	b3	4360	[3]	0	0	0	0	0	0	x	0	x	0	1	1	2	0	1	0	0	Was very lost and didn�t do anything
+GN	2024ndgf	qm	31	b3	4360	[3]	0	0	0	0	0	0	x	0	x	0	1	1	2	0	1	0	0	Was very lost and didn't do anything
 GN	2024ndgf	qm	30	b3	2883	[10]	1	0	2	1	5	0	b	0	a	0	3	x	5	0	0	0	1	Very fast, heavy speaker player
 Jm	2024ndgf	qm	24	r1	8188	[21]	0	0	1	4	1	0	b	0	o	0	2	x	4	0	0	0	1	
 Jm	2024ndgf	qm	23	r1	4536	[6]	0	0	1	4	0	0	x	0	o	0	2	x	2	0	0	1	0	
@@ -242,7 +216,7 @@ Jm	2024ndgf	qm	9	r1	3298	[10]	1	0	0	1	0	0	x	2.3	o	0	1	x	2	0	0	0	0
 Jm	2024ndgf	qm	6	r1	7235	[7]	0	0	0	0	0	0	x	0	x	0	x	x	3	1	0	0	0	
 Jm	2024ndgf	qm	5	r1	6146	[8]	1	0	1	0	8	0	x	3.8	o	0	2	x	4	0	0	0	1	
 Jm	2024ndgf	qm	4	r1	8255	[9]	1	0	1	2	0	0	s	0	x	0	2	x	2	0	1	0	0	
-Jm	2024ndgf	qm	3	r1	3871	[7]	1	0	0	0	0	0	x	0	x	0	x	x	1	0	0	0	0	It�s was bugging out 
+Jm	2024ndgf	qm	3	r1	3871	[7]	1	0	0	0	0	0	x	0	x	0	x	x	1	0	0	0	0	It's was bugging out 
 Jm	2024ndgf	qm	2	r1	4536	[21]	0	0	1	2	3	0	x	2.6	o	0	3	x	5	0	0	0	1	
 JG	2024ndgf	qm	29	b3	6628	[4]	1	0	0	3	0	0	x	0	x	0	2	x	3	0	0	0	0	
 JG	2024ndgf	qm	28	b3	5658	[23]	0	0	0	0	2	0	f	12.1	s	0	2	x	3	0	1	0	0	
@@ -261,15 +235,15 @@ KG	2024ndgf	p	19	b3	2177	[7]	1	0	1	0	3	1	f	0	a	0	2	x	3	0	0	0	0
 KG	2024ndgf	p	18	b3	3275	[10]	1	0	1	0	1	0	f	0	x	0	x	x	3	1	0	0	0	Died halfway through match
 KG	2024ndgf	qm	17	b3	7048	[7]	0	0	0	0	4	0	f	0	x	0	2	x	3	0	0	1	0	
 KG	2024ndgf	qm	16	b3	8255	[10]	0	0	1	1	0	0	s	0	x	0	2	x	3	0	1	1	0	
-KG	2024ndgf	qm	15	b3	5929	[3]	1	0	0	0	0	0	x	0	x	0	1	x	1	1	0	0	0	Died at the end. They weren�t defense or offense
+KG	2024ndgf	qm	15	b3	5929	[3]	1	0	0	0	0	0	x	0	x	0	1	x	1	1	0	0	0	Died at the end. They weren't defense or offense
 KG	2024ndgf	qm	13	b3	8586	[9]	0	0	0	0	2	0	s	0	x	0	x	x	3	0	0	0	0	
-KG	2024ndgf	qm	12	b3	4536	[21]	0	0	0	0	0	0	x	0	x	0	x	x	3	1	0	0	0	Was technically moving, but barely and couldn�t go far
+KG	2024ndgf	qm	12	b3	4536	[21]	0	0	0	0	0	0	x	0	x	0	x	x	3	1	0	0	0	Was technically moving, but barely and couldn't go far
 KG	2024ndgf	qm	11	b3	2177	[7]	0	0	0	0	0	0	x	0	x	0	x	x	1	1	0	0	0	Died almost immediately after auto
 KG	2024ndgf	qm	10	b3	4663	[4]	1	0	1	0	6	0	f	11.9	a	0	2	x	3	0	0	0	1	
 KG	2024ndgf	qm	9	b3	5638	[11]	0	0	0	0	0	0	x	0	x	0	x	x	3	1	0	0	0	Never moved
 KG	2024ndgf	qm	7	b3	4181	[7]	1	0	1	3	2	1	f	8.4	o	0	3	x	4	0	0	0	1	
 KG	2024ndgf	qm	6	b3	5929	[3]	1	0	0	0	0	0	x	17.0	p	0	1	1	1	0	0	0	0	
-KG	2024ndgf	qm	5	b3	2177	[7]	1	0	0	0	1	0	x	11.1	o	0	x	x	3	1	0	1	0	Didn�t move first chunk of match
+KG	2024ndgf	qm	5	b3	2177	[7]	1	0	0	0	1	0	x	11.1	o	0	x	x	3	1	0	1	0	Didn't move first chunk of match
 KG	2024ndgf	qm	4	b3	877	[3]	1	0	0	0	0	0	x	0	x	0	1	1	2	0	0	0	0	
 KG	2024ndgf	qm	3	b3	5576	[3]	1	0	0	1	0	0	x	5.5	o	0	2	x	3	0	0	1	0	Missed multiple shots in the speaker
 KG	2024ndgf	qm	2	b3	4238	[3]	0	0	0	0	0	0	x	0	x	0	x	x	3	1	0	0	0	Robot never activated
@@ -326,7 +300,7 @@ AOD	2024ndgf	qm	57	b2	3276	[9]	1	0	2	3	3	0	b	3.6	o	0	3	x	5	0	0	0	1	Did well with
 AOD	2024ndgf	qm	56	b2	2177	[7]	1	0	0	0	0	0	f	2.5	o	0	2	x	4	0	0	1	0	They missed all their shots at the speaker
 AOD	2024ndgf	qm	55	b2	2450	[11]	1	0	0	4	0	0	s	0	p	0	x	x	4	0	0	0	1	Good support
 AOD	2024ndgf	qm	54	b2	3755	[9]	1	0	1	0	3	0	x	6.6	o	0	2	x	4	0	0	0	1	Had a good auto and worked well with others
-AOD	2024ndgf	qm	52	b2	8586	[6]	0	0	0	0	2	0	s	0	a	0	1	x	3	0	0	0	0	Didn�t score much and ran into lots of things
+AOD	2024ndgf	qm	52	b2	8586	[6]	0	0	0	0	2	0	s	0	a	0	1	x	3	0	0	0	0	Didn't score much and ran into lots of things
 AOD	2024ndgf	qm	51	b2	3276	[9]	1	0	3	3	2	0	b	0	x	0	3	x	4	0	0	0	1	Good support (also really accurate and fast)
 AOD	2024ndgf	qm	50	b2	7048	[10]	0	0	1	3	0	0	f	0	p	0	2	x	3	0	0	0	1	Good support teammate
 AOD	2024ndgf	qm	49	b2	4536	[7]	0	0	0	0	0	0	x	0	x	0	x	x	1	1	0	0	0	Barely moved at all
@@ -335,7 +309,7 @@ AOD	2024ndgf	qm	47	b2	9576	[9]	1	0	1	0	4	1	x	3.5	s	0	2	x	4	0	0	0	1	Fast and accu
 AOD	2024ndgf	qm	46	b2	3755	[3]	0	0	0	0	5	0	f	12.7	h	0	2	x	3	0	0	0	1	Good at scoring speaker and climbing
 AOD	2024ndgf	qm	45	b2	5929	[3]	1	0	0	0	0	0	f	0	a	0	x	1	3	0	0	0	0	Ran into random things (walls, stages, ect)
 AOD	2024ndgf	qm	44	b2	877	[6]	1	0	0	0	0	0	x	0	p	0	3	3	3	0	0	0	1	Prevented multiple bots from scoring on their speaker
-AOD	2024ndgf	qm	43	b2	2500	[3]	1	0	0	0	3	0	s	0	x	0	2	x	4	0	0	0	0	They helped, but didn�t gain many points
+AOD	2024ndgf	qm	43	b2	2500	[3]	1	0	0	0	3	0	s	0	x	0	2	x	4	0	0	0	0	They helped, but didn't gain many points
 AOD	2024ndgf	qm	42	b2	4226	[11]	1	0	0	3	0	0	x	2.6	o	0	2	x	2	0	0	0	1	Good support, focusing on the amp
 AOD	2024ndgf	qm	41	b2	2883	[5]	1	0	0	0	0	0	x	0	h	0	2	2	3	0	0	0	0	Delayed the other team, but not for long
 AOD	2024ndgf	qm	40	b2	3058	[9]	1	0	1	0	5	0	b	3.6	o	0	3	x	5	0	0	0	1	Very fast, but were able to avoid hitting other bots
@@ -350,9 +324,9 @@ KG	2024ndgf	qm	51	r2	9745	[7]	1	0	1	1	3	0	s	0	p	0	2	x	3	0	0	0	0
 KG	2024ndgf	qm	50	r2	3026	[16]	1	0	0	0	0	0	x	30.4	o	0	x	x	3	0	0	0	0	Just drive around and then climbed. No defense
 KG	2024ndgf	qm	49	r2	2530	[7]	1	0	2	5	1	0	b	15.2	s	0	3	x	4	0	0	0	1	
 KG	2024ndgf	qm	47	r2	3313	[9]	1	0	1	0	4	0	x	4.1	p	0	x	x	3	0	0	0	0	
-KG	2024ndgf	qm	46	r2	7235	[11]	1	0	0	0	0	0	x	0	p	0	x	x	2	0	0	0	0	Got 2 notes stuck on the robot and couldn�t get rid of
+KG	2024ndgf	qm	46	r2	7235	[11]	1	0	0	0	0	0	x	0	p	0	x	x	2	0	0	0	0	Got 2 notes stuck on the robot and couldn't get rid of
 KG	2024ndgf	qm	45	r2	4674	[10]	0	0	1	1	0	0	f	0	p	0	x	1	3	0	0	0	0	
-KG	2024ndgf	qm	44	r2	7048	[10]	0	0	1	0	0	0	x	0	x	0	x	x	3	1	1	0	0	Almost tipped over, didn�t, then stopped moving
+KG	2024ndgf	qm	44	r2	7048	[10]	0	0	1	0	0	0	x	0	x	0	x	x	3	1	1	0	0	Almost tipped over, didn't, then stopped moving
 KG	2024ndgf	qm	43	r2	3275	[10]	1	0	1	0	7	0	f	10.0	o	0	2	x	4	0	0	0	1	
 KG	2024ndgf	qm	42	r2	4536	[10]	0	0	1	4	1	0	f	3.0	p	0	2	x	3	0	0	0	1	
 KG	2024ndgf	qm	41	r2	3134	[9]	1	0	4	0	2	0	f	0	p	0	x	x	5	1	0	0	0	Died early in the parked area, but seemed to be good

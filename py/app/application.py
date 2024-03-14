@@ -1,20 +1,22 @@
 import tkinter as tk
 from tkinter import *
+from tkinter import ttk
 import customtkinter as ctk
 from customtkinter import *
 import scanner_funcs
 import cv2
-import scouting
+import information
+import excel_manipulation
 
 
 ctk.set_appearance_mode('Sysem')
 ctk.set_default_color_theme('dark-blue')
-appWidth, appHeight = 600, 700
+appWidth, appHeight = 300, 150
 matchScoutingPath = 'py/app/data/match_scouting_data.txt'
 pitScoutingPath = 'py/app/data/pit_scouting_data.txt'
-matchScoutingInfo = scouting.getAllMatchInfo(matchScoutingPath)
-pitScoutingInfo = scouting.getAllMatchInfo(pitScoutingPath)
-teams = scouting.getTeam('frc2508')
+matchScoutingInfo = information.getAllMatchInfo(matchScoutingPath)
+pitScoutingInfo = information.getAllMatchInfo(pitScoutingPath)
+teams = information.getTeam('frc2508')
 
 class App(ctk.CTk):
     def __init__(self, *args, **kwargs):
@@ -22,11 +24,12 @@ class App(ctk.CTk):
         self.scannerPage = CTkFrame(self)
         self.dataPage = CTkFrame(self)
         self.navBar = CTkFrame(self, fg_color='black')
-        self.navBar.place(relx=0.0,rely=0.0,relwidth=1.0,relheight=0.1)
+        # self.navBar.place(relx=0.0,rely=0.0,relwidth=1.0,relheight=0.05)
         self.scannerPage.place(relx=0.0,rely=0.0,relwidth=1.0,relheight=1.0)
+        # self.scannerPage.pack(pady=40)
         self.dataPage.place(relx=0.0,rely=0.0,relwidth=1.0,relheight=1.0)
 
-        self.scannerPage.tkraise()
+        self.scannerPage.lift()
         self.navBar.tkraise()
         self.title("ScoutingApp")
         self.geometry(f"{appWidth}x{appHeight}")
@@ -68,31 +71,38 @@ class App(ctk.CTk):
         # self.matchScoutingRadioButton.grid(row=2,column=3, 
         #                                    padx=20, pady=20, 
         #                                    sticky='ew')
-        self.matchScoutingRadioButton.place(relx=0.6,rely=0.5,anchor='center')
+        self.matchScoutingRadioButton.place(relx=0.3,rely=0.2,anchor='center')
         self.pitScoutingRadioButton = ctk.CTkRadioButton(self.scannerPage,
                                                           text='Pit Scouting', 
                                                           variable=self.scoutingType,
                                                           value='Pit Scouting')
-        self.pitScoutingRadioButton.place(relx=0.4,rely=0.5, anchor='center')
+        self.pitScoutingRadioButton.place(relx=0.7,rely=0.2, anchor='center')
         
         #Upload File                              
         self.scanCodesButton = ctk.CTkButton(self.scannerPage,
                                              text='Open QRcode Scanner',
                                              command=self.scanCodesButtonPressed)
         self.scanCodesButton.place(relx=0.5,rely=0.6,anchor='center')
+        # self.scanCodesButton.pack(pady=40)
 
-        self.dataLabel = ctk.CTkLabel(self.dataPage,
-                                      text=teams)
-        self.dataLabel.place(relx=0.5,rely=0.4,anchor='center')
-
+        self.updateSheets = ctk.CTkButton(self.scannerPage,
+                                              text="Update Spreadsheet",
+                                              command=self.updateSheet)
+        self.updateSheets.place(relx=0.5,rely=0.8,anchor='center')
 
         """-------------------------------------PAGE 2(Data)-------------------------------------"""
-        self.updateDataButton = ctk.CTkButton(self.dataPage,
+        self.updateTeamButton = ctk.CTkButton(self.dataPage,
                                               text='Update Data',
-                                              command=self.updateData)
-        self.updateDataButton.place(relx=0.5,rely=0.8, anchor='center')
+                                              command=self.changeTeam)
+        self.updateTeamButton.place(relx=0.5,rely=0.8, anchor='center')
 
-        self.teamDropDown = ctk.CTkComboBox(self.dataPage)
+        self.dataComboBox = ctk.CTkEntry(self.dataPage)
+        # self.dataComboBox.bind('<<ComboboxSelected>>', self.changeTeam)
+        self.dataComboBox.place(relx=0.5,rely=0.4,anchor='center')
+        
+        self.dataLabel = ctk.CTkLabel(self.dataPage, text='Team Location')
+
+        self.dataLabel.place(relx=0.5,rely=0.6,anchor='center')
 
     """-------------------------------------FUNCTIONS-------------------------------------"""
 
@@ -109,6 +119,7 @@ class App(ctk.CTk):
     def changePage(self):
         self.dataPageButton.configure(fg_color='#808080')
         self.scannerPageButton.configure(fg_color='black')
+        self.dataPage.lift()
         self.dataPage.tkraise()
         self.navBar.tkraise()
 
@@ -118,7 +129,16 @@ class App(ctk.CTk):
         self.scannerPage.tkraise()
         self.navBar.tkraise()
     
+    def changeTeam(self):
+        print('Combo Changed')
+        self.dataLabel.configure(text=information.getTeam(f'frc{self.dataComboBox.get()}').city)
 
+    def updateSheet(self):
+        try:
+            excel_manipulation.populateSheet()
+            tk.messagebox.showinfo(title='Sheet Update',message='Spreadsheet successfully updated')
+        except PermissionError:
+            tk.messagebox.showerror(title='Error',message='Please Close the spreadsheet')
 
 if __name__ == '__main__':
     app = App()
