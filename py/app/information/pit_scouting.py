@@ -42,7 +42,38 @@ def getAllPitInfo(filePath):
             scouting_info.append(line_info)
     return scouting_info
 
+def getAllPitInfoList(filePath):
+    all_lines = []
 
-class MatchScoutingInfo():
-    def getUniqueTeams(scoutingInfo):
-        return
+    with open(filePath, 'r') as file:
+        lines = file.readlines()
+        for line in lines:
+            line_array = line.split('\t')
+            #If the line is from match scouting, skip it
+            if line_array[0] == 'm':
+                continue
+            line_array[len(line_array)-1] = line_array[len(line_array)-1].rstrip('\n')
+            line_array = line_array[1:]
+            all_lines.append(line_array)
+
+    return all_lines
+
+def updatePitScoutingFile(allDataPath,pitDataPath):
+    line_arr = []
+    # Get match data from all scouting data
+    with open(allDataPath, 'r') as file:
+        lines = file.readlines()
+        for line in lines:
+            if line[0] != 'p': continue
+            line_arr.append(line[2:])
+    #Clear File
+    with open(pitDataPath, 'w') as file: pass
+    #Rewrite all pit data
+    with open(pitDataPath, 'a') as file:
+        for line in line_arr:
+            file.write(line)
+    return
+
+path1 = 'py/app/data/all_scouting_data.txt'
+path2 = 'py/app/data/pit_scouting_data.txt'
+updatePitScoutingFile(path1,path2)

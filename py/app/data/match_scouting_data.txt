@@ -75,58 +75,7 @@ AG	2024ndgf	p	20	b3	3293	[11]	1	2	0	5	0	0	f	4.5	o	0	2	3	3	0	0	0	1
 AG	2024ndgf	p	19	b3	3058	[21]	0	0	2	0	4	0	f	5.9	o	0	3	1	4	0	0	0	1	
 AG	2024ndgf	p	18	b3	8255	[21]	1	0	0	1	0	0	s	0	x	0	1	2	2	0	0	0	0	
 AG	2024ndgf	p	17	b3	3026	[21]	1	0	1	0	2	0	f	14.9	a	0	2	1	3	0	0	0	0	
-2500	Btly	33	42	100	w	4 wheel mechanum	12.75	c	Y	s		0	1	0	4		Y		c	N	[7,10]	[21]	o	l	Score in speaker than leave	They really on human 	0
-3275	Phoenix 	36	36		s		L3	f	Y	f		0	1	0	1		Y	10	s	N	[21]	[9]	o	f	Shoot speaker	Not much but not clueless	0
-877	Jerry				m	?	?	c	Y	f	?	0	0	3	3		Y	?	c	N	[]	[20]	d	n	Drive forward	They had no idea for a lot	0
-3058	Public enemy			105.5	s		L2	f	Y	b	9-10	0	2	9	9		Y	4	d	N	[21,8]	[9,9]	o	f	Can shoot in speaker and get off line and grab note	They were very versatile for chain	0
-3293	Big G			107	s		Medium 	n	Y	f	12	2	0	9	0		Y	10	s	Y	[10,7,10]	[]	o	f	Score in amp pick up 2 middle and put in shooters way.	Didn't know length and width 	0
-2450	Zane	33	33	80	s		L1	n	Y	s	15 sec	0	1	4	6		Y	7	d	N	[9,7,10]	[9,7,10]	o	l	Shoot note go to center	Had most numbers	0
-2549	Becky	30	33	105	s		L3	n	Y	b	5	2	2	5	5	8	Y		c	N	[8,9,9,8]	[21,11,7]	x	l	2 notes in speaker	Not sure about a lot in auto.	0
-2530	Riffs of insanity	31	36	110.7	s			f	Y	b	6 secs	0	4	4	4	3	Y	5	d	Y	[7,9,10,9,21,21]	[21,10,7,21,18,11]	o	l	Leave, pick up score either sides.	They were prepared lots of auto options.	0
-7235	Walter	34	39	89	w			x	Y	s		1	0	4	0	0	N		s	N	[11]	[25]	d	f	Amp	Not much experience 	1
-8255	Big bertha	29.5	29.5	100	s		48:1	n	Y	b	15	0	1	0	0	0	Y	20	s	N	[9]	[8,7,10]	o	f	Speaker		4
-7677	Crazy kim			112	s		L1	n	Y	f	7-8	0	2	0	8		Y	10	d	N	[7,21,11]	[7,9,10]	x	f	Speaker		6
-7028	Tempo	27	27	124	s	L3		f	Y	x	6-7	0	6	0	13		Y		c	N	[7,11]	[21,24,8,16,19,14,22]	o	l	Everything 	Very strong team	9
-6453	X	26	26	71	s			n	N	f		0	0	0	0		Y		c	N	[]	[]	x	n	Nothing	Not much experience, no testing	3
-3298	Cortana			58	w			n	Y	s	X	1	0	7	0		N	2 	s	N	[24]	[25]	o	f	Score in amp		3
-3277	The maestro	34	28	96.5	s		2:1	f	Y	b	10-11 seconds	0	4	1	1		Y	4 seconds	d	Y	[3]	[24,21,9,7,10,7]	x	f	Score speaker		7
-9474	Real	33	37	64	w			n	Y	b	X	0	0	1	0	0	Y	Fast	d	N	[]	[25]	o	f	Leave starting zone	Inexperienced 	4
-3313	Sound wave	26	26		s		Shooter: 1:1	n	N	f		0	0	0	0		N	5 seconds	d	N	[]	[]	x	f	Nothing	Incomplete auto and data	2
-5658	filipe	28	28	99.7	s			n	N	b	14	0	0	2	2		Y	unknown 	d	Y	[11,5]	[9,9]	o	n	none 		1
-5929	wally	32	27	78	w		unknown 	c	Y	f	unknown 	0	0	3	0		N	slower 	c	N	[10,6]	[24,24]	o	n	drove forward 		1
-6146	maestro 	29	30	97	s		1-15	n	Y	f	15	0	2	0	4		Y	3	s	N	[21,21]	[9,45]	o	l	score 3		5
-7048		24	24	92	s		unknown 	n	Y	f	unknown 	0	1	1	3		N		d	N	[9,11,7]	[9]	o	f	shoot one		3
-3755	elmo	31	31		s		14-1	n	N	b	unknown 	0	1	0	0		Y	14	d	N	[6,21,11]	[9,10]	d	n	none	didn't know a lot of things 	1
-4360	ferdanand	28	28	80	s		medium 	n	N	f	none	0	0	0	0	0	N	x	c	N	[]	[]	d	f	none	doesn't work well like at all 	2
-3926	icespit	28	32	116.8	s		l1	n	Y	f	unknown 	0	3	2	2		Y	4	d	N	[9,7]	[9]		f	score 1	average 	3
-4198	fish	30	29.5	120	s		l1	n	Y	x	don't know	0	1	1	3		Y	5	d	N	[6]	[21,10,7]	o	f	1 note	lots of variables 	4
-4181	none	36	36	88	s		l2	n	Y	f	8	0	2	4	0		Y	6	d	N	[21,21]	[21,21]	o	o	score 1	interesting dynamic	2
-4226	bounty	29.5		117	s		low	n	Y	b	no clue	0	1	4	4		Y	no clue	d	N	[21]	[21,21,9]	o	f	score 1	kinda confused 	2
-4238		20	28	105	s			n	N	f	13	0	1	0	6		N	10	d	Y	[21]	[9,10,7]	o	f	shoot 3 and grab a 4th	doesn't work very well and don't know a lot 	2
-4239	jawn	33	39	099	s		l2	f	Y	f	unsure 	0	2	2	7	0	N	3-4	d	N	[5,6]	[9]	o	n	2 and out	didn't know a few things 	3
-5576	gary	25	29	72	w		3-1	f	Y	b	doesn't know 	0	1	2	2		N	unsure 	c	N	[5,21,12]	[9,21]	x	l	score and move out	sick pins	7
-5464	thunderstruck 	38	39	91	s		l2	n	Y	f	8	0	4	0	8		Y	5	d	N	[8,21,21,21]	[21,7,10]	x	l	4 peice 	has color scheme 	6
-4674	none	29	29	98	s		medium 13-2	n	Y	f	6	1	0	0	6		Y	10	s	N	[21]	[21,9]	d	f	score 1	okay team	6
-4663	mcmera	34	34	84	s		medium	n	Y	f	8	0	4	1	2		Y	5	d	N	[8]	[21,21,21,21]	o	l	4 score	no robot yet but they know quite a bit 	6
-4596	cassiopea	29	29	119.8	s			n	Y	f	10	0	3	5	5		Y	12	s	N	[6]	[21,20]	d	l	score 2-3	pretty scattered didn't know mutch	4
-4539	kashmir 	025	025	075.5	s			f	Y	b	x6.8	0	2	4	0	3	N	3	s	N	[21]	[21]	o	l	pick up notes 	pretty nolegble 	5
-3278	Squatchbot	32	38	88	m		12:1	n	Y	b	9	0	0	0	5	0	Y	x	d	N	[11]	[9,7]	o	f	pick up note		5
-2654	Switchback	36	36	124	s		L2	n	N	f		0	0	10	10	12	Y	10	d	N	[21]	[20]	o	l	score speaker once, leave	auto doesn't work yet	7
-3026	Tuna	30.5	33	72	s		L3	n	Y	f	10	0	2	0	3	13	Y	20	d	N	[6,20,11]	[21]	x	f	3 ring	prepared	7
-2177	Daphne	33	33	118	s		5:1	f	Y	f	12	0	1	0	3	5	Y	10	d	N	[21,7,10]	[21,33]	o	f	score speaker once, leave zone	Knew a lot about their robot	8
-3293	Big G	0	0	107	s		medium	n	Y	f	13	2	0	9	0	0	Y	10	s	Y	[24,24]	[]	o	o	2 notes, give to shooter, score in amp	didn't know length x width, lots of wood on bot	6
-6175	Phantom virus	28.5	28.5	97	s		14	n	Y	b	10	0	0	2	2	8	Y	2	s	N	[6,11,21]	[45,9,7,10,24]	o	l	Didn't know	Seemed like they had it together	8
-8586	Firebot	35	36.5	66	w		X	c	N	s	X	0	0	0	0	0	Y		c	N	[]	[8]	d	f	Nothing	Don't have auto at all	3
-8188	Brent	28	28	110	s		L3	f	Y	x	10	0	4	0	0	8	Y	10	s	N	[9,11]	[45,29,10,24]	o	n	Move and score speaker		6
 SSC	2024ndgf	p	17	b1	4198	[10]	0	0	1	0	1	0	f	1.7	h	0	2	1	3	0	0	1	0	
-6628	Scrat	32	28	87	w		X	c	Y	b		0	0	7	0	1	N		c	N	[3,11]	[24]	x	f	Move	Can't score in speaker	4
-9745	X	27	32.5	62	w		X	c	Y	s	x	0	0	1	4	3	N	x	c	N	[21]	[21,24,24,10]	o	n	Move		2
-8878	Hippobottumus	26	26		s		13	n	Y	f	X	0	1	1	8	0	Y	X	d	N	[7,4,11]	[9,24]	x	f	Score speaker	Didn't test alot	5
-2883	Isabella	24	24	97	s		L3+	f	Y	b	6	1	3	2	2	3	Y	10	d	N	[11,6]	[21,23]	o	l	Amp and speaker and start zone	Cool	9
-7257	Mack	36	33	124.8	w		X	n	Y	f	X	0	4	6	4	0	Y	10	s	N	[6]	[21,7,10,24]	o	n	Move and speaker score		5
-876	Sound check	28	28	115	s		L3	f	Y	f	15	0	2	1	16	10	Y	X	d	N	[]	[58,35,19]	o	l	Mainly speaker and stary zone		6
-9576	None	27	27	122.7	s		L3	n	Y	b	X	1	1	3	3	0	Y	X	d	N	[3,6,11,21]	[9,7,10]	x	f	Score speaker	Can do both defense and offense	7
-		27	27	122.7	s		L3	n	Y	b	X	1	1	3	3	0	Y	X	d	N	[3,6,11,21]	[9,7,10]	x	f	Score speaker	Can do both defense and offense	7
 Ey	2024ndgf	p	16	b2	3277	[9]	0	0	2	0	5	0	f	0	p	0	3	2	4	1	0	0	1	Even though die it scored fast
 Ey	2024ndgf	p	15	b2	4239	[5]	0	0	0	0	0	0	x	0	o	0	3	4	3	0	0	0	1	They played great defense  heavy enough to block
 Ey	2024ndgf	p	17	b2	4198	[11]	0	0	0	0	4	0	b	0	o	0	2	2	3	0	0	0	0	They did nothing in auto but good shooting and avoiding
@@ -135,8 +84,6 @@ AG	2024ndgf	qm	15	b1	7677	[10]	0	0	0	0	3	0	f	15.6	p	0	2	x	3	0	0	0	0
 AG	2024ndgf	qm	17	b3	7048	[7]	0	0	1	0	4	0	x	0	p	0	1	x	2	0	0	0	0	
 AG	2024ndgf	qm	18	b3	3275	[10]	0	0	2	0	2	0	f	0	p	0	2	x	4	1	0	0	1	Doing very well before the robot died
 AG	2024ndgf	qm	16	b3	8255	[11]	0	0	0	1	0	0	s	0	p	0	1	x	2	0	0	0	0	
-5638	Michael jukeson	25	25	71	s		75:1	n	Y	f	x	0	4	0	9	0	Y	5	s	N	[9]	[9,8,10]	o	f	Score in speaker 4 times	Offense based, knowledgeable 	5
-3042	Larry	32	33	89	s			n	Y	f	X	0	1	0	4	0	N	10	d	N	[21,7,11]	[9,7,9]	d	l	Back up	Very defensive, climber broken at moment	4
 JB	2024ndgf	qm	1	r3	7028	[7]	0	0	0	0	0	0	x	0	p	0	2	4	5	0	0	0	0	Intake/ shooter broke, played defense
 JB	2024ndgf	qm	2	r3	3313	[7]	0	0	1	0	2	1	f	0	p	0	2	3	3	0	0	0	0	Trouble with scoring, but otherwise good
 JB	2024ndgf	qm	3	r3	3276	[9]	1	0	3	6	7	2	f	0	p	0	3	x	5	0	0	0	1	Crazy good 
@@ -165,8 +112,6 @@ SL	2024ndgf	qm	12	r2	3042	[4]	0	0	0	0	1	0	f	3.8	a	0	2	2	2	0	0	0	0	had an intake 
 SL	2024ndgf	qm	11	r2	3276	[9]	1	0	3	3	2	0	f	15.9	a	0	3	x	5	0	0	0	1	helped alliance by shooting middle notes to their side
 SL	2024ndgf	qm	10	r2	3134	[9]	1	0	2	0	8	0	f	0	x	0	3	x	4	0	0	0	1	
 SL	2024ndgf	qm	9	r2	3026	[6]	0	0	0	0	2	0	f	16.6	h	0	2	x	3	0	0	1	0	
-3276	Piccolo	22	22	83	s			f	Y	f	X	2	4	6	8	0	Y	3	s	Y	[21]	[8,7,-2,24,18,21,22,23]	o	l	Speaker and amp	Very knowledgeable and prepared 	9
-3871	None			110	w			x	Y	f	X	0	1	0	3	0	Y		c	N	[21]	[9,7,10]	d	f	1 in speaker	Not too knowledgeable, somewhat weak in offense and defense	3
 AG	2024ndgf	qm	22	b3	2530	[11]	1	0	0	0	9	0	f	7.3	o	0	2	x	3	0	0	0	1	Very effective at scoring
 AG	2024ndgf	qm	21	b3	3926	[7]	0	0	0	3	3	0	x	0	p	0	3	x	4	0	0	0	1	Very efficient in scoring in speaker and amp
 JB	2024ndgf	qm	20	r3	5172	[9]	1	0	0	0	12	0	f	0	x	0	3	x	5	0	0	0	1	Basically carried their team, even though they lost

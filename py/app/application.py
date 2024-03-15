@@ -7,15 +7,18 @@ import scanner_funcs
 import cv2
 import information
 import excel_manipulation
-
+import os
 
 ctk.set_appearance_mode('Sysem')
 ctk.set_default_color_theme('dark-blue')
 appWidth, appHeight = 300, 150
+allScoutingPath = 'py/app/data/all_scouting_data.txt'
 matchScoutingPath = 'py/app/data/match_scouting_data.txt'
 pitScoutingPath = 'py/app/data/pit_scouting_data.txt'
-matchScoutingInfo = information.getAllMatchInfo(matchScoutingPath)
-pitScoutingInfo = information.getAllMatchInfo(pitScoutingPath)
+excelWorkbookPath = 'py/app/data/Test.xlsx'
+excelWorkbookPath = os.path.abspath(excelWorkbookPath)
+matchScoutingInfo = information.getAllMatchInfoList(matchScoutingPath)
+pitScoutingInfo = information.getAllMatchInfoList(pitScoutingPath)
 teams = information.getTeam('frc2508')
 
 class App(ctk.CTk):
@@ -71,24 +74,31 @@ class App(ctk.CTk):
         # self.matchScoutingRadioButton.grid(row=2,column=3, 
         #                                    padx=20, pady=20, 
         #                                    sticky='ew')
-        self.matchScoutingRadioButton.place(relx=0.3,rely=0.2,anchor='center')
+        # self.matchScoutingRadioButton.place(relx=0.3,rely=0.2,anchor='center')
         self.pitScoutingRadioButton = ctk.CTkRadioButton(self.scannerPage,
                                                           text='Pit Scouting', 
                                                           variable=self.scoutingType,
                                                           value='Pit Scouting')
-        self.pitScoutingRadioButton.place(relx=0.7,rely=0.2, anchor='center')
+        # self.pitScoutingRadioButton.place(relx=0.7,rely=0.2, anchor='center')
         
         #Upload File                              
         self.scanCodesButton = ctk.CTkButton(self.scannerPage,
                                              text='Open QRcode Scanner',
                                              command=self.scanCodesButtonPressed)
-        self.scanCodesButton.place(relx=0.5,rely=0.6,anchor='center')
+        self.scanCodesButton.place(relx=0.5,rely=0.4,anchor='center')
         # self.scanCodesButton.pack(pady=40)
 
         self.updateSheets = ctk.CTkButton(self.scannerPage,
                                               text="Update Spreadsheet",
                                               command=self.updateSheet)
-        self.updateSheets.place(relx=0.5,rely=0.8,anchor='center')
+        self.updateSheets.place(relx=0.5,rely=0.6,anchor='center')
+
+        self.openExcelButton = ctk.CTkButton(self.scannerPage,
+                                             text='Open Excel Workbook',
+                                             command=self.openExcelButtonPressed)
+        self.openExcelButton.place(relx=0.5,rely=0.8,anchor='center')
+
+
 
         """-------------------------------------PAGE 2(Data)-------------------------------------"""
         self.updateTeamButton = ctk.CTkButton(self.dataPage,
@@ -107,15 +117,18 @@ class App(ctk.CTk):
     """-------------------------------------FUNCTIONS-------------------------------------"""
 
     def scanCodesButtonPressed(self):
-        if self.scoutingType.get()=='Match Scouting':
-            tk.messagebox.showinfo(title='Closing Scanner',message='To close the QRcode scanner, hold \'q\'')
-            scanner_funcs.openQRScanner(matchScoutingPath)
-        elif self.scoutingType.get()=='Pit Scouting':
-            tk.messagebox.showinfo(title='Closing Scanner',message='To close the QRcode scanner, hold \'q\'')
-            scanner_funcs.openQRScanner(pitScoutingPath)
-            print('Button Pressed')
-        else: tk.messagebox.showerror(title='Missing Input',message='Please select the type of scouting input')
-
+        tk.messagebox.showinfo(title='Closing Scanner',message='To close the QRcode scanner, hold \'q\'')
+        scanner_funcs.openQRScanner(allScoutingPath)
+        # if self.scoutingType.get()=='Match Scouting':
+        #     tk.messagebox.showinfo(title='Closing Scanner',message='To close the QRcode scanner, hold \'q\'')
+        #     scanner_funcs.openQRScanner(matchScoutingPath)
+        # elif self.scoutingType.get()=='Pit Scouting':
+        #     tk.messagebox.showinfo(title='Closing Scanner',message='To close the QRcode scanner, hold \'q\'')
+        #     scanner_funcs.openQRScanner(pitScoutingPath)
+        #     print('Button Pressed')
+        # else: tk.messagebox.showerror(title='Missing Input',message='Please select the type of scouting input')
+        return
+    
     def changePage(self):
         self.dataPageButton.configure(fg_color='#808080')
         self.scannerPageButton.configure(fg_color='black')
@@ -140,37 +153,13 @@ class App(ctk.CTk):
         except PermissionError:
             tk.messagebox.showerror(title='Error',message='Please Close the spreadsheet')
 
+    def openExcelButtonPressed(self):
+        if os.path.exists(excelWorkbookPath):
+            os.startfile(excelWorkbookPath)
+        else:
+            tk.messagebox.showinfo(title='File Not Found',message='Excel File not found')
+        return
+
 if __name__ == '__main__':
     app = App()
     app.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

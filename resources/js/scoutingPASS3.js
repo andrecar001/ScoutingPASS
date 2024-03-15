@@ -516,7 +516,13 @@ function getData(dataFormat) {
     Array.from(fd.keys()).forEach(thisKey => {
       str.push(fd.get(thisKey))
     });
-    return str.join("\t")
+    if(pitScouting) {
+      return "p\t" + str.join("\t")
+    }
+    else {
+      return "m\t" + str.join("\t")
+    }
+
   } else {
     return "unsupported dataFormat"
   }

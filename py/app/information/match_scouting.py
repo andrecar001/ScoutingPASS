@@ -2,7 +2,25 @@ class DotDict(dict):
     __getattr__ = dict.get
     __setattr__ = dict.__setitem__
     __delattr__ = dict.__delitem__
-def getAllMatchInfo(filePath):
+
+
+def updateMatchScoutingFile(allDataPath,matchDataPath):
+    line_arr = []
+    # Get match data from all scouting data
+    with open(allDataPath, 'r') as file:
+        lines = file.readlines()
+        for line in lines:
+            if line[0] != 'm': continue
+            line_arr.append(line[2:])
+    #Clear File
+    with open(matchDataPath, 'w') as file: pass
+    #Rewrite all match data
+    with open(matchDataPath, 'a') as file:
+        for line in line_arr:
+            file.write(line)
+    return
+
+def getAllMatchInfoDict(filePath):
 #Create Dictionary
     scouting_info = []
 
@@ -42,7 +60,22 @@ def getAllMatchInfo(filePath):
             scouting_info.append(line_info)
     return scouting_info
 
-# print(getAllMatchInfo('py/app/data/match_scouting_data.txt'))
+def getAllMatchInfoList(filePath):
+    all_lines = []
+    with open(filePath, 'r') as file:
+        lines = file.readlines()
+        for line in lines:
+            line_array = line.split('\t')
+            line_array[len(line_array)-1] = line_array[len(line_array)-1].rstrip('\n')
+            all_lines.append(line_array)
+
+    return all_lines
+
+
+path1 = 'py/app/data/all_scouting_data.txt'
+path2 = 'py/app/data/match_scouting_data.txt'
+updateMatchScoutingFile(path1,path2)
+
 class MatchScoutingInfo():
     def getUniqueTeams(scoutingInfo):
         return
