@@ -6,8 +6,9 @@ from customtkinter import *
 import scanner_funcs
 import cv2
 import information
-import excel_manipulation
+import excel_manipulation as excel
 import os
+import time
 
 ctk.set_appearance_mode('Sysem')
 ctk.set_default_color_theme('dark-blue')
@@ -15,8 +16,10 @@ appWidth, appHeight = 300, 150
 allScoutingPath = 'py/app/data/all_scouting_data.txt'
 matchScoutingPath = 'py/app/data/match_scouting_data.txt'
 pitScoutingPath = 'py/app/data/pit_scouting_data.txt'
-excelWorkbookPath = 'py/app/data/Test.xlsx'
-excelWorkbookPath = os.path.abspath(excelWorkbookPath)
+rawWorkbookPath = 'py/app/data/raw_scouting_data.xlsx'
+formattedWorkbookPath = 'py/app/data/formatted_data.xlsm'
+rawWorkbookPath = os.path.abspath(rawWorkbookPath)
+formattedWorkbookPath = os.path.abspath(formattedWorkbookPath)
 matchScoutingInfo = information.getAllMatchInfoList(matchScoutingPath)
 pitScoutingInfo = information.getAllMatchInfoList(pitScoutingPath)
 teams = information.getTeam('frc2508')
@@ -90,7 +93,7 @@ class App(ctk.CTk):
 
         self.updateSheets = ctk.CTkButton(self.scannerPage,
                                               text="Update Spreadsheet",
-                                              command=self.updateSheet)
+                                              command=self.updateSheetsButtonPressed)
         self.updateSheets.place(relx=0.5,rely=0.6,anchor='center')
 
         self.openExcelButton = ctk.CTkButton(self.scannerPage,
@@ -119,14 +122,6 @@ class App(ctk.CTk):
     def scanCodesButtonPressed(self):
         tk.messagebox.showinfo(title='Closing Scanner',message='To close the QRcode scanner, hold \'q\'')
         scanner_funcs.openQRScanner(allScoutingPath)
-        # if self.scoutingType.get()=='Match Scouting':
-        #     tk.messagebox.showinfo(title='Closing Scanner',message='To close the QRcode scanner, hold \'q\'')
-        #     scanner_funcs.openQRScanner(matchScoutingPath)
-        # elif self.scoutingType.get()=='Pit Scouting':
-        #     tk.messagebox.showinfo(title='Closing Scanner',message='To close the QRcode scanner, hold \'q\'')
-        #     scanner_funcs.openQRScanner(pitScoutingPath)
-        #     print('Button Pressed')
-        # else: tk.messagebox.showerror(title='Missing Input',message='Please select the type of scouting input')
         return
     
     def changePage(self):
@@ -146,16 +141,21 @@ class App(ctk.CTk):
         print('Combo Changed')
         self.dataLabel.configure(text=information.getTeam(f'frc{self.dataComboBox.get()}').city)
 
-    def updateSheet(self):
+    def updateSheetsButtonPressed(self):
+        information.updateAllData(allScoutingPath,matchScoutingPath,pitScoutingPath)
         try:
-            excel_manipulation.populateSheet()
+            excel.populateSheet(rawWorkbookPath,matchScoutingPath,pitScoutingPath)
             tk.messagebox.showinfo(title='Sheet Update',message='Spreadsheet successfully updated')
         except PermissionError:
             tk.messagebox.showerror(title='Error',message='Please Close the spreadsheet')
 
     def openExcelButtonPressed(self):
-        if os.path.exists(excelWorkbookPath):
-            os.startfile(excelWorkbookPath)
+        if os.path.exists(rawWorkbookPath) and os.path.exists(formattedWorkbookPath):
+            tk.messagebox.showwarning(title='Caution', message='Please close formatted_data.xlsm\nfirst in order to avoid future errors')
+            # TODO: Find a way to avoid opening two workbooks, currently will corrupt single macro file
+            os.startfile(rawWorkbookPath)
+            time.sleep(2)
+            os.startfile(formattedWorkbookPath)
         else:
             tk.messagebox.showinfo(title='File Not Found',message='Excel File not found')
         return

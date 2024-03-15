@@ -49,11 +49,7 @@ def getAllPitInfoList(filePath):
         lines = file.readlines()
         for line in lines:
             line_array = line.split('\t')
-            #If the line is from match scouting, skip it
-            if line_array[0] == 'm':
-                continue
             line_array[len(line_array)-1] = line_array[len(line_array)-1].rstrip('\n')
-            line_array = line_array[1:]
             all_lines.append(line_array)
 
     return all_lines
