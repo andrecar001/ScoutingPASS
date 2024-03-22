@@ -5,8 +5,8 @@ import pyperclip
 import time
 
 MAX_VALUE = 72
-rows = 26
-columns = 26
+rows = 6
+columns = 12
 totalCells = rows * columns
 for i in range(5,0,-1):
     print(i)
@@ -14,8 +14,8 @@ for i in range(5,0,-1):
 
 #print(pyautogui.position())
 for i in range(1,totalCells+1):
-    pyperclip.copy('SM_' + str(i))
-    pyautogui.click(x=56,y=199)
+    pyperclip.copy('SH_POS_' + str(i))
+    pyautogui.click(x=92,y=476)
     time.sleep(0.1)
     pyautogui.hotkey('ctrl','v')
     time.sleep(0.1)

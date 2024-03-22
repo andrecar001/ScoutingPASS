@@ -16,10 +16,10 @@ appWidth, appHeight = 300, 150
 allScoutingPath = 'py/app/data/all_scouting_data.txt'
 matchScoutingPath = 'py/app/data/match_scouting_data.txt'
 pitScoutingPath = 'py/app/data/pit_scouting_data.txt'
-rawWorkbookPath = 'py/app/data/raw_scouting_data.xlsx'
-formattedWorkbookPath = 'py/app/data/formatted_data.xlsm'
-rawWorkbookPath = os.path.abspath(rawWorkbookPath)
-formattedWorkbookPath = os.path.abspath(formattedWorkbookPath)
+mainWorkbookPath = 'py/app/data/updated_test_sheet.xlsx'
+heatmapsPath = 'py/app/data/heatmaps.xlsm'
+mainWorkbookPath = os.path.abspath(mainWorkbookPath)
+heatmapsPath = os.path.abspath(heatmapsPath)
 matchScoutingInfo = information.getAllMatchInfoList(matchScoutingPath)
 pitScoutingInfo = information.getAllMatchInfoList(pitScoutingPath)
 teams = information.getTeam('frc2508')
@@ -144,18 +144,18 @@ class App(ctk.CTk):
     def updateSheetsButtonPressed(self):
         information.updateAllData(allScoutingPath,matchScoutingPath,pitScoutingPath)
         try:
-            excel.populateSheet(rawWorkbookPath,matchScoutingPath,pitScoutingPath)
+            excel.populateSheet(mainWorkbookPath,matchScoutingPath,pitScoutingPath)
             tk.messagebox.showinfo(title='Sheet Update',message='Spreadsheet successfully updated')
         except PermissionError:
             tk.messagebox.showerror(title='Error',message='Please Close the spreadsheet')
 
     def openExcelButtonPressed(self):
-        if os.path.exists(rawWorkbookPath) and os.path.exists(formattedWorkbookPath):
-            tk.messagebox.showwarning(title='Caution', message='Please close formatted_data.xlsm\nfirst in order to avoid future errors')
+        if os.path.exists(mainWorkbookPath) and os.path.exists(heatmapsPath):
+            # tk.messagebox.showwarning(title='Caution', message='Please close formatted_data.xlsm\nfirst in order to avoid future errors')
             # TODO: Find a way to avoid opening two workbooks, currently will corrupt single macro file
-            os.startfile(rawWorkbookPath)
+            os.startfile(mainWorkbookPath)
             time.sleep(2)
-            os.startfile(formattedWorkbookPath)
+            os.startfile(heatmapsPath)
         else:
             tk.messagebox.showinfo(title='File Not Found',message='Excel File not found')
         return
