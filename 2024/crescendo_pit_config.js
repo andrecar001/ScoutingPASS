@@ -66,6 +66,10 @@ var config_data = `
       },
       "defaultValue":"x"
     },
+    { "name": "Vision",
+      "code": "vis",
+      "type": "bool"
+    },
 
 
     { "name": "General Game Info",
