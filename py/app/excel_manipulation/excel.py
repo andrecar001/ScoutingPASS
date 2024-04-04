@@ -1,4 +1,5 @@
 from openpyxl import load_workbook
+import xlwings as xw
 import os
 import information
 def isDouble(value):
@@ -9,7 +10,7 @@ def isDouble(value):
         return False
 
 # print(wb.sheetnames)
-def populateSheet(workbookPath, matchDataPath, pitDataPath):
+def populateSheetWithPyXl(workbookPath, matchDataPath, pitDataPath):
     path = 'py/app/data/Test.xlsx'
     workbookPath = os.path.abspath(workbookPath)
     # wb = load_workbook(filename=workbookPath, read_only=False, keep_vba=True)
@@ -38,6 +39,49 @@ def populateSheet(workbookPath, matchDataPath, pitDataPath):
     for row_idx, row in enumerate(pit_lines, start=1):
         for col_idx, value in enumerate(row, start=1):
             cell = pit_sheet.cell(row=row_idx+1,column=col_idx)
+            if isDouble(value):
+                cell.value = float(value)
+                if '.' in value:
+                    cell.number_format = '0.0'
+                else:
+                    cell.number_format = '0'
+            else:
+                cell.value = value
+    wb.save(workbookPath)
+    wb.close()
+    return
+
+
+def populateSheetWithXWings(workbookPath, matchDataPath, pitDataPath):
+    # path = 'py/app/data/Test.xlsx'
+    workbookPath = os.path.abspath(workbookPath)
+    app = xw.App(visible=False)
+    # wb = load_workbook(filename=workbookPath, read_only=False, keep_vba=True)
+    wb = app.books.open(workbookPath)
+    # filePath = 'py/app/data/match_scouting_data.txt'
+
+    match_sheet_name = 'ScoutingInfo'
+    pit_sheet_name = 'PitScoutingInfo'
+    match_sheet = wb.sheets[match_sheet_name]
+    pit_sheet = wb.sheets[pit_sheet_name]
+    match_lines = information.getAllMatchInfoList(matchDataPath)
+    pit_lines = information.getAllPitInfoList(pitDataPath)
+    # Update Match Sheet
+    for row_idx, row in enumerate(match_lines, start=1):
+        for col_idx, value in enumerate(row, start=1):
+            cell = match_sheet.range(row_idx+1,col_idx)
+            if isDouble(value):
+                cell.value = float(value)
+                if '.' in value:
+                    cell.number_format = '0.0'
+                else:
+                    cell.number_format = '0'
+            else:
+                cell.value = value
+        
+    for row_idx, row in enumerate(pit_lines, start=1):
+        for col_idx, value in enumerate(row, start=1):
+            cell = pit_sheet.range(row_idx+1,col_idx)
             if isDouble(value):
                 cell.value = float(value)
                 if '.' in value:

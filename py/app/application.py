@@ -144,7 +144,7 @@ class App(ctk.CTk):
     def updateSheetsButtonPressed(self):
         information.updateAllData(allScoutingPath,matchScoutingPath,pitScoutingPath)
         try:
-            excel.populateSheet(mainWorkbookPath,matchScoutingPath,pitScoutingPath)
+            excel.populateSheetWithXWings(mainWorkbookPath,matchScoutingPath,pitScoutingPath)
             tk.messagebox.showinfo(title='Sheet Update',message='Spreadsheet successfully updated')
         except PermissionError:
             tk.messagebox.showerror(title='Error',message='Please Close the spreadsheet')
