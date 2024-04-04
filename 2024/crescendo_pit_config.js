@@ -5,12 +5,13 @@ var config_data = `
   "page_title": "Crescendo",
   "pitConfig": "true",
   "prematch": [
-    { "name": "Robot",
-      "type": "header"
-    },
+
     { "name": "Team Number",
       "code": "t",
       "type": "number"
+    },
+    { "name": "Robot Info",
+      "type": "header"
     },
     { "name": "Cool Robot Name",
       "code": "crn",
@@ -65,12 +66,20 @@ var config_data = `
       },
       "defaultValue":"x"
     },
-    { "name": "Points",
+
+
+    { "name": "General Game Info",
       "type": "header"
     },
-    { "name": "Can Leave Starting Zone",
-    "code": "lst",
-    "type": "bool"
+    { "name": "Defense/Offense focused",
+      "code": "do",
+      "type":"radio",
+      "choices": {
+        "d": "Defense<br>",
+        "o": "Offense<br>",
+        "x": "Doesn't Matter<br>"
+      },
+      "defaultValue": "c"
     },
     { "name": "Pickup From",
       "code": "tpu",
@@ -83,10 +92,37 @@ var config_data = `
       },
       "defaultValue": "x"
     },
-    { "name": "Cycle Times(s)",
+    { "name": "Cycle Times(s) (Time to grab note)",
     "code": "cyt",
     "type": "text",
     "defaultValue": "x"
+    },
+    { "name": "Reliable Shooting Distance(ft)",
+      "code": "rsd",
+      "type": "number",
+      "defaultValue": "0"
+    },
+    { "name": "Shooting Positions",
+    "code": "sp",
+    "type": "clickable_image",
+    "filename": "2024/field_image_half.png",
+    "shape": "circle 5 black red true"
+    },
+
+
+
+    { "name": "Auto",
+      "type": "header"
+    },
+    { "name": "What Do They Do In Auto?",
+      "code": "autoco",
+      "type": "text",
+      "size": 20,
+      "maxSize": 250
+    },
+    { "name": "Auto: Can Leave Starting Zone",
+    "code": "lst",
+    "type": "bool"
     },
     { "name": "Auto Amp Score",
       "code": "aas",
@@ -96,6 +132,20 @@ var config_data = `
       "code": "ass",
       "type": "counter"
     },
+    { "name": "Auto Start Position",
+    "code": "as",
+    "type": "clickable_image",
+    "filename": "2024/field_image_half.png",
+
+    "allowableResponses": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24",
+    "shape": "circle 5 black red true"
+    },
+
+
+
+    { "name": "Teleop",
+      "type": "header"
+    },
     { "name": "Teleop Amp Score",
     "code": "tas",
     "type": "counter"
@@ -104,19 +154,11 @@ var config_data = `
       "code": "tss",
       "type": "counter"
     },
-    { "name": "Reliable Shooting Distance(ft)",
-      "code": "rsd",
-      "type": "number",
-      "defaultValue": "0"
-    },
-    { "name": "Designated Human Player?",
-    "code": "hp",
-    "type": "bool"
-    },
-    { "name": "Climb Time(s)",
-    "code": "cbt",
-    "type": "text",
-    "defaultValue": "x"
+
+
+
+    { "name": "Endgame",
+      "type": "header"
     },
     { "name": "Climb Status",
       "code": "fs",
@@ -128,39 +170,24 @@ var config_data = `
       },
       "defaultValue": "c"
     },
+    { "name": "Climb Time(s)",
+    "code": "cbt",
+    "type": "text",
+    "defaultValue": "x"
+    },
     { "name": "Can Score Note in Trap",
       "code": "nit",
       "type": "bool"
     },
-    { "name": "Positions",
-      "type": "header"
+    { "name": "Designated Human Player?",
+    "code": "hp",
+    "type": "bool"
     },
-    { "name": "Auto Start Position",
-    "code": "as",
-    "type": "clickable_image",
-    "filename": "2024/field_image_half.png",
 
-    "allowableResponses": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24",
-    "shape": "circle 5 black red true"
-  },
-    { "name": "Shooting Positions",
-    "code": "sp",
-    "type": "clickable_image",
-    "filename": "2024/field_image_half.png",
-    "shape": "circle 5 black red true"
-    },
+
+
     { "name": "Misc.",
       "type": "header"
-    },
-    { "name": "Defense/Offense",
-      "code": "do",
-      "type":"radio",
-      "choices": {
-        "d": "Defense<br>",
-        "o": "Offense<br>",
-        "x": "Doesn't Matter<br>"
-      },
-      "defaultValue": "c"
     },
     { "name": "Scouting Amount",			
       "code": "sa",
@@ -173,13 +200,7 @@ var config_data = `
       },
       "defaultValue": "o"
     },
-    { "name": "What Do They Do In Auto?",
-      "code": "autoco",
-      "type": "text",
-      "size": 20,
-      "maxSize": 250
-    },
-    { "name": "Comments",
+    { "name": "Final Comments",
       "code": "co",
       "type": "text",
       "size": 20,

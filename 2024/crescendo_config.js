@@ -102,17 +102,6 @@ var config_data = `
       "code": "tta",
       "type": "counter"
     },
-    { "name": "Pickup From",
-      "code": "tpu",
-      "type": "radio",
-      "choices": {
-        "s": "Source<br>",
-        "f": "Floor<br>",
-        "b": "Both<br>",
-        "x": "Not Attempted"
-      },
-      "defaultValue": "x"
-    },
 
 
 
@@ -145,6 +134,17 @@ var config_data = `
 
     { "name": "Post-match",
       "type": "header"
+    },
+    { "name": "Pickup From",
+      "code": "tpu",
+      "type": "radio",
+      "choices": {
+        "s": "Source<br>",
+        "f": "Floor<br>",
+        "b": "Both<br>",
+        "x": "Not Attempted"
+      },
+      "defaultValue": "x"
     },
     { "name": "Driver Skill",
     "code": "ds",

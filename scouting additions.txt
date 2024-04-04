@@ -1,12 +1,12 @@
-reorganize such that questions follow logically:
+C   reorganize such that questions follow logically:
 - questions asking about the same thing follow eachother
 - - EX: ask if able to climb -> climb time -> single / double climb
 - - EX: what do in auto -> auto score ammount -> eachother
-Was the same as last year pretty much. Good for freshman because they get to know people.
-it was fine but it was hard to find where they started from
-I didnt do much of it but from what I ended up doing, It was alright
-pretty easy to use 
-it was fine but there should be an option for "they dont know"
-It worked out well, but it was hard to remember when to add how someone grabbed a gamepeice when the end came quick
-I have no complaints about the match scouting forms
-I thought the format was really good and liked how the forms were organized
+C   Was the same as last year pretty much. Good for freshman because they get to know people.
+X   it was fine but it was hard to find where they started from
+C   I didnt do much of it but from what I ended up doing, It was alright
+C   pretty easy to use 
+X   it was fine but there should be an option for "they dont know"
+C   It worked out well, but it was hard to remember when to add how someone grabbed a gamepeice when the end came quick
+C   I have no complaints about the match scouting forms
+C   I thought the format was really good and liked how the forms were organized
